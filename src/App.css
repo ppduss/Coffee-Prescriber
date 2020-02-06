@@ -1,17 +1,23 @@
 .App {
   text-align: center;
+
+}
+
+body {
+    background-color: rgb(120, 176, 221);
 }
 
 
 .App-header {
   background-color: rgb(120, 176, 221);
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+ /* justify-content: center; */
   font-size: calc(6px + 2vmin);
   color: white;
+  margin-top: 20vh;
 }
 
 .App-link {
@@ -21,7 +27,7 @@
 
 .button {
   size: 80rem;
-  margin: 0px 12px 0px;
+  margin: 0px 12px 20px;
   background-color: inherit;
 }
 
