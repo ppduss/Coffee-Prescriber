@@ -1,5 +1,5 @@
 import React from 'react'
-import StarRatings from './react-star-ratings';
+import StarRatings from '../node_modules/react-star-ratings';
 
 class Foo extends React.Component {
     changeRating(newRating, name) {
