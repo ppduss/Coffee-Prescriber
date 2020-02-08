@@ -19,31 +19,31 @@ import FlaviconImg from './assets/favicon2.ico'
 const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
 const currentTime = new Date();
 
-console.log(DrugWarning);
-
 const App = () => {
 
   const [currentComponent, setCurrentComponent] = useState('intro')
-  const [feelingsText, setFeelingsText] = useState()
+  const [feelingsText, setFeelingsText] = useState("")
+  const [happinessScore, setHappinessScore] = useState("")
 
-  useEffect(() => {
-    console.log('this runs every render')
-  })
 
-  useEffect(() => {
-    console.log('this runs only on first render')
-  }, [])
+  // useEffect(() => {
+  //   console.log('this runs every render')
+  // })
 
-  useEffect(() => {
-    console.log('this runs only when feelingsText changes (and first render, but they all do that)')
-  }, [feelingsText])
+  // useEffect(() => {
+  //   console.log('this runs only on first render')
+  // }, [])
 
-  useEffect(() => {
-    console.log('this runs first render only')
-    return () => {
-      console.log('this only runs on dismount of this component')
-    }
-  })
+  // useEffect(() => {
+  //   console.log('this runs only when feelingsText changes (and first render, but they all do that)')
+  // }, [feelingsText])
+
+  // useEffect(() => {
+  //   console.log('this runs first render only')
+  //   return () => {
+  //     console.log('this only runs on dismount of this component')
+  //   }
+  // })
 
   const IntroComponent = () => (
     <div className="App">
@@ -81,9 +81,11 @@ const App = () => {
 
   )
 
-  const handleIconClick = e => {
-    e.preventDefault();
-    setFeelingsText('sleeeeepy are ye')
+  const handleIconClick = (event, iconText) => {
+    event.preventDefault();
+    setHappinessScore(event.target.value)
+    setFeelingsText(iconText)
+
   }
 
   const Cup1Component = () => (
@@ -93,24 +95,31 @@ const App = () => {
 
         <p>How do you feel ?</p>
 
-        <form>
-          <input type="radio" class="button" onClick={handleIconClick} name="Sleeping" value="" type="image" src={SleepingImg} alt="Expressionless face" alt="sleepy" height="42" width="42" />
-          <input type="radio" class="button" name="Expressionless" value="2" type="image" src={ExpressionlessImg} alt="Expressionless face" height="42" width="42" />
-          <input type="radio" class="button" name="Smiling" value="3" type="image" src={SmilingImg} alt="Expressionless face" height="42" width="42" />
-          <input type="radio" class="button" name="Confused" value="4" type="image" src={ConfusedImg} alt="Expressionless face" height="42" width="42" />
-          <input type="radio" class="button" name="Unhappy" value="5" type="image" src={UnhappyImg} alt="Expressionless face" height="42" width="42" />
-        </form>
+        <div>
+          <input type="radio" class="button" onClick={event => handleIconClick(event, 'Sleepy')} name="Sleeping" value="1" type="image" src={SleepingImg} alt="sleepy" height="42" width="42" />
+
+          <input type="radio" class="button" onClick={event => handleIconClick(event, 'Expressionless')} name="Expressionless" value="2" type="image" src={ExpressionlessImg} alt="Expressionless face" height="42" width="42" />
+
+          <input type="radio" class="button" name="Smiling" value="3" type="image" src={SmilingImg} alt="Smiling face" height="42" width="42" />
+
+          <input type="radio" class="button" name="Confused" value="4" type="image" src={ConfusedImg} alt="Confused face" height="42" width="42" />
+
+          <input type="radio" class="button" name="Unhappy" value="5" type="image" src={UnhappyImg} alt="Unhappy face" height="42" width="42" />
+        </div>
 
         <div>{feelingsText}</div>
+        <br />
+        <br />
+        <br />
 
         <p>How productive were you ?</p>
 
         <form>
-          <input type="radio" class="star" name="Sleepy" value="" type="image" src={StarImg} alt="Expressionless face" alt="sleepy" height="42" width="42" />
-          <input type="radio" class="star" name="Expressionless" value="2" type="image" src={StarImg} alt="Expressionless face" height="42" width="42" />
-          <input type="radio" class="star" name="Smiling" value="3" type="image" src={StarImg} height="42" width="42" />
-          <input type="radio" class="star" name="test" value="4" type="image" src={StarImg} alt="Expressionless face" height="42" width="42" />
-          <input type="radio" class="star" name="test" value="5" type="image" src={StarImg} alt="Expressionless face" height="42" width="42" />
+          <input type="radio" class="star" name="" value="1" type="image" src={StarImg} alt="Expressionless face" alt="sleepy" height="42" width="42" />
+          <input type="radio" class="star" name="" value="2" type="image" src={StarImg} alt="Expressionless face" height="42" width="42" />
+          <input type="radio" class="star" name="" value="3" type="image" src={StarImg} height="42" width="42" />
+          <input type="radio" class="star" name="" value="4" type="image" src={StarImg} alt="Expressionless face" height="42" width="42" />
+          <input type="radio" class="star" name="" value="5" type="image" src={StarImg} alt="Expressionless face" height="42" width="42" />
         </form>
 
 
