@@ -64,21 +64,21 @@ const App = () => {
             <option value="teen">12-18 </option>
             <option value="adult">18+</option>
           </select>
-          <input class="" type="reset" />
+          <input className="" type="reset" />
 
 
         </form>
-        <button onClick={() => setCurrentComponent('next')}>next!</button>
+        <button onClick={() => setCurrentComponent('cup1')}>next!</button>
       </header>
 
     </div>
 
   )
 
-  const Cup1Component = () => (
+  const CupsContainer = () => (
     <div className="App">
       <header className="App-header">
-        <Cups />
+        <Cups setCurrentComponent={setCurrentComponent} currentComponent={currentComponent} />
       </header >
 
     </div >
@@ -94,9 +94,13 @@ const App = () => {
     switch (currentComponent) {
       case "intro":
         return <IntroComponent />
-      case "next":
-        return <Cup1Component />
-      case "starrating":
+      case "cup1":
+      case "cup2":
+      case "cup3":
+      case "cup4":
+      case "cup5":
+        return <CupsContainer />
+      case "starRating":
         return <StarRatings />
       case "analysis":
         return <Analysis />
