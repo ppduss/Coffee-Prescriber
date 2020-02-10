@@ -35,4 +35,6 @@ class Bar extends React.Component {
 	}
 }
 
-export default StarRatings;
+export default (Bar)
+
+

@@ -24,7 +24,8 @@ const App = () => {
   const [currentComponent, setCurrentComponent] = useState('intro')
   const [feelingsText, setFeelingsText] = useState("")
   const [happinessScore, setHappinessScore] = useState("")
-
+  const [productivityText, setProductivityText] = useState("")
+  const [productivityScore, setProductivityScore] = useState("")
 
   // useEffect(() => {
   //   console.log('this runs every render')
@@ -80,67 +81,67 @@ const App = () => {
     </div>
 
   )
-
+  //The "Happiness" index is measuring satisfaction with the amount of coffee"
   const handleIconClick = (event, iconText) => {
     event.preventDefault();
     setHappinessScore(event.target.value)
     setFeelingsText(iconText)
-
   }
+  const handleStarClick = (event, starProd) => {
+    event.preventDefault();
+    setProductivityText(starProd)
+    setProductivityScore(event.target.value)
+  }
+
 
   const Cup1Component = () => (
     <div className="App">
       <header className="App-header">
         <h1>CUP: 1</h1>
 
-        <p>How do you feel ?</p>
+        <p>Do you feel satisfied ?</p>
 
         <div>
-          <input type="radio" class="button" onClick={event => handleIconClick(event, 'Sleepy')} name="Sleeping" value="1" type="image" src={SleepingImg} alt="sleepy" height="42" width="42" />
+          <input type="radio" class="button" onClick={event => handleIconClick(event, "You're still sleeping")} name="Sleeping" value="1" type="image" src={SleepingImg} alt="sleepy" height="42" width="42" />
 
           <input type="radio" class="button" onClick={event => handleIconClick(event, 'Expressionless')} name="Expressionless" value="2" type="image" src={ExpressionlessImg} alt="Expressionless face" height="42" width="42" />
 
-          <input type="radio" class="button" name="Smiling" value="3" type="image" src={SmilingImg} alt="Smiling face" height="42" width="42" />
+          <input type="radio" class="button" onClick={event => handleIconClick(event, 'Satisfied')} name="Smiling" value="3" type="image" src={SmilingImg} alt="Smiling face" height="42" width="42" />
 
-          <input type="radio" class="button" name="Confused" value="4" type="image" src={ConfusedImg} alt="Confused face" height="42" width="42" />
+          <input type="radio" class="button" onClick={event => handleIconClick(event, 'Sleepy')} name="Confused" value="4" type="image" src={ConfusedImg} alt="Confused face" height="42" width="42" />
 
-          <input type="radio" class="button" name="Unhappy" value="5" type="image" src={UnhappyImg} alt="Unhappy face" height="42" width="42" />
+          <input type="radio" class="button" onClick={event => handleIconClick(event, 'Sleepy')} name="Unhappy" value="5" type="image" src={UnhappyImg} alt="Unhappy face" height="42" width="42" />
         </div>
 
         <div>{feelingsText}</div>
+        <div>{happinessScore}</div>
         <br />
         <br />
+        <div>{productivityScore}</div>
+        <div>{productivityText}</div>
         <br />
 
         <p>How productive were you ?</p>
 
-        <form>
-          <input type="radio" class="star" name="" value="1" type="image" src={StarImg} alt="Expressionless face" alt="sleepy" height="42" width="42" />
-          <input type="radio" class="star" name="" value="2" type="image" src={StarImg} alt="Expressionless face" height="42" width="42" />
-          <input type="radio" class="star" name="" value="3" type="image" src={StarImg} height="42" width="42" />
-          <input type="radio" class="star" name="" value="4" type="image" src={StarImg} alt="Expressionless face" height="42" width="42" />
-          <input type="radio" class="star" name="" value="5" type="image" src={StarImg} alt="Expressionless face" height="42" width="42" />
-        </form>
+        <div>
+          <input type="radio" class="star" onClick={event => handleStarClick(event, 'Not productive at all')} name="" value="1" type="image" src={StarImg} alt='Not productive at all' alt="sleepy" height="42" width="42" />
+
+          <input type="radio" class="star" onClick={event => handleStarClick(event, 'Barely productive')} name="" value="2" type="image" src={StarImg} alt="Barely productive" height="42" width="42" />
+
+          <input type="radio" class="star" onClick={event => handleStarClick(event, 'Somewhat productive')} name="" value="3" type="image" src={StarImg} alt="Somewhat productive" height="42" width="42" />
+
+          <input type="radio" class="star" onClick={event => handleStarClick(event, 'Productive')} name="" value="4" type="image" src={StarImg} alt="Productive" height="42" width="42" />
+
+          <input type="radio" class="star" onClick={event => handleStarClick(event, 'Very productive !')} name="" value="5" type="image" src={StarImg} alt="Very productive" height="42" width="42" />
+        </div>
 
 
-        <button onClick={() => setCurrentComponent('counter')}>counter</button>
+        <button onClick={() => setCurrentComponent('starrating')}>counter</button>
       </header >
 
     </div >
   )
 
-  function Counter({ initialCount }) {
-    const [count, setCount] = useState(initialCount);
-    return (
-      <>
-        Count: {count}
-        <button onClick={() => setCount(initialCount)}>Reset</button>
-        <button onClick={() => setCount(x => x - 1)}>-</button>
-        <button onClick={() => setCount(x => x + 1)}>+</button>
-
-      </>
-    );
-  }
 
   const Stars = () => {
     return <StarRatings />
@@ -154,8 +155,6 @@ const App = () => {
         return <IntroComponent />
       case "next":
         return <Cup1Component />
-      case "counter":
-        return <Counter initialCount={2} />
       case "starrating":
         return <StarRatings />
       default:
