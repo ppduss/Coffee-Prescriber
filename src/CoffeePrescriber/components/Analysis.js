@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react'
 
-const Analysis = () => {
+const Analysis = ({ setCurrentComponent, currentComponent }) => {
 
   return (
+    <>
+      <h1>Analysis</h1>
 
-    <div>
       <div>
+
         <p>Yo</p>
+
       </div>
-    </div>
-  )
+      <button onClick={() => setCurrentComponent('cup1')}>On to cup 2!</button>
+    </>)
 }
 
 export default Analysis

@@ -34,9 +34,10 @@ const ActiveCup = ({ setCurrentComponent, currentComponent }) => {
     console.log('something after')
   }
 
-  useEffect(() => {
-    console.log(9999, totalProductivityScore)
-  }, [totalProductivityScore])
+
+  // useEffect(() => {
+  //   console.log(9999, totalProductivityScore)
+  // }, [totalProductivityScore])
 
   return (
     <>
@@ -62,7 +63,7 @@ const ActiveCup = ({ setCurrentComponent, currentComponent }) => {
       <div>{happinessScore}</div>
       <br />
       <br />
-      <div>{productivityScore}</div>
+      <div>  {productivityScore}</div>
       <div>{productivityText}</div>
       <br />
 

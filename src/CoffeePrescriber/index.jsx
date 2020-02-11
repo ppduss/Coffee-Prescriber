@@ -75,19 +75,16 @@ const App = () => {
 
   )
 
-  const CupsContainer = () => (
-    <div className="App">
-      <header className="App-header">
-        <Cups setCurrentComponent={setCurrentComponent} currentComponent={currentComponent} />
-      </header >
+  const CupsContainer = () => {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <Cups setCurrentComponent={setCurrentComponent} currentComponent={currentComponent} />
+        </header>
 
-    </div >
-  )
-
-
-  const Stars = () => {
-    return <StarRatings />
-  };
+      </div>
+    )
+  }
 
 
   const ActiveComponent = () => {
@@ -95,9 +92,13 @@ const App = () => {
       case "intro":
         return <IntroComponent />
       case "cup1":
+        return <CupsContainer />
       case "cup2":
+        return <CupsContainer cupNumber="2" />
       case "cup3":
+        return <CupsContainer />
       case "cup4":
+        return <CupsContainer />
       case "cup5":
         return <CupsContainer />
       case "starRating":
