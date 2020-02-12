@@ -35,6 +35,6 @@ class Bar extends React.Component {
 	}
 }
 
-export default (Bar)
+export default Bar
 
 
