@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Cups from './Cups/index.jsx';
+import Cups from '../Cups/index'
 
 
 const Analysis = ({ setCurrentComponent, currentComponent, setCurrentCup }) => (

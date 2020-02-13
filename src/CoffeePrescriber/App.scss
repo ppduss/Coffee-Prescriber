@@ -34,21 +34,20 @@ body {
 .time {
   margin: 5px 0px 20px;
 }
+
 .star:hover {
   filter: gray;
   -webkit-filter: grayscale(1); 
   filter: grayscale(1)
 }
+
 .star {
   margin: 0px 2px 0px;
 }
 
 .warning {
-  color:brown;
-  font-size: 0.80rem;
+  color: rgb(241, 62, 62);
+  font-size: 0.75rem;
 
 }
 
-/* .steam {
-  
-} */

@@ -25,7 +25,7 @@ const Cups = props => {
   const [totalProductivityScore, setTotalProductivityScore] = useState('');
 
 
-  // The "Happiness" index is measuring satisfaction with the amount of coffee"
+ 
   const handleIconClick = (event) => {
     event.preventDefault();
     setHappinessScore(event.target.value);
@@ -67,9 +67,28 @@ const Cups = props => {
       return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg ])
     } else if (currentCup === 5) {
       return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg ])
+    } else if (currentCup === 5) {
+      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg ])
     }
   };
 
+  const cupTitle = () => {
+    if (currentCup === 1) {
+      return ("\"The Resurection\"")
+    } else if (currentCup === 2) {
+      return ("\"The Boost\"")
+    } else if (currentCup === 3) {
+      return ("\"The Stim Pack\"")
+    } else if (currentCup === 4) {
+      return ("\"Power Overwhelming\"")
+    } else if (currentCup === 5) {
+      return ("\"WHOOOOOOOOO\"")
+    } else if (currentCup === 6) {
+      return ("ERROR : TOO MUCH COFFEE")
+    } else {
+      return ("* Error *")
+    }
+  }
 
 
   const CupContent = () => (
@@ -78,6 +97,7 @@ const Cups = props => {
       <h1>
         CUP: {currentCup}
       </h1>
+      <h2>{cupTitle()}</h2>
 
       <p>Do you feel satisfied ?</p>
 
@@ -96,7 +116,6 @@ const Cups = props => {
 
       <div>{feelingsText}</div>
       <div>{happinessScore}</div>
-      <br />
       <br />
       <div>{productivityScore}</div>
       <div>{productivityText}</div>
