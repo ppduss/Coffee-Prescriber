@@ -14,14 +14,24 @@ import PerseveringImg from '../assets/Persevering.png';
 
 const Cups = (props) => {
   const {
-    setCurrentComponent, currentCup, setCurrentCup, parentFunction, setProductivityScore, productivityScore, happinessScore, setHappinessScore, totalProductivityScore, setTotalProductivityScore, totalHappinessScore, setTotalHapinessScore,
+    setCurrentComponent,
+    currentCup,
+    setCurrentCup,
+    parentFunction,
+    setProductivityScore,
+    productivityScore,
+    happinessScore,
+    setHappinessScore,
+    totalProductivityScore,
+    setTotalProductivityScore,
+    totalHappinessScore,
+    setTotalHapinessScore,
+    feelingsText,
+    setFeelingsText,
+    productivityText,
+    setProductivityText,
   } = props;
 
-  const [feelingsText, setFeelingsText] = useState('');
-  const [productivityText, setProductivityText] = useState('');
-
-
-  parentFunction('this is declared in the child');
 
   const handleIconClick = (event) => {
     event.preventDefault();
@@ -34,10 +44,12 @@ const Cups = (props) => {
     setProductivityText(starProd);
     setProductivityScore(e.target.value);
   };
-  const handleSubmitClick = ({ event, productivityScore }) => {
-    event.preventDefault();
-    setTotalProductivityScore(productivityScore + totalProductivityScore);
-    setTotalHapinessScore(happinessScore + totalHappinessScore);
+
+  const handleSubmit = () => {
+    setTotalProductivityScore((total) => total + productivityScore);
+    setTotalHapinessScore();
+    setCurrentComponent('analysis');
+    setCurrentCup((cup) => cup + 1);
   };
 
   const handleEmoji = () => {
@@ -50,6 +62,8 @@ const Cups = (props) => {
     } if (currentCup === 4) {
       return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
     } if (currentCup === 5) {
+      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
+    } if (currentCup === 6) {
       return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
     }
   };
@@ -65,7 +79,7 @@ const Cups = (props) => {
       return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
     } if (currentCup === 5) {
       return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
-    } if (currentCup === 5) {
+    } if (currentCup === 6) {
       return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
     }
   };
@@ -86,69 +100,71 @@ const Cups = (props) => {
     }
     return ('* Error *');
   };
+  const satisfactionQuery = () => {
+    if (currentCup === 1) {
+      return ('first');
+    } if (currentCup === 2) {
+      return ('second');
+    } if (currentCup === 3) {
+      return ('third');
+    } if (currentCup === 4) {
+      return ('fourth');
+    } if (currentCup === 5) {
+      return ('fifth');
+    } if (currentCup === 6) {
+      return ('ERROR : TOO MUCH COFFEE');
+    }
+    return ('* Error *');
+  };
 
 
   const CupContent = () => (
-    <>
+    <div>
 
       <h1>
-        CUP:
-        {' '}
-        {currentCup}
+        CUP: {currentCup}
       </h1>
       <h3>{cupTitle()}</h3>
 
-      <p>Do you feel satisfied ?</p>
+      <p>Are you satisfied with your {satisfactionQuery()} cup ?</p>
 
       <div>
-        <input type="radio" className="button" onClick={(event) => handleIconClick(event)} name={handleText()[0]} value="1" type="image" src={handleEmoji()[0]} alt="sleepy" height="48" width="48" />
+        <input className="button" onClick={(event) => handleIconClick(event)} name={handleText()[0]} value="1" type="image" src={handleEmoji()[0]} alt="sleepy" height="48" width="48" />
 
-        <input type="radio" className="button" onClick={(event) => handleIconClick(event)} name={handleText()[1]} value="2" type="image" src={handleEmoji()[1]} alt="Expressionless face" height="48" width="48" />
+        <input className="button" onClick={(event) => handleIconClick(event)} name={handleText()[1]} value="2" type="image" src={handleEmoji()[1]} alt="Expressionless face" height="48" width="48" />
 
-        <input type="radio" className="button" onClick={(event) => handleIconClick(event)} name={handleText()[2]} value="3" type="image" src={handleEmoji()[2]} alt="Smiling face" height="48" width="48" />
+        <input className="button" onClick={(event) => handleIconClick(event)} name={handleText()[2]} value="3" type="image" src={handleEmoji()[2]} alt="Smiling face" height="48" width="48" />
 
-        <input type="radio" className="button" onClick={(event) => handleIconClick(event)} name={handleText()[3]} value="4" type="image" src={handleEmoji()[3]} alt="Confused face" height="48" width="48" />
+        <input className="button" onClick={(event) => handleIconClick(event)} name={handleText()[3]} value="4" type="image" src={handleEmoji()[3]} alt="Confused face" height="48" width="48" />
 
-        <input type="radio" className="button" onClick={(event) => handleIconClick(event)} name={handleText()[4]} value="5" type="image" src={handleEmoji()[4]} alt="Unhappy face" height="48" width="48" />
+        <input className="button" onClick={(event) => handleIconClick(event)} name={handleText()[4]} value="5" type="image" src={handleEmoji()[4]} alt="Unhappy face" height="48" width="48" />
 
       </div>
-
       <div>{feelingsText}</div>
-      <div>{happinessScore}</div>
-      <br />
-      <div>{productivityScore}</div>
+      <div>{happinessScore > 0 && happinessScore}</div>
+      <div>{productivityScore > 0 && productivityScore}</div>
       <div>{productivityText}</div>
-      <div>{totalProductivityScore}</div>
-      <br />
-
       <p>How productive were you ?</p>
-
       <div>
-        <input type="radio" className="star" onClick={(event) => handleStarClick(event, 'Not productive at all')} name="" value="1" type="image" src={StarImg} alt="Not productive at all" height="48" width="48" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'Not productive at all')} name="" value="1" type="image" src={StarImg} alt="Not productive at all" height="48" width="48" />
 
-        <input type="radio" className="star" onClick={(event) => handleStarClick(event, 'Barely productive')} name="" value="2" type="image" src={StarImg} alt="Barely productive" height="48" width="48" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'Not productive at all')} name="" value="2" type="image" src={StarImg} alt="Barely productive" height="48" width="48" />
 
-        <input type="radio" className="star" onClick={(event) => handleStarClick(event, 'Somewhat productive')} name="" value="3" type="image" src={StarImg} alt="Somewhat productive" height="48" width="48" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'Somewhat productive')} name="" value="3" type="image" src={StarImg} alt="Somewhat productive" height="48" width="48" />
 
-        <input type="radio" className="star" onClick={(event) => handleStarClick(event, 'Productive')} name="" value="4" type="image" src={StarImg} alt="Productive" height="48" width="48" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'Productive')} name="" value="4" type="image" src={StarImg} alt="Productive" height="48" width="48" />
 
-        <input type="radio" className="star" onClick={(event) => handleStarClick(event, 'Very productive !')} name="" value="5" type="image" src={StarImg} alt="Very productive" height="48" width="48" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'Very productive !')} name="" value="5" type="image" src={StarImg} alt="Very productive" height="48" width="48" />
       </div>
 
 
       <button
         type="submit"
-        onClick={(event) => {
-          handleSubmitClick({ event, productivityScore });
-          setCurrentComponent('analysis');
-          setCurrentCup((cup) => cup + 1);
-        }}
+        onClick={handleSubmit}
       >
-        Submit
-        {' '}
-        {currentCup}
+        Submit Cup {currentCup} Outcome
       </button>
-    </>
+    </div>
   );
 
   return (

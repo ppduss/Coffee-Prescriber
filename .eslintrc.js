@@ -27,6 +27,7 @@ module.exports = {
     'react/button-has-type': 0,
     'consistent-return': 0,
     'react/jsx-one-expression-per-line': 0,
-    'no-console': 0
+    'no-console': 0,
+    // "react/jsx-max-props-per-line": [{"maxiumum": 3}]
   },
 };

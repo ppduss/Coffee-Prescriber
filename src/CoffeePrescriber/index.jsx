@@ -19,22 +19,17 @@ const App = () => {
   const [prodScore, setProdScore] = useState(0);
 
   // New stuff from Cups:
-
-  const [productivityScore, setProductivityScore] = useState('');
-  const [happinessScore, setHappinessScore] = useState('');
-  const [totalProductivityScore, setTotalProductivityScore] = useState('');
-  const [totalHapinessScore, setTotalHapinessScore] = useState('');
+  const [feelingsText, setFeelingsText] = useState('');
+  const [productivityText, setProductivityText] = useState('');
+  const [productivityScore, setProductivityScore] = useState(0);
+  const [happinessScore, setHappinessScore] = useState(0);
+  const [totalProductivityScore, setTotalProductivityScore] = useState(0);
+  const [totalHapinessScore, setTotalHapinessScore] = useState(0);
 
   const parentFunction = (propsFromChild) => {
     console.log(propsFromChild);
   };
-  // const test {
-  //   const handleProdScore = (productivityScore) => {
-  //     console.log(productivityScore);
 
-  //     return
-  //   };
-  // };
 
   //   // useEffect(() => {
   //   console.log('this runs every render');
@@ -99,9 +94,49 @@ const App = () => {
       case 'intro':
         return <IntroComponent />;
       case 'cup':
-        return <Cups setCurrentComponent={setCurrentComponent} currentComponent={currentComponent} setCurrentCup={setCurrentCup} currentCup={currentCup} parentFunction={parentFunction} happinessScore={happinessScore} setHappinessScore={setHappinessScore} setTotalProductivityScore={setTotalProductivityScore} totalProductivityScore={totalProductivityScore} totalHapinessScore={totalHapinessScore} setTotalHapinessScore={setTotalHapinessScore} setProductivityScore={setProductivityScore} productivityScore={productivityScore} />;
+        return (
+          <Cups
+            setCurrentComponent={setCurrentComponent}
+            currentComponent={currentComponent}
+            setCurrentCup={setCurrentCup}
+            currentCup={currentCup}
+            parentFunction={parentFunction}
+            happinessScore={happinessScore}
+            setHappinessScore={setHappinessScore}
+            setTotalProductivityScore={setTotalProductivityScore}
+            totalProductivityScore={totalProductivityScore}
+            totalHapinessScore={totalHapinessScore}
+            setTotalHapinessScore={setTotalHapinessScore}
+            setProductivityScore={setProductivityScore}
+            productivityScore={productivityScore}
+            productivityText={productivityText}
+            setProductivityText={setProductivityText}
+            feelingsText={feelingsText}
+            setFeelingsText={setFeelingsText}
+          />
+        );
       case 'analysis':
-        return <Analysis setCurrentComponent={setCurrentComponent} currentComponent={currentComponent} setCurrentCup={setCurrentCup} currentCup={currentCup} />;
+        return (
+          <Analysis
+            setCurrentComponent={setCurrentComponent}
+            currentComponent={currentComponent}
+            setCurrentCup={setCurrentCup}
+            currentCup={currentCup}
+            parentFunction={parentFunction}
+            happinessScore={happinessScore}
+            setHappinessScore={setHappinessScore}
+            setTotalProductivityScore={setTotalProductivityScore}
+            totalProductivityScore={totalProductivityScore}
+            totalHapinessScore={totalHapinessScore}
+            setTotalHapinessScore={setTotalHapinessScore}
+            setProductivityScore={setProductivityScore}
+            productivityScore={productivityScore}
+            productivityText={productivityText}
+            setProductivityText={setProductivityText}
+            feelingsText={feelingsText}
+            setFeelingsText={setFeelingsText}
+          />
+        );
       default:
         break;
     }
