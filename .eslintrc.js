@@ -4,8 +4,8 @@ module.exports = {
     es6: true,
   },
   extends: [
-    'react-app',
-    // airbnb (for when you want to use the better one)
+    // 'react-app',
+    'airbnb'
   ],
   globals: {
     Atomics: 'readonly',
@@ -23,6 +23,10 @@ module.exports = {
   ],
   rules: {
     'react/forbid-prop-types': 0,
-    'react/prop-types': 0
+    'react/prop-types': 0,
+    'react/button-has-type': 0,
+    'consistent-return': 0,
+    'react/jsx-one-expression-per-line': 0,
+    'no-console': 0
   },
 };

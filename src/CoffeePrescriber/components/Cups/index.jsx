@@ -12,20 +12,17 @@ import SmilingImg from '../assets/Smiling.png';
 import PerseveringImg from '../assets/Persevering.png';
 
 
-
-
-const Cups = props => {
-  const { setCurrentComponent, currentComponent, currentCup } = props;
-  // console.log({ currentComponent, setCurrentComponent, currentCup });
+const Cups = (props) => {
+  const {
+    setCurrentComponent, currentCup, setCurrentCup, parentFunction, setProductivityScore, productivityScore, happinessScore, setHappinessScore, totalProductivityScore, setTotalProductivityScore, totalHappinessScore, setTotalHapinessScore,
+  } = props;
 
   const [feelingsText, setFeelingsText] = useState('');
-  const [happinessScore, setHappinessScore] = useState('');
   const [productivityText, setProductivityText] = useState('');
-  const [productivityScore, setProductivityScore] = useState('');
-  const [totalProductivityScore, setTotalProductivityScore] = useState('');
 
 
- 
+  parentFunction('this is declared in the child');
+
   const handleIconClick = (event) => {
     event.preventDefault();
     setHappinessScore(event.target.value);
@@ -39,65 +36,67 @@ const Cups = props => {
   };
   const handleSubmitClick = ({ event, productivityScore }) => {
     event.preventDefault();
-    setTotalProductivityScore(productivityScore);
+    setTotalProductivityScore(productivityScore + totalProductivityScore);
+    setTotalHapinessScore(happinessScore + totalHappinessScore);
   };
 
   const handleEmoji = () => {
     if (currentCup === 1) {
-      return ([SleepingImg, ExpressionlessImg, SmilingImg, ConfusedImg, UnhappyImg ])
-    } else if (currentCup === 2) {
-      return ([Blushed, SlightlySmilingImg, NeutralImg, UnhappyImg, VerySadImg ])
-    } else if (currentCup === 3) {
-      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, PerseveringImg ])
-    } else if (currentCup === 4) {
-      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg ])
-    } else if (currentCup === 5) {
-      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg ])
+      return ([SleepingImg, ExpressionlessImg, SmilingImg, ConfusedImg, UnhappyImg]);
+    } if (currentCup === 2) {
+      return ([Blushed, SlightlySmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
+    } if (currentCup === 3) {
+      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, PerseveringImg]);
+    } if (currentCup === 4) {
+      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
+    } if (currentCup === 5) {
+      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
     }
   };
 
   const handleText = () => {
     if (currentCup === 1) {
-      return (["I didn't feel a thing", "Barely made a dent", "I'm satisfied", "meh", "that was unnecessary" ])
-    } else if (currentCup === 2) {
-      return (["I feel great, gimme more", "yeah, that was good", "still nothing", "I think that was enough", "I made a huge mistake" ])
-    } else if (currentCup === 3) {
-      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, PerseveringImg ])
-    } else if (currentCup === 4) {
-      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg ])
-    } else if (currentCup === 5) {
-      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg ])
-    } else if (currentCup === 5) {
-      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg ])
+      return (["I didn't feel a thing", 'Barely made a dent', "I'm satisfied", 'meh', 'that was unnecessary']);
+    } if (currentCup === 2) {
+      return (['I feel great, gimme more', 'yeah, that was good', 'still nothing', 'I think that was enough', 'I made a huge mistake']);
+    } if (currentCup === 3) {
+      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, PerseveringImg]);
+    } if (currentCup === 4) {
+      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
+    } if (currentCup === 5) {
+      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
+    } if (currentCup === 5) {
+      return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
     }
   };
 
   const cupTitle = () => {
     if (currentCup === 1) {
-      return ("\"The Resurection\"")
-    } else if (currentCup === 2) {
-      return ("\"The Boost\"")
-    } else if (currentCup === 3) {
-      return ("\"The Stim Pack\"")
-    } else if (currentCup === 4) {
-      return ("\"Power Overwhelming\"")
-    } else if (currentCup === 5) {
-      return ("\"WHOOOOOOOOO\"")
-    } else if (currentCup === 6) {
-      return ("ERROR : TOO MUCH COFFEE")
-    } else {
-      return ("* Error *")
+      return ('The Resurection');
+    } if (currentCup === 2) {
+      return ('The Boost');
+    } if (currentCup === 3) {
+      return ('The Stim Pack');
+    } if (currentCup === 4) {
+      return ('Power Overwhelming');
+    } if (currentCup === 5) {
+      return ('WHOOOOOOOOO');
+    } if (currentCup === 6) {
+      return ('ERROR : TOO MUCH COFFEE');
     }
-  }
+    return ('* Error *');
+  };
 
 
   const CupContent = () => (
     <>
 
       <h1>
-        CUP: {currentCup}
+        CUP:
+        {' '}
+        {currentCup}
       </h1>
-      <h2>{cupTitle()}</h2>
+      <h3>{cupTitle()}</h3>
 
       <p>Do you feel satisfied ?</p>
 
@@ -119,6 +118,7 @@ const Cups = props => {
       <br />
       <div>{productivityScore}</div>
       <div>{productivityText}</div>
+      <div>{totalProductivityScore}</div>
       <br />
 
       <p>How productive were you ?</p>
@@ -141,17 +141,20 @@ const Cups = props => {
         onClick={(event) => {
           handleSubmitClick({ event, productivityScore });
           setCurrentComponent('analysis');
+          setCurrentCup((cup) => cup + 1);
         }}
       >
         Submit
+        {' '}
+        {currentCup}
       </button>
     </>
-  )
+  );
 
   return (
     <div className="App">
       <header className="App-header">
-        <CupContent/>
+        <CupContent />
       </header>
     </div>
   );
