@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
 import InlineSVG from 'svg-inline-react';
-import Cups from './components/Cups';
-import Analysis from './components/Analysis/Analysis';
 
 // COMPONENTS
+import Cups from './components/Cups';
+import Analysis from './components/Analysis/Analysis';
 import StarRatings from './components/StarRating.jsx';
 import DrugWarning from './components/drugs';
 
@@ -24,7 +24,7 @@ const App = () => {
   const [productivityScore, setProductivityScore] = useState(0);
   const [happinessScore, setHappinessScore] = useState(0);
   const [totalProductivityScore, setTotalProductivityScore] = useState(0);
-  const [totalHapinessScore, setTotalHapinessScore] = useState(0);
+  const [totalHappinessScore, setTotalHappinessScore] = useState(0);
 
   const parentFunction = (propsFromChild) => {
     console.log(propsFromChild);
@@ -105,8 +105,8 @@ const App = () => {
             setHappinessScore={setHappinessScore}
             setTotalProductivityScore={setTotalProductivityScore}
             totalProductivityScore={totalProductivityScore}
-            totalHapinessScore={totalHapinessScore}
-            setTotalHapinessScore={setTotalHapinessScore}
+            totalHappinessScore={totalHappinessScore}
+            setTotalHappinessScore={setTotalHappinessScore}
             setProductivityScore={setProductivityScore}
             productivityScore={productivityScore}
             productivityText={productivityText}
@@ -127,8 +127,8 @@ const App = () => {
             setHappinessScore={setHappinessScore}
             setTotalProductivityScore={setTotalProductivityScore}
             totalProductivityScore={totalProductivityScore}
-            totalHapinessScore={totalHapinessScore}
-            setTotalHapinessScore={setTotalHapinessScore}
+            totalHappinessScore={totalHappinessScore}
+            setTotalHappinessScore={setTotalHappinessScore}
             setProductivityScore={setProductivityScore}
             productivityScore={productivityScore}
             productivityText={productivityText}

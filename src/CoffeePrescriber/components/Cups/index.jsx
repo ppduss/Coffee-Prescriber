@@ -22,10 +22,10 @@ const Cups = (props) => {
     productivityScore,
     happinessScore,
     setHappinessScore,
-    totalProductivityScore,
+    // totalProductivityScore,
     setTotalProductivityScore,
-    totalHappinessScore,
-    setTotalHapinessScore,
+    // totalHappinessScore,
+    setTotalHappinessScore,
     feelingsText,
     setFeelingsText,
     productivityText,
@@ -46,11 +46,12 @@ const Cups = (props) => {
   };
 
   const handleSubmit = () => {
-    setTotalProductivityScore((total) => total + productivityScore);
-    setTotalHapinessScore();
+    setTotalProductivityScore((total) => total + Number(productivityScore));
+    setTotalHappinessScore((total) => total + Number(happinessScore));
     setCurrentComponent('analysis');
     setCurrentCup((cup) => cup + 1);
   };
+
 
   const handleEmoji = () => {
     if (currentCup === 1) {
@@ -67,7 +68,6 @@ const Cups = (props) => {
       return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
     }
   };
-
   const handleText = () => {
     if (currentCup === 1) {
       return (["I didn't feel a thing", 'Barely made a dent', "I'm satisfied", 'meh', 'that was unnecessary']);
@@ -83,7 +83,6 @@ const Cups = (props) => {
       return ([Blushed, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
     }
   };
-
   const cupTitle = () => {
     if (currentCup === 1) {
       return ('The Resurection');

@@ -15,12 +15,13 @@ const Analysis = (props) => {
     totalProductivityScore,
     setTotalProductivityScore,
     totalHappinessScore,
-    setTotalHapinessScore,
+    setTotalHappinessScore,
     feelingsText,
     setFeelingsText,
     productivityText,
     setProductivityText,
   } = props;
+
 
   const AnalysisContent = () => (
     <div className="analysis-container">
@@ -36,9 +37,9 @@ const Analysis = (props) => {
         type="button"
         onClick={() => {
           setCurrentComponent('cup');
-          setCurrentCup((cup) => cup + 1);
-          setProductivityScore(null);
-          setHappinessScore(null);
+          // setCurrentCup((cup) => cup + 1);
+          setProductivityScore(0);
+          setHappinessScore(0);
           setFeelingsText('');
           setProductivityText('');
         }}
