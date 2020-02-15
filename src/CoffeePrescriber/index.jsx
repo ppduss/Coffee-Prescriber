@@ -26,6 +26,8 @@ const App = () => {
   const [totalProductivityScore, setTotalProductivityScore] = useState(0);
   const [totalHappinessScore, setTotalHappinessScore] = useState(0);
 
+  const [IconHover, setIconHover] = useState(48);
+
   const parentFunction = (propsFromChild) => {
     console.log(propsFromChild);
   };
@@ -113,6 +115,8 @@ const App = () => {
             setProductivityText={setProductivityText}
             feelingsText={feelingsText}
             setFeelingsText={setFeelingsText}
+            setIconHover={setIconHover}
+            IconHover={IconHover}
           />
         );
       case 'analysis':

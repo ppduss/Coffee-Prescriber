@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import Cups from '../Cups/index';
+import React from 'react';
+// import Cups from '../Cups/index';
 
 
 const Analysis = (props) => {
   const {
     setCurrentComponent,
     currentCup,
-    setCurrentCup,
-    parentFunction,
+    // setCurrentCup,
+    // parentFunction,
     setProductivityScore,
-    productivityScore,
-    happinessScore,
+    // productivityScore,
+    // happinessScore,
     setHappinessScore,
     totalProductivityScore,
-    setTotalProductivityScore,
+    // setTotalProductivityScore,
     totalHappinessScore,
-    setTotalHappinessScore,
-    feelingsText,
+    // setTotalHappinessScore,
+    // feelingsText,
     setFeelingsText,
-    productivityText,
+    // productivityText,
     setProductivityText,
   } = props;
 
@@ -31,7 +31,7 @@ const Analysis = (props) => {
       <br />
       <div>{totalProductivityScore}</div>
 
-      {currentCup <= 6 && (
+      {currentCup <= 9 && (
       <button
         className="clickButton"
         type="button"
