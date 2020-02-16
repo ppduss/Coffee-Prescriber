@@ -117,7 +117,6 @@ console.log(currentTime)
   const handleSelectChange = (e) => {
     const currentDrug = drugs.find(drug => drug.name === e.target.value)
     if (currentDrug?.effect) {
-      console.log(currentDrug.effect)
       setEffectState(currentDrug.effect)
     }
   }

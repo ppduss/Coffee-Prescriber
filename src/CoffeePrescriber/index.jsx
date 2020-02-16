@@ -18,19 +18,17 @@ const App = () => {
   const [currentCup, setCurrentCup] = useState(1);
   const [prodScore, setProdScore] = useState(0);
 
-  // New stuff from Cups:
+  // FEELINGS & PRODUCTIVITY
   const [feelingsText, setFeelingsText] = useState('');
+  const [happinessScore, setHappinessScore] = useState(0);
   const [productivityText, setProductivityText] = useState('');
   const [productivityScore, setProductivityScore] = useState(0);
-  const [happinessScore, setHappinessScore] = useState(0);
   const [totalProductivityScore, setTotalProductivityScore] = useState(0);
-  const [totalHappinessScore, setTotalHappinessScore] = useState(0);
+  const [record, setRecord] = useState([]);
+  const [averageHappinessScore, setAverageHappinessScore] = useState();
 
+  // STYLING ?
   const [IconHover, setIconHover] = useState(48);
-
-  const parentFunction = (propsFromChild) => {
-    console.log(propsFromChild);
-  };
 
 
   //   // useEffect(() => {
@@ -102,13 +100,12 @@ const App = () => {
             currentComponent={currentComponent}
             setCurrentCup={setCurrentCup}
             currentCup={currentCup}
-            parentFunction={parentFunction}
             happinessScore={happinessScore}
             setHappinessScore={setHappinessScore}
             setTotalProductivityScore={setTotalProductivityScore}
             totalProductivityScore={totalProductivityScore}
-            totalHappinessScore={totalHappinessScore}
-            setTotalHappinessScore={setTotalHappinessScore}
+            averageHappinessScore={averageHappinessScore}
+            setAverageHappinessScore={setAverageHappinessScore}
             setProductivityScore={setProductivityScore}
             productivityScore={productivityScore}
             productivityText={productivityText}
@@ -117,6 +114,8 @@ const App = () => {
             setFeelingsText={setFeelingsText}
             setIconHover={setIconHover}
             IconHover={IconHover}
+            record={record}
+            setRecord={setRecord}
           />
         );
       case 'analysis':
@@ -126,19 +125,20 @@ const App = () => {
             currentComponent={currentComponent}
             setCurrentCup={setCurrentCup}
             currentCup={currentCup}
-            parentFunction={parentFunction}
             happinessScore={happinessScore}
             setHappinessScore={setHappinessScore}
             setTotalProductivityScore={setTotalProductivityScore}
             totalProductivityScore={totalProductivityScore}
-            totalHappinessScore={totalHappinessScore}
-            setTotalHappinessScore={setTotalHappinessScore}
+            averageHappinessScore={averageHappinessScore}
+            setAverageHappinessScore={setAverageHappinessScore}
             setProductivityScore={setProductivityScore}
             productivityScore={productivityScore}
             productivityText={productivityText}
             setProductivityText={setProductivityText}
             feelingsText={feelingsText}
             setFeelingsText={setFeelingsText}
+            record={record}
+            setRecord={setRecord}
           />
         );
       default:

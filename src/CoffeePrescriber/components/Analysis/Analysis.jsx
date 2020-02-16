@@ -14,8 +14,8 @@ const Analysis = (props) => {
     setHappinessScore,
     totalProductivityScore,
     // setTotalProductivityScore,
-    totalHappinessScore,
-    // setTotalHappinessScore,
+    averageHappinessScore,
+    // setAverageHappinessScore,
     // feelingsText,
     setFeelingsText,
     // productivityText,
@@ -27,7 +27,7 @@ const Analysis = (props) => {
     <div className="analysis-container">
       <h1>Analysis</h1>
       <div>Your current score is: </div>
-      <div>{totalHappinessScore}</div>
+      <div>{averageHappinessScore}</div>
       <br />
       <div>{totalProductivityScore}</div>
 
