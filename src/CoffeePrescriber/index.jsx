@@ -57,40 +57,20 @@ const App = () => {
       <header className="App-header">
         <link rel="shortcut icon" href={FlaviconImg} />
         <link rel="icon" href={FlaviconImg} type="image/x-icon" />
-        <img src={CoffeeCup} alt="" />
-        <h1>Are you ready for coffee ?</h1>
-        {/* <form>
-          <label for="time">What time is it ?</label>
-          <input type="time" class="time" name="time"
-            min="01:00" max="24:00" step="600" required />
-          {/* <select name="time">
-            <option value="1"> Age </option>
-            <option value="2"> 0-12</option>
-            <option value="3">12-18 </option>
-            <option value="4">18+</option>
-          </select> */}
-
-        {/* <select name="age">
-            <option value="select"> --Age-- </option>
-            <option value="child"> 0 - 12 yo </option>
-            <option value="teen"> 12 - 18 yo </option>
-            <option value="adult">  18 - 65 yo  </option>
-            <option value="senior">  65 +  </option>
-          </select>
-
-          <input className="" type="reset" />
-        </form> */}
-
-
-        <button className="button" onClick={() => setCurrentComponent('cup')}>Drink first cup !</button>
-        <br />
-        <br />
-
       </header>
-      <DrugWarning
-        setAdultMode={setAdultMode}
-        adultMode={adultMode}
-      />
+      <body className="App-header">
+        <img src={CoffeeCup} alt="coffee mug" />
+        <h1>Are you ready for coffee ?</h1>
+        <button className="button" onClick={() => setCurrentComponent('cup')}>DRINK FIRST CUP !</button>
+      </body>
+      <div id="test">TestDiv</div>
+
+      <div className="App-footer">
+        <DrugWarning
+          setAdultMode={setAdultMode}
+          adultMode={adultMode} // change to dark with new fade colors
+        />
+      </div>
     </div>
   );
 
