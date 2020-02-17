@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import SlightlySmilingImg from '../assets/Slightly_Smiling.png';
 import UnhappyImg from '../assets/Unhappy.png';
 import ExpressionlessImg from '../assets/Expressionless.png';
@@ -31,25 +31,21 @@ const Cups = (props) => {
     setCurrentComponent,
     currentCup,
     setCurrentCup,
-    parentFunction,
     setProductivityScore,
     productivityScore,
     happinessScore,
     setHappinessScore,
-    averageProductivityScore,
+    // averageProductivityScore,
     setAverageProductivityScore,
-    averageHappinessScore,
+    // averageHappinessScore,
     setAverageHappinessScore,
     feelingsText,
     setFeelingsText,
-    productivityText,
+    // productivityText,
     setProductivityText,
-    IconHover,
     setIconHover,
     setRecord,
     record,
-    adultMode,
-    setAdultMode,
   } = props;
 
 
@@ -102,9 +98,9 @@ const Cups = (props) => {
     } if (currentCup === 6) {
       return ([WearyImg, ConfoundedImg, NeutralImg, TongueOutImg, ExplodingImg]);
     } if (currentCup === 7) {
-      return ([PoisonedImg, null, NeutralImg, UnhappyImg, HighVoltageImg]);
+      return ([PoisonedImg, SkullImg, NeutralImg, UnhappyImg, HighVoltageImg]);
     } if (currentCup === 8) {
-      return ([DizzyImg, null, NeutralImg, UnhappyImg, CollisionImg]);
+      return ([DizzyImg, SkullImg, NeutralImg, UnhappyImg, CollisionImg]);
     }
   };
   const handleText = () => {

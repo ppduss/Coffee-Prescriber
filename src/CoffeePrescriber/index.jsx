@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import InlineSVG from 'svg-inline-react';
 
 // COMPONENTS
 import Cups from './components/Cups';
 import Analysis from './components/Analysis/Analysis';
-import StarRatings from './components/StarRating.jsx';
-import DrugWarning from './components/drugs';
+// import StarRatings from './components/StarRating.jsx';
+import DrugWarning from './components/Drugs/drugs';
 
-// Other
+// OTHER
 import FlaviconImg from './assets/favicon2.ico';
 import CoffeeCup from './components/assets/coffee.png';
 
@@ -82,7 +82,7 @@ const App = () => {
         </form> */}
 
 
-        <button onClick={() => setCurrentComponent('cup')}>Drink first cup !</button>
+        <button className="button" onClick={() => setCurrentComponent('cup')}>Drink first cup !</button>
         <br />
         <br />
 
