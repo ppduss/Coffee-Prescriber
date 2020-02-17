@@ -36,8 +36,8 @@ const Cups = (props) => {
     productivityScore,
     happinessScore,
     setHappinessScore,
-    // totalProductivityScore,
-    setTotalProductivityScore,
+    averageProductivityScore,
+    setAverageProductivityScore,
     averageHappinessScore,
     setAverageHappinessScore,
     feelingsText,
@@ -48,6 +48,8 @@ const Cups = (props) => {
     setIconHover,
     setRecord,
     record,
+    adultMode,
+    setAdultMode,
   } = props;
 
 
@@ -65,24 +67,16 @@ const Cups = (props) => {
   };
 
   const handleSubmit = () => {
-    setTotalProductivityScore((total) => total + productivityScore);
-    // setTotalHappinessScore((total) => total + Number(productivityScore));
-    // setAverageHappinessScore(() => (averageHappinessScore + happinessScore) / currentCup);
-
     // ADDING CUP TO RECORDS
     const newRecord = record;
     newRecord[currentCup - 1] = { happiness: happinessScore, productivity: productivityScore };
     setRecord(newRecord);
     setAverageHappinessScore(newRecord.reduce((acc, cur) => acc + cur.happiness, 0) / newRecord.length);
+    setAverageProductivityScore(newRecord.reduce((acc, cur) => acc + cur.productivity, 0) / newRecord.length);
     // MOVING TO NEXT CUP
     setCurrentComponent('analysis');
     setCurrentCup((cup) => cup + 1);
   };
-
-  console.log(averageHappinessScore);
-  console.log(record);
-  // console.log(record);
-
 
   // const handleMouseOver = (evnt) => {
   //   evnt.preventDefault();
@@ -92,6 +86,7 @@ const Cups = (props) => {
   //   evnt.preventDefault();
   //   setIconHover(48);
   // };
+
 
   const handleEmoji = () => {
     if (currentCup === 1) {
@@ -197,8 +192,8 @@ const Cups = (props) => {
         <input className="emoji-button" onClick={(event) => handleIconClick(event)} name={handleText()[4]} value={5} type="image" src={handleEmoji()[4]} alt="Unhappy face" height="48" width="48" />
 
       </div>
-      {/* <div>{feelingsText}</div>
-      <div>{happinessScore > 0 && happinessScore}</div> */}
+      <div>{feelingsText}</div>
+      <div>{happinessScore > 0 && happinessScore}</div>
 
       {/* <div>{productivityText}</div> */}
       <p>How productive were you ?</p>
@@ -216,7 +211,7 @@ const Cups = (props) => {
       {/* <div>{productivityScore > 0 && productivityScore}</div> */}
 
       <button onClick={handleSubmit}>
-        Submit Cup {currentCup} Outcome
+        Analysis
       </button>
     </div>
   );

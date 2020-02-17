@@ -23,13 +23,15 @@ const App = () => {
   const [happinessScore, setHappinessScore] = useState(0);
   const [productivityText, setProductivityText] = useState('');
   const [productivityScore, setProductivityScore] = useState(0);
-  const [totalProductivityScore, setTotalProductivityScore] = useState(0);
+  const [averageProductivityScore, setAverageProductivityScore] = useState(0);
   const [record, setRecord] = useState([]);
   const [averageHappinessScore, setAverageHappinessScore] = useState();
 
   // STYLING ?
   const [IconHover, setIconHover] = useState(48);
 
+  // EXPERIMENTAL
+  const [adultMode, setAdultMode] = useState('');
 
   //   // useEffect(() => {
   //   console.log('this runs every render');
@@ -85,7 +87,10 @@ const App = () => {
         <br />
 
       </header>
-      <DrugWarning />
+      <DrugWarning
+        setAdultMode={setAdultMode}
+        adultMode={adultMode}
+      />
     </div>
   );
 
@@ -102,8 +107,8 @@ const App = () => {
             currentCup={currentCup}
             happinessScore={happinessScore}
             setHappinessScore={setHappinessScore}
-            setTotalProductivityScore={setTotalProductivityScore}
-            totalProductivityScore={totalProductivityScore}
+            setAverageProductivityScore={setAverageProductivityScore}
+            averageProductivityScore={averageProductivityScore}
             averageHappinessScore={averageHappinessScore}
             setAverageHappinessScore={setAverageHappinessScore}
             setProductivityScore={setProductivityScore}
@@ -127,8 +132,8 @@ const App = () => {
             currentCup={currentCup}
             happinessScore={happinessScore}
             setHappinessScore={setHappinessScore}
-            setTotalProductivityScore={setTotalProductivityScore}
-            totalProductivityScore={totalProductivityScore}
+            setAverageProductivityScore={setAverageProductivityScore}
+            averageProductivityScore={averageProductivityScore}
             averageHappinessScore={averageHappinessScore}
             setAverageHappinessScore={setAverageHappinessScore}
             setProductivityScore={setProductivityScore}

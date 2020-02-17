@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 
 
-const DrugWarning = () => {
- 
+const DrugWarning = (props) => {
+  const {
+    setAdultMode,
+    adultMode,
+  } = props;
+
+
   //Time stuff
 const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
 const currentTime = new Date();
@@ -120,14 +125,14 @@ console.log(currentTime)
       setEffectState(currentDrug.effect)
     }
   }
-   
+
       
   return (
   
     
     <div>
-        <p className="note">Optional : Here is a tool to help you determine if coffee is good for you.</p>
-        <p className="warning"> Are you prescribed any of the following medication ?</p>
+        <p className="note">Here's an optional tool to help determine if coffee is right for you.</p>
+        <p className="note"> Are you prescribed any of the following medication ?</p>
       <select onChange={handleSelectChange}>
         <option>---------- </option>
         {drugs.map((drug, idx) => <option key={drug.name + idx}>{drug.name}</option> )}
@@ -135,12 +140,11 @@ console.log(currentTime)
       <p className="warning">{effectState}</p>
       
       
-      <form>
-        <label for="time">What time is it ?</label>
+      
+        <label for="time" className="note">What time is it ?</label>
         <input type="time" class="time" name="time"
             min="01:00" max="24:00" step="600" required />
-        
-         
+        {/* onChange={(sel) => handleAgeChange(sel)} */}
         <select name="age">
           <option value="select"> --Age-- </option>
           <option value="child"> 0 - 12 yo </option>
@@ -148,9 +152,8 @@ console.log(currentTime)
           <option value="adult">  18 - 65 yo  </option>
           <option value="senior">  65 +  </option>
         </select>
-            
         <input className="" type="reset" />
-      </form>
+      
       
     </div>
     

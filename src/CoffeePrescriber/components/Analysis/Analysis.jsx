@@ -12,8 +12,8 @@ const Analysis = (props) => {
     // productivityScore,
     // happinessScore,
     setHappinessScore,
-    totalProductivityScore,
-    // setTotalProductivityScore,
+    averageProductivityScore,
+    setAverageProductivityScore,
     averageHappinessScore,
     // setAverageHappinessScore,
     // feelingsText,
@@ -26,10 +26,10 @@ const Analysis = (props) => {
   const AnalysisContent = () => (
     <div className="analysis-container">
       <h1>Analysis</h1>
-      <div>Your current score is: </div>
+      <div>Your average Happiness score is: </div>
       <div>{averageHappinessScore}</div>
-      <br />
-      <div>{totalProductivityScore}</div>
+      <div>Your average Productivity score is: </div>
+      <div>{averageProductivityScore}</div>
 
       {currentCup <= 9 && (
       <button
