@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.scss';
+import './components/Cups/Cups.scss';
 import InlineSVG from 'svg-inline-react';
 
 // COMPONENTS
@@ -61,11 +62,11 @@ const App = () => {
       <body className="App-header">
         <img src={CoffeeCup} alt="coffee mug" />
         <h1>Are you ready for coffee ?</h1>
-        <button className="button" onClick={() => setCurrentComponent('cup')}>DRINK FIRST CUP !</button>
+        <button className="button" onClick={() => setCurrentComponent('cup')}>Drink first cup </button>
       </body>
-      <div id="test">TestDiv</div>
 
-      <div className="App-footer">
+
+      <div>
         <DrugWarning
           setAdultMode={setAdultMode}
           adultMode={adultMode} // change to dark with new fade colors

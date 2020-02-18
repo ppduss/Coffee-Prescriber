@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './Drugs.scss'
 
 const DrugWarning = (props) => {
   const {
@@ -130,29 +130,28 @@ console.log(currentTime)
   return (
   
     
-    <div>
+    <div className="App-footer">
         <p className="note">Here's an optional tool to help determine if coffee is right for you.</p>
         <p className="note"> Are you prescribed any of the following medication ?</p>
-      <select onChange={handleSelectChange}>
-        <option>---------- </option>
+      <select className='button' onChange={handleSelectChange}>
+        <option>--Medication-- </option>
         {drugs.map((drug, idx) => <option key={drug.name + idx}>{drug.name}</option> )}
       </select>
       <p className="warning">{effectState}</p>
       
-      
-      
+    
         <label for="time" className="note">What time is it ?</label>
-        <input type="time" class="time" name="time"
+        <input className="button" type="time"  name="time"
             min="01:00" max="24:00" step="600" required />
-        {/* onChange={(sel) => handleAgeChange(sel)} */}
-        <select name="age">
+      
+        <select className='button' name="age">
           <option value="select"> --Age-- </option>
           <option value="child"> 0 - 12 yo </option>
           <option value="teen"> 12 - 18 yo </option>
           <option value="adult">  18 - 65 yo  </option>
           <option value="senior">  65 +  </option>
         </select>
-        <input className="" type="reset" />
+        <input className="button" id="reset" type="reset" />
       
       
     </div>

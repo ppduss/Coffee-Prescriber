@@ -1,21 +1,14 @@
 import React from 'react';
-// import Cups from '../Cups/index';
 
 
 const Analysis = (props) => {
   const {
     setCurrentComponent,
     currentCup,
-    // setCurrentCup,
-    // parentFunction,
     setProductivityScore,
-    // productivityScore,
-    // happinessScore,
     setHappinessScore,
     averageProductivityScore,
-    setAverageProductivityScore,
     averageHappinessScore,
-    // setAverageHappinessScore,
     // feelingsText,
     setFeelingsText,
     // productivityText,
@@ -33,7 +26,7 @@ const Analysis = (props) => {
 
       {currentCup <= 9 && (
       <button
-        className="clickButton"
+        className="button"
         type="button"
         onClick={() => {
           setCurrentComponent('cup');

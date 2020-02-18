@@ -1,4 +1,8 @@
 import React from 'react';
+import './Cups.scss';
+import '../../App.scss';
+
+// IMAGES
 import SlightlySmilingImg from '../assets/Slightly_Smiling.png';
 import UnhappyImg from '../assets/Unhappy.png';
 import ExpressionlessImg from '../assets/Expressionless.png';
@@ -83,7 +87,6 @@ const Cups = (props) => {
   //   setIconHover(48);
   // };
 
-
   const handleEmoji = () => {
     if (currentCup === 1) {
       return ([UnhappyImg, ConfusedImg, SlightlySmilingImg, ExpressionlessImg, SleepingImg]);
@@ -165,15 +168,14 @@ const Cups = (props) => {
 
   // const emoticonClasses = () => classNames("button", {"isSelected": isSelected})
 
-
   const CupContent = () => (
-    <div>
-
-      <h1>
-        CUP: {currentCup}
-      </h1>
-      <h3>{cupTitle()}</h3>
-
+    <div className="App">
+      <header className="App-header">
+        <h1>
+          CUP: {currentCup}
+        </h1>
+        <h3>{cupTitle()}</h3>
+      </header>
       <p>Are you satisfied with your {satisfactionQuery()} cup ?</p>
 
       <div>
@@ -206,17 +208,17 @@ const Cups = (props) => {
       </div>
       {/* <div>{productivityScore > 0 && productivityScore}</div> */}
 
-      <button onClick={handleSubmit}>
+      <button className="button" onClick={handleSubmit}>
         Analysis
       </button>
     </div>
   );
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <CupContent />
-      </header>
+    <div>
+
+      <CupContent />
+
     </div>
   );
 };
