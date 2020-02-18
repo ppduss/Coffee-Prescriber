@@ -1,0 +1,66 @@
+
+
+.central-component {
+  min-height: 100vh;
+    text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: linear-gradient(rgb(120, 176, 221), rgb(120, 176, 221),rgb(120, 176, 221), rgb(120, 189, 221), rgb(224, 191, 129));
+   color: white;
+  font-size: calc(0.8em + 0.8vw);
+}
+
+.intro-component-container {
+  // you apply unique qualities to this one
+}
+
+.spacer {
+min-height: 14vh;
+}
+
+.App-footer {
+  min-height: 10vh;
+  position: absolute;
+    bottom: 30px;
+    width: 100%;
+}
+
+.button {
+  font-size: calc(2.5px + 1.4vmin);
+  font-family: 'lato', sans-serif;
+  // font-weight: 'Raleway' , sans-serif;
+  letter-spacing: 0.1em;
+  color: white;
+  padding: 8px 30px;
+  margin: 5px 5px;
+  background-color: transparent;
+  border-width: 0.16rem;
+  border-color:rgb(210, 236, 181);
+  border-color:whitesmoke;
+  border-radius: 0.3rem;
+  border-style: solid;
+}
+  .button:focus {
+    outline-width: 1px;
+    outline-color: rgb(230, 203, 154);
+    outline-offset: -2px;
+  }
+
+
+.time {
+  margin: 5px 0px 20px;
+}
+
+
+.warning {
+  color: rgb(241, 62, 62);
+  font-size: 0.80rem;
+}
+
+.note {
+  font-family: 'Montserrat' sans-serif;
+  color: whitesmoke;
+  font-style: italic;
+  font-size: 13px;
+}
+
