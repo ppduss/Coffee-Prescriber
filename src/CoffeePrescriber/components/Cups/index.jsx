@@ -1,6 +1,5 @@
 import React from 'react';
 import './Cups.scss';
-import '../../App.scss';
 
 // IMAGES
 import SlightlySmilingImg from '../assets/Slightly_Smiling.png';
@@ -39,9 +38,7 @@ const Cups = (props) => {
     productivityScore,
     happinessScore,
     setHappinessScore,
-    // averageProductivityScore,
     setAverageProductivityScore,
-    // averageHappinessScore,
     setAverageHappinessScore,
     feelingsText,
     setFeelingsText,
@@ -78,14 +75,6 @@ const Cups = (props) => {
     setCurrentCup((cup) => cup + 1);
   };
 
-  // const handleMouseOver = (evnt) => {
-  //   evnt.preventDefault();
-  //   setIconHover(55);
-  // };
-  // const handleMouseOut = (evnt) => {
-  //   evnt.preventDefault();
-  //   setIconHover(48);
-  // };
 
   const handleEmoji = () => {
     if (currentCup === 1) {
@@ -127,7 +116,7 @@ const Cups = (props) => {
   };
   const cupTitle = () => {
     if (currentCup === 1) {
-      return ('The Resurection');
+      return ('The Resurector');
     } if (currentCup === 2) {
       return ('The Boost');
     } if (currentCup === 3) {
@@ -169,42 +158,44 @@ const Cups = (props) => {
   // const emoticonClasses = () => classNames("button", {"isSelected": isSelected})
 
   const CupContent = () => (
-    <div className="App">
+
+    <div className="central-component">
+      <div className="spacer" />
       <header className="App-header">
         <h1>
-          CUP: {currentCup}
+          CUP {currentCup}
         </h1>
-        <h3>{cupTitle()}</h3>
+        <h3 className="cup-title">{cupTitle()}</h3>
       </header>
       <p>Are you satisfied with your {satisfactionQuery()} cup ?</p>
 
       <div>
-        <input className="emoji-button" onClick={(event) => handleIconClick(event)} name={handleText()[0]} value={1} type="image" src={handleEmoji()[0]} alt="sleepy" height="48" width="48" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} name={handleText()[0]} value={1} type="image" src={handleEmoji()[0]} alt="sleepy" height="46" width="46" />
 
-        <input className="emoji-button" onClick={(event) => handleIconClick(event)} name={handleText()[1]} value={2} type="image" src={handleEmoji()[1]} alt="Expressionless face" height="48" width="48" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} name={handleText()[1]} value={2} type="image" src={handleEmoji()[1]} alt="Expressionless face" height="46" width="46" />
 
-        <input className="emoji-button" onClick={(event) => handleIconClick(event)} name={handleText()[2]} value={3} type="image" src={handleEmoji()[2]} alt="Smiling face" height="48" width="48" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} name={handleText()[2]} value={3} type="image" src={handleEmoji()[2]} alt="Smiling face" height="46" width="46" />
 
-        <input className="emoji-button" onClick={(event) => handleIconClick(event)} name={handleText()[3]} value={4} type="image" src={handleEmoji()[3]} alt="Confused face" height="48" width="48" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} name={handleText()[3]} value={4} type="image" src={handleEmoji()[3]} alt="Confused face" height="46" width="46" />
 
-        <input className="emoji-button" onClick={(event) => handleIconClick(event)} name={handleText()[4]} value={5} type="image" src={handleEmoji()[4]} alt="Unhappy face" height="48" width="48" />
-
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} name={handleText()[4]} value={5} type="image" src={handleEmoji()[4]} alt="Unhappy face" height="46" width="46" />
       </div>
+      <div className="spacer" />
       <div>{feelingsText}</div>
       <div>{happinessScore > 0 && happinessScore}</div>
 
       {/* <div>{productivityText}</div> */}
       <p>How productive were you ?</p>
       <div>
-        <input className="star" onClick={(event) => handleStarClick(event, 'Not productive at all')} name="" value={1} type="image" src={StarImg} alt="Not productive at all" height="48" width="48" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'Not productive at all')} name="" value={1} type="image" src={StarImg} alt="Not productive at all" height="45" width="45" />
 
-        <input className="star" onClick={(event) => handleStarClick(event, 'Not productive at all')} name="" value={2} type="image" src={StarImg} alt="Barely productive" height="48" width="48" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'Not productive at all')} name="" value={2} type="image" src={StarImg} alt="Barely productive" height="45" width="45" />
 
-        <input className="star" onClick={(event) => handleStarClick(event, 'Somewhat productive')} name="" value={3} type="image" src={StarImg} alt="Somewhat productive" height="48" width="48" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'Somewhat productive')} name="" value={3} type="image" src={StarImg} alt="Somewhat productive" height="45" width="45" />
 
-        <input className="star" onClick={(event) => handleStarClick(event, 'Productive')} name="" value={4} type="image" src={StarImg} alt="Productive" height="48" width="48" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'Productive')} name="" value={4} type="image" src={StarImg} alt="Productive" height="45" width="45" />
 
-        <input className="star" onClick={(event) => handleStarClick(event, 'Very productive !')} name="" value={5} type="image" src={StarImg} alt="Very productive" height="48" width="48" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'Very productive !')} name="" value={5} type="image" src={StarImg} alt="Very productive" height="45" width="45" />
       </div>
       {/* <div>{productivityScore > 0 && productivityScore}</div> */}
 

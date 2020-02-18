@@ -7,13 +7,12 @@ const DrugWarning = (props) => {
     adultMode,
   } = props;
 
-
   //Time stuff
 const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
 const currentTime = new Date();
 console.log(currentTime)
-
   //DRUGZZz
+
   const drugs = [
     {
       name: "Adenosine",
@@ -124,12 +123,9 @@ console.log(currentTime)
     if (currentDrug?.effect) {
       setEffectState(currentDrug.effect)
     }
-  }
-
+  };
       
   return (
-  
-    
     <div className="App-footer">
         <p className="note">Here's an optional tool to help determine if coffee is right for you.</p>
         <p className="note"> Are you prescribed any of the following medication ?</p>
@@ -139,7 +135,6 @@ console.log(currentTime)
       </select>
       <p className="warning">{effectState}</p>
       
-    
         <label for="time" className="note">What time is it ?</label>
         <input className="button" type="time"  name="time"
             min="01:00" max="24:00" step="600" required />
@@ -153,11 +148,8 @@ console.log(currentTime)
         </select>
         <input className="button" id="reset" type="reset" />
       
-      
     </div>
-    
   )
 };
-
 
 export default DrugWarning;

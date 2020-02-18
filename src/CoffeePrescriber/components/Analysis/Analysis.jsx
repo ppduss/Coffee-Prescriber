@@ -1,5 +1,5 @@
 import React from 'react';
-
+import AnalysisStyle from './Analysis.scss';
 
 const Analysis = (props) => {
   const {
@@ -17,7 +17,8 @@ const Analysis = (props) => {
 
 
   const AnalysisContent = () => (
-    <div className="analysis-container">
+    <div className="central-component">
+      <div className="spacer" />
       <h1>Analysis</h1>
       <div>Your average Happiness score is: </div>
       <div>{averageHappinessScore}</div>
@@ -43,11 +44,7 @@ const Analysis = (props) => {
     </div>
   );
   return (
-    <div className="App">
-      <header className="App-header">
-        <AnalysisContent />
-      </header>
-    </div>
+    <AnalysisContent />
   );
 };
 

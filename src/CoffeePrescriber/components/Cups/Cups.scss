@@ -1,6 +1,23 @@
 
 .Cups_Main {
-   min-height: 15vh;
-  color: white;
-  font-size: calc(0.8em + 0.8vw);
+}
+
+.cup-title {
+
+}
+
+.button--emoji {
+  padding: 1px 7px;
+  // background-color: white;
+}
+
+.star:hover {
+  filter: gray;
+  -webkit-filter: grayscale(1); 
+  filter: grayscale(1)
+
+}
+
+.star {
+  margin: 0px 2px 10px;
 }
