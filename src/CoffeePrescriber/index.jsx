@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './global.scss';
-import InlineSVG from 'svg-inline-react';
+// import InlineSVG from 'svg-inline-react';
 // COMPONENTS
 import Cups from './components/Cups';
 import Analysis from './components/Analysis/Analysis';
-import DrugWarning from './components/Drugs/drugs';
+import DrugWarning from './components/Drugs/Drugs';
+import Outro from './components/Outro.jsx';
 // OTHER
 import CoffeeCup from './components/assets/coffee.png';
 
@@ -64,7 +65,7 @@ const App = () => {
   const ActiveComponent = () => {
     switch (currentComponent) {
       case 'intro':
-        return <Analysis />;
+        return <IntroComponent />;
       case 'cup':
         return (
           <Cups
@@ -111,6 +112,20 @@ const App = () => {
             setFeelingsText={setFeelingsText}
             record={record}
             setRecord={setRecord}
+          />
+        );
+      case 'outro':
+        return (
+          <Outro
+            setCurrentComponent={setCurrentComponent}
+            setCurrentCup={setCurrentCup}
+            setProductivityScore={setProductivityScore}
+            setHappinessScore={setHappinessScore}
+            setRecord={setRecord}
+            setProductivityText={setProductivityText}
+            setAverageHappinessScore={setAverageHappinessScore}
+            setAverageProductivityScore={setAverageProductivityScore}
+            setFeelingsText={setFeelingsText}
           />
         );
       default:

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ResponsiveLine } from '@nivo/line';
 import './Analysis.scss';
+// import smileImg from '../assets/Slightly_Smiling.png';
 
 
 const Analysis = (props) => {
@@ -15,47 +16,31 @@ const Analysis = (props) => {
     setFeelingsText,
     // productivityText,
     setProductivityText,
+    productivityScore,
+    happinessScore,
+    record,
+
   } = props;
 
+  console.log(productivityScore, happinessScore, record);
 
-  const countries = [
+  const generateData = (stat) => record.map((_, idx) => ({
+    x: `Cup ${idx + 1}`,
+    y: record[idx][stat],
+  }));
+
+  const cupdata = [
     {
       id: 'Happiness',
       color: 'hsl(302, 70%, 50%)',
-      data: [
-        {
-          x: 'Cup 1',
-          y: 2,
-        },
-        {
-          x: 'Cup 2',
-          y: 2,
-        },
-        {
-          x: 'Cup3',
-          y: 1,
-        },
-      ],
+      data: [...generateData('happiness')],
     },
     {
       id: 'Productivity',
       color: 'hsl(329, 70%, 50%)',
-      data: [
-        {
-          x: 'Cup 1',
-          y: 1,
-        },
-        {
-          x: 'Cup 2',
-          y: 2,
-        },
-        {
-          x: 'Cup 3',
-          y: 3,
-        },
-
-      ],
+      data: [...generateData('productivity')],
     },
+
   ];
   const MyResponsiveLine = ({ data }) => (
     <ResponsiveLine
@@ -65,7 +50,7 @@ const Analysis = (props) => {
       }}
       xScale={{ type: 'point' }}
       yScale={{
-        type: 'linear', min: 0, max: 'auto', stacked: true, reverse: false,
+        type: 'linear', min: 0, max: 'auto', stacked: false, reverse: false,
       }}
       curve="cardinal"
       axisTop={null}
@@ -89,7 +74,7 @@ const Analysis = (props) => {
         legendPosition: 'middle',
       }}
       colors={{ scheme: 'nivo' }}
-      lineWidth={5}
+      lineWidth={8}
       pointSize={10}
       pointColor={{ from: 'color', modifiers: [] }}
       pointBorderWidth={3}
@@ -97,20 +82,21 @@ const Analysis = (props) => {
       pointLabel="y"
       pointLabelYOffset={-12}
       areaOpacity={0.3}
+      enableCrosshair={false}
       useMesh
       legends={[
         {
-          anchor: 'bottom-right',
-          direction: 'column',
+          anchor: 'top-left',
+          direction: 'row',
           justify: false,
           translateX: 100,
-          translateY: 0,
-          itemsSpacing: 0,
+          translateY: -40,
+          itemsSpacing: 20,
           itemDirection: 'left-to-right',
           itemWidth: 80,
           itemHeight: 20,
           itemOpacity: 0.75,
-          symbolSize: 12,
+          symbolSize: 14,
           symbolShape: 'circle',
           symbolBorderColor: 'rgba(0, 0, 0, .5)',
           effects: [
@@ -137,7 +123,7 @@ const Analysis = (props) => {
       <div>{averageProductivityScore}</div>
 
       <div className="plot">
-        <MyResponsiveLine data={countries} />
+        <MyResponsiveLine data={cupdata} />
       </div>
       {currentCup <= 9 && (
       <button
@@ -155,6 +141,13 @@ const Analysis = (props) => {
         On to cup {currentCup}
       </button>
       )}
+      <button
+        className="button"
+        onClick={() => {
+          setCurrentComponent('outro');
+        }}
+      >Quit
+      </button>
     </div>
   );
   return (
