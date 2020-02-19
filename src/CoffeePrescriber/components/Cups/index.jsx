@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Cups.scss';
 
 // IMAGES
@@ -42,19 +42,35 @@ const Cups = (props) => {
     setAverageHappinessScore,
     feelingsText,
     setFeelingsText,
-    // productivityText,
+    productivityText,
     setProductivityText,
     setIconHover,
     setRecord,
     record,
   } = props;
 
+  const [butAnd, setButAnd] = useState('yo');
+
+  const emotionText = [
+    ['I didn\'t feel a thing, gimme more', 'Barely made a dent', "I'm satisfied", 'meh', 'that was unnecessary'],
+    ['I feel great, gimme more', 'yeah, that was good', 'still nothing', 'I think that was enough', 'I made a huge mistake'],
+    [BlushedImg, SmilingImg, NeutralImg, UnhappyImg, PerseveringImg],
+    [BlushedImg, SmilingImg, NeutralImg, UnhappyImg, PerseveringImg],
+    [BlushedImg, SmilingImg, NeutralImg, UnhappyImg, PerseveringImg],
+    [BlushedImg, SmilingImg, NeutralImg, UnhappyImg, PerseveringImg],
+    [BlushedImg, SmilingImg, NeutralImg, UnhappyImg, PerseveringImg],
+    [BlushedImg, SmilingImg, NeutralImg, UnhappyImg, PerseveringImg],
+  ];
+
+  const handleText = (idx) => emotionText[currentCup - 1][idx];
 
   const handleIconClick = (event) => {
     event.preventDefault();
     setHappinessScore(Number(event.target.value));
-    setFeelingsText(event.target.name);
+    // setFeelingsText(event.target.name);
+    setFeelingsText(handleText(event.target.name));
     setIconHover(55);
+    setButAnd('test');
   };
 
   const handleStarClick = (e, starProd) => {
@@ -74,8 +90,6 @@ const Cups = (props) => {
     setCurrentComponent('analysis');
     setCurrentCup((cup) => cup + 1);
   };
-
-
   const handleEmoji = () => {
     if (currentCup === 1) {
       return ([UnhappyImg, ConfusedImg, SlightlySmilingImg, ExpressionlessImg, SleepingImg]);
@@ -93,25 +107,6 @@ const Cups = (props) => {
       return ([PoisonedImg, SkullImg, NeutralImg, UnhappyImg, HighVoltageImg]);
     } if (currentCup === 8) {
       return ([DizzyImg, SkullImg, NeutralImg, UnhappyImg, CollisionImg]);
-    }
-  };
-  const handleText = () => {
-    if (currentCup === 1) {
-      return (["I didn't feel a thing", 'Barely made a dent', "I'm satisfied", 'meh', 'that was unnecessary']);
-    } if (currentCup === 2) {
-      return (['I feel great, gimme more', 'yeah, that was good', 'still nothing', 'I think that was enough', 'I made a huge mistake']);
-    } if (currentCup === 3) {
-      return ([BlushedImg, SmilingImg, NeutralImg, UnhappyImg, PerseveringImg]);
-    } if (currentCup === 4) {
-      return ([BlushedImg, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
-    } if (currentCup === 5) {
-      return ([BlushedImg, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
-    } if (currentCup === 6) {
-      return ([BlushedImg, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
-    } if (currentCup === 7) {
-      return ([BlushedImg, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
-    } if (currentCup === 8) {
-      return ([BlushedImg, SmilingImg, NeutralImg, UnhappyImg, VerySadImg]);
     }
   };
   const cupTitle = () => {
@@ -165,27 +160,21 @@ const Cups = (props) => {
         <h1>
           CUP {currentCup}
         </h1>
-        <h3 className="cup-title">{cupTitle()}</h3>
+        {/* <h3 className="cup-title">{cupTitle()}</h3> */}
       </header>
-      <p>Are you satisfied with your {satisfactionQuery()} cup ?</p>
+      <p className="cup-text">Please rate your levels of satisfaction and <br />productivity after your {satisfactionQuery()} cup.</p>
 
       <div>
-        <input className="button--emoji" onClick={(event) => handleIconClick(event)} name={handleText()[0]} value={1} type="image" src={handleEmoji()[0]} alt="sleepy" height="46" width="46" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={1} name={0} type="image" src={handleEmoji()[0]} alt="sleepy" height="46" width="46" />
 
-        <input className="button--emoji" onClick={(event) => handleIconClick(event)} name={handleText()[1]} value={2} type="image" src={handleEmoji()[1]} alt="Expressionless face" height="46" width="46" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={2} name={1} type="image" src={handleEmoji()[1]} alt="Expressionless face" height="46" width="46" />
 
-        <input className="button--emoji" onClick={(event) => handleIconClick(event)} name={handleText()[2]} value={3} type="image" src={handleEmoji()[2]} alt="Smiling face" height="46" width="46" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={3} name={2} type="image" src={handleEmoji()[2]} alt="Smiling face" height="46" width="46" />
 
-        <input className="button--emoji" onClick={(event) => handleIconClick(event)} name={handleText()[3]} value={4} type="image" src={handleEmoji()[3]} alt="Confused face" height="46" width="46" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={4} name={3} type="image" src={handleEmoji()[3]} alt="Confused face" height="46" width="46" />
 
-        <input className="button--emoji" onClick={(event) => handleIconClick(event)} name={handleText()[4]} value={5} type="image" src={handleEmoji()[4]} alt="Unhappy face" height="46" width="46" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={5} name={4} type="image" src={handleEmoji()[4]} alt="Unhappy face" height="46" width="46" />
       </div>
-      <div className="spacer" />
-      <div>{feelingsText}</div>
-      <div>{happinessScore > 0 && happinessScore}</div>
-
-      {/* <div>{productivityText}</div> */}
-      <p>How productive were you ?</p>
       <div>
         <input className="star" onClick={(event) => handleStarClick(event, 'Not productive at all')} name="" value={1} type="image" src={StarImg} alt="Not productive at all" height="45" width="45" />
 
@@ -197,6 +186,13 @@ const Cups = (props) => {
 
         <input className="star" onClick={(event) => handleStarClick(event, 'Very productive !')} name="" value={5} type="image" src={StarImg} alt="Very productive" height="45" width="45" />
       </div>
+
+      <div className="cup-spacer" />
+      <div className="cup-mash">{feelingsText > 0 && productivityText > 0}</div>
+      <div>{feelingsText}</div>
+      <div>{happinessScore > 0 && productivityScore}</div>
+      <div className="cup-spacer" />
+
       {/* <div>{productivityScore > 0 && productivityScore}</div> */}
 
       <button className="button" onClick={handleSubmit}>

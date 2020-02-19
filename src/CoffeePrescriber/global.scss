@@ -19,9 +19,9 @@ min-height: 14vh;
 }
 
 .App-footer {
-  min-height: 10vh;
+  // min-height: 10vh;
   position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     width: 100%;
 }
 
@@ -34,7 +34,7 @@ min-height: 14vh;
   padding: 8px 30px;
   margin: 5px 5px;
   background-color: transparent;
-  border-width: 0.16rem;
+  border-width: 0.15rem;
   border-color:rgb(210, 236, 181);
   border-color:whitesmoke;
   border-radius: 0.3rem;
@@ -62,5 +62,7 @@ min-height: 14vh;
   color: whitesmoke;
   font-style: italic;
   font-size: 13px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
