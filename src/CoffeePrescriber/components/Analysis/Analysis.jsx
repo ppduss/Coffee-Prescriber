@@ -1,6 +1,6 @@
 import React from 'react';
 import { ResponsiveLine } from '@nivo/line';
-import AnalysisStyle from './Analysis.scss';
+import './Analysis.scss';
 
 
 const Analysis = (props) => {
@@ -17,122 +17,46 @@ const Analysis = (props) => {
     setProductivityText,
   } = props;
 
-  const data = [
+
+  const countries = [
     {
-      id: 'japan',
+      id: 'Happiness',
       color: 'hsl(302, 70%, 50%)',
       data: [
         {
-          x: 'plane',
-          y: 161,
+          x: 'Cup 1',
+          y: 2,
         },
         {
-          x: 'helicopter',
-          y: 110,
+          x: 'Cup 2',
+          y: 2,
         },
         {
-          x: 'boat',
-          y: 30,
-        },
-        {
-          x: 'train',
-          y: 194,
-        },
-        {
-          x: 'subway',
-          y: 4,
-        },
-        {
-          x: 'bus',
-          y: 107,
-        },
-        {
-          x: 'car',
-          y: 241,
-        },
-        {
-          x: 'moto',
-          y: 134,
-        },
-        {
-          x: 'bicycle',
-          y: 210,
-        },
-        {
-          x: 'horse',
-          y: 57,
-        },
-        {
-          x: 'skateboard',
-          y: 180,
-        },
-        {
-          x: 'others',
-          y: 219,
+          x: 'Cup3',
+          y: 1,
         },
       ],
     },
     {
-      id: 'france',
+      id: 'Productivity',
       color: 'hsl(329, 70%, 50%)',
       data: [
         {
-          x: 'plane',
-          y: 263,
+          x: 'Cup 1',
+          y: 1,
         },
         {
-          x: 'helicopter',
-          y: 157,
+          x: 'Cup 2',
+          y: 2,
         },
         {
-          x: 'boat',
-          y: 288,
+          x: 'Cup 3',
+          y: 3,
         },
-        {
-          x: 'train',
-          y: 208,
-        },
-        {
-          x: 'subway',
-          y: 86,
-        },
-        {
-          x: 'bus',
-          y: 189,
-        },
-        {
-          x: 'car',
-          y: 227,
-        },
-        {
-          x: 'moto',
-          y: 179,
-        },
-        {
-          x: 'bicycle',
-          y: 287,
-        },
-        {
-          x: 'horse',
-          y: 97,
-        },
-        {
-          x: 'skateboard',
-          y: 59,
-        },
-        {
-          x: 'others',
-          y: 144,
-        },
+
       ],
     },
   ];
-
-  // make sure parent container have a defined height when using
-  // responsive component, otherwise height will be 0 and
-  // no chart will be rendered.
-  // website examples showcase many properties,
-  // you'll often use just a few of them.
   const MyResponsiveLine = ({ data }) => (
     <ResponsiveLine
       data={data}
@@ -141,7 +65,7 @@ const Analysis = (props) => {
       }}
       xScale={{ type: 'point' }}
       yScale={{
-        type: 'linear', min: 'auto', max: 'auto', stacked: true, reverse: false,
+        type: 'linear', min: 0, max: 'auto', stacked: true, reverse: false,
       }}
       curve="cardinal"
       axisTop={null}
@@ -151,7 +75,7 @@ const Analysis = (props) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: 'transportation',
+        legend: 'Cups of coffee',
         legendOffset: 36,
         legendPosition: 'middle',
       }}
@@ -160,7 +84,7 @@ const Analysis = (props) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: 'count',
+        legend: 'Score',
         legendOffset: -40,
         legendPosition: 'middle',
       }}
@@ -204,7 +128,7 @@ const Analysis = (props) => {
   );
 
   const AnalysisContent = () => (
-    <div className="central-component">
+    <div className="central-component_analysis">
       <div className="spacer" />
       <h1>Analysis</h1>
       <div>Your average Happiness score is: </div>
@@ -212,7 +136,9 @@ const Analysis = (props) => {
       <div>Your average Productivity score is: </div>
       <div>{averageProductivityScore}</div>
 
-      <div className="spacer" />
+      <div className="plot">
+        <MyResponsiveLine data={countries} />
+      </div>
       {currentCup <= 9 && (
       <button
         className="button"
@@ -232,7 +158,10 @@ const Analysis = (props) => {
     </div>
   );
   return (
-    <AnalysisContent />
+    <>
+      <AnalysisContent />
+
+    </>
   );
 };
 

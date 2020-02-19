@@ -64,7 +64,7 @@ const App = () => {
   const ActiveComponent = () => {
     switch (currentComponent) {
       case 'intro':
-        return <IntroComponent />;
+        return <Analysis />;
       case 'cup':
         return (
           <Cups
