@@ -23,6 +23,23 @@ const Analysis = (props) => {
   } = props;
 
   console.log(productivityScore, happinessScore, record);
+  const DangerZone = () => {
+    if (currentCup === 8) {
+      return (
+        <div>
+          <div className="dangerzone">WARNING</div>
+          <div className="warning">Have you done any of the following in since your last drink ?</div>
+          <div className="warning">
+            Cleaned the bathroom tiles with a toothbrush
+            Had a panic attack thinking about your ex/father
+            Juggled firearms for your IG feed.
+            Started a list of nemeses.
+          </div>
+
+        </div>
+      );
+    }
+  };
 
   const generateData = (stat) => record.map((_, idx) => ({
     x: `Cup ${idx + 1}`,
@@ -117,6 +134,7 @@ const Analysis = (props) => {
     <div className="central-component_analysis">
       <div className="spacer" />
       <h1>Analysis</h1>
+      <div>{DangerZone()}</div>
       <div>Your average Happiness score is: </div>
       <div>{averageHappinessScore}</div>
       <div>Your average Productivity score is: </div>
