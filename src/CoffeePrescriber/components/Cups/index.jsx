@@ -49,7 +49,7 @@ const Cups = (props) => {
     record,
   } = props;
 
-  const [butAnd, setButAnd] = useState('yo');
+  const [butAnd, setButAnd] = useState('');
 
   const emotionText = [
     ['The dead don\'t speak but let me say this: gimme more.  I still need to be resurected', 'Bring me more and bring it now.  I\'m not here yet,', 'I feel cool ', 'Oh yeah.  My dulled senses are now tingling with the spark of life ', 'I\'m back, baby ! I\'ve parted from the soothing arms of Morpheus to take on a new day, '],
@@ -61,6 +61,11 @@ const Cups = (props) => {
     [BlushedImg, SmilingImg, ' I feel like an F16 about to break the sound barrier : the engine is revving hard, and the hull is rattling', 'The sound of my ego has become so loud that you can barely focus on anything else.  My inner monologue is blasting thoughts at a rate I can barely process, never mind control.', 'No I didn\'t take a handfull of Adderal, this is normal ! I AM FINE'],
     [BlushedImg, SmilingImg, NeutralImg, UnhappyImg, 'My mind and body feel godlike.  Time and matter are the bane of mere mortals and I laugh at the abyss. Oh'],
   ];
+  const butAndHandler = () => {
+    if (happinessScore >= 3) {
+      setButAnd('and');
+    } setButAnd('but');
+  };
 
   const handleText = (idx) => emotionText[currentCup - 1][idx];
 
@@ -70,13 +75,14 @@ const Cups = (props) => {
     // setFeelingsText(event.target.name);
     setFeelingsText(handleText(event.target.name));
     setIconHover(55);
-    setButAnd('test');
+    butAndHandler();
   };
 
   const handleStarClick = (e, starProd) => {
     e.preventDefault();
     setProductivityText(starProd);
     setProductivityScore(Number(e.target.value));
+    butAndHandler();
   };
 
   const handleSubmit = () => {
@@ -150,6 +156,8 @@ const Cups = (props) => {
     return ('');
   };
 
+
+  console.log(happinessScore, butAnd);
   // const emoticonClasses = () => classNames("button", {"isSelected": isSelected})
 
   const CupContent = () => (
@@ -176,24 +184,21 @@ const Cups = (props) => {
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={5} name={4} type="image" src={handleEmoji()[4]} alt="Unhappy face" height="46" width="46" />
       </div>
       <div>
-        <input className="star" onClick={(event) => handleStarClick(event, 'Not productive at all')} name="" value={1} type="image" src={StarImg} alt="I wasn't productive at all" height="45" width="45" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'not productive at all')} name="" value={1} type="image" src={StarImg} alt="I wasn't productive at all" height="45" width="45" />
 
-        <input className="star" onClick={(event) => handleStarClick(event, 'Not productive at all')} name="" value={2} type="image" src={StarImg} alt="barely productive" height="45" width="45" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'not very productive')} name="" value={2} type="image" src={StarImg} alt="barely productive" height="45" width="45" />
 
-        <input className="star" onClick={(event) => handleStarClick(event, 'Somewhat productive')} name="" value={3} type="image" src={StarImg} alt="somewhat productive" height="45" width="45" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'somewhat productive')} name="" value={3} type="image" src={StarImg} alt="somewhat productive" height="45" width="45" />
 
-        <input className="star" onClick={(event) => handleStarClick(event, 'Productive')} name="" value={4} type="image" src={StarImg} alt="productive" height="45" width="45" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'productive')} name="" value={4} type="image" src={StarImg} alt="productive" height="45" width="45" />
 
-        <input className="star" onClick={(event) => handleStarClick(event, 'Very productive !')} name="" value={5} type="image" src={StarImg} alt="very productive" height="45" width="45" />
+        <input className="star" onClick={(event) => handleStarClick(event, 'very productive !')} name="" value={5} type="image" src={StarImg} alt="very productive" height="45" width="45" />
       </div>
 
-      <div className="cup-spacer" />
-      <div className="cup-mash">{feelingsText > 0 && productivityText > 0}</div>
-      <div className="feelings">{feelingsText}</div>
-      <div>{happinessScore > 0 && productivityScore}</div>
-      <div>{productivityText}</div>
-      <div className="cup-spacer" />
 
+      <div className="cup-spacer" />
+      <div className="feelings">{feelingsText && productivityText ? feelingsText + butAnd + productivityText : ''}</div>
+      <div className="cup-spacer" />
       {/* <div>{productivityScore > 0 && productivityScore}</div> */}
 
       <button className="button" onClick={handleSubmit}>
@@ -204,11 +209,8 @@ const Cups = (props) => {
 
   return (
     <div>
-
       <CupContent />
-
     </div>
   );
 };
-
 export default Cups;

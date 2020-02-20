@@ -19,10 +19,8 @@ const Analysis = (props) => {
     productivityScore,
     happinessScore,
     record,
-
   } = props;
 
-  console.log(productivityScore, happinessScore, record);
   const DangerZone = () => {
     if (currentCup === 8) {
       return (
@@ -35,7 +33,6 @@ const Analysis = (props) => {
             Juggled firearms for your IG feed.
             Started a list of nemeses.
           </div>
-
         </div>
       );
     }
@@ -130,15 +127,16 @@ const Analysis = (props) => {
     />
   );
 
+  const roundedAverageHappinessScore = averageHappinessScore.toFixed(1);
+  const roundedAverageProductivityScore = averageProductivityScore.toFixed(1);
+
   const AnalysisContent = () => (
     <div className="central-component_analysis">
       <div className="spacer" />
       <h1>Analysis</h1>
       <div>{DangerZone()}</div>
-      <div>Your average Happiness score is: </div>
-      <div>{averageHappinessScore}</div>
-      <div>Your average Productivity score is: </div>
-      <div>{averageProductivityScore}</div>
+      <div>Average happiness: {roundedAverageHappinessScore}</div>
+      <div>Average productivity: {roundedAverageProductivityScore} </div>
 
       <div className="plot">
         <MyResponsiveLine data={cupdata} />
