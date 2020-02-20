@@ -50,7 +50,7 @@ const Analysis = (props) => {
       }}
       xScale={{ type: 'point' }}
       yScale={{
-        type: 'linear', min: 0, max: 'auto', stacked: false, reverse: false,
+        type: 'linear', min: 0, max: 5, stacked: false, reverse: false,
       }}
       curve="cardinal"
       axisTop={null}

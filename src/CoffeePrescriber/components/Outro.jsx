@@ -53,7 +53,10 @@ const Outro = (props) => {
         <img src={CoffeeCup} alt="coffee mug" />
         <h1>Thanks for playing !</h1>
         <button className="button" onClick={handleReset}>Would you like to begin again ? </button>
-        <button><TwitterIcon size={32} round logoFillColor={black} /></button>
+        <div className="spacer" />
+        <div className="social-media">
+          <button><TwitterIcon size={32} round /></button>
+        </div>
       </body>
     </div>
 

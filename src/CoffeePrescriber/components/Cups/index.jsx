@@ -92,21 +92,21 @@ const Cups = (props) => {
   };
   const handleEmoji = () => {
     if (currentCup === 1) {
-      return ([UnhappyImg, ConfusedImg, SlightlySmilingImg, ExpressionlessImg, SleepingImg]);
+      return ([SleepingImg, ExpressionlessImg, NeutralImg, SlightlySmilingImg, BlushedImg]);
     } if (currentCup === 2) {
-      return ([UnhappyImg, ConfusedImg, SlightlySmilingImg, ExpressionlessImg, SleepingImg]);
+      return ([ConfusedImg, ExpressionlessImg, NeutralImg, SlightlySmilingImg, BlushedImg]);
     } if (currentCup === 3) {
-      return ([VerySadImg, UnhappyImg, NeutralImg, SlightlySmilingImg, BlushedImg]);
+      return ([VerySadImg, UnhappyImg, NeutralImg, BlushedImg, SmilingImg]);
     } if (currentCup === 4) {
       return ([PerseveringImg, VerySadImg, GrimacingImg, SmilingImg, PartyImg]);
     } if (currentCup === 5) {
       return ([ConfoundedImg, PerseveringImg, FlushedImg, SunglassesImg, StarEyesImg]);
     } if (currentCup === 6) {
-      return ([WearyImg, ConfoundedImg, NeutralImg, TongueOutImg, ExplodingImg]);
+      return ([WearyImg, ConfoundedImg, FlushedImg, TongueOutImg, ExplodingImg]);
     } if (currentCup === 7) {
-      return ([PoisonedImg, SkullImg, NeutralImg, UnhappyImg, HighVoltageImg]);
+      return ([DizzyImg, PoisonedImg, FlushedImg, ExplodingImg, HighVoltageImg]);
     } if (currentCup === 8) {
-      return ([DizzyImg, SkullImg, NeutralImg, UnhappyImg, CollisionImg]);
+      return ([SkullImg, DizzyImg, NeutralImg, HighVoltageImg, CollisionImg]);
     }
   };
   const cupTitle = () => {
@@ -143,11 +143,11 @@ const Cups = (props) => {
     } if (currentCup === 6) {
       return ('sixth');
     } if (currentCup === 7) {
-      return ('ERROR : TOO MUCH COFFEE');
-    } if (currentCup === 6) {
-      return ('ERROR : TOO MUCH COFFEE');
+      return ('seventh');
+    } if (currentCup === 8) {
+      return ('eighth');
     }
-    return ('* Error *');
+    return ('');
   };
 
   // const emoticonClasses = () => classNames("button", {"isSelected": isSelected})
@@ -162,7 +162,7 @@ const Cups = (props) => {
         </h1>
         {/* <h3 className="cup-title">{cupTitle()}</h3> */}
       </header>
-      <p className="cup-text">Please rate your levels of satisfaction and <br />productivity after your {satisfactionQuery()} cup.</p>
+      <p className="cup-text">Please rate your satisfaction and productivity <br />after your {satisfactionQuery()} cup.</p>
 
       <div>
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={1} name={0} type="image" src={handleEmoji()[0]} alt="sleepy" height="46" width="46" />
