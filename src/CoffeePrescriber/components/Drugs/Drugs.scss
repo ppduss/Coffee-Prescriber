@@ -1,4 +1,12 @@
 
+
+.button-margin {
+margin-right: 9vw;
+background-color: red;
+}
+.button_optional{
+  font-size: 0.9rem;
+}
 #reset {
   padding: 4px;
 //  border-color: black;
@@ -7,12 +15,15 @@ background-color: whitesmoke
 
 }
 .meds {
-  // text-align: start;
-  // justify-content: center;
+  // align-self: left;
+  // align-items: unset;
+  // flex-direction: row;
+  justify-content: right;
   // background-color: rgb(187, 87, 87);
-  
-  // align-items: center;
   display: inline-flex;
-  // flex: 1 1 160px;
-
+  flex-wrap: wrap;
+  // margin-right: 2vw;
+  // line-height: 4px;
+  align-items: baseline;
+  
 }

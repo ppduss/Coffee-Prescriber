@@ -1,4 +1,7 @@
 
+h1 {
+  margin: 20px 25px 30px;
+}
 
 .central-component {
   min-height: 100vh;
@@ -14,9 +17,6 @@
   // you apply unique qualities to this one
 }
 
-.spacer {
-min-height: 14vh;
-}
 
 .App-footer {
   // min-height: 10vh;
@@ -26,7 +26,7 @@ min-height: 14vh;
 }
 
 .button {
-  font-size: calc(2.5px + 1.4vmin);
+  font-size: calc(0.9rem);
   font-family: 'lato', sans-serif;
   // font-weight: 'Raleway' , sans-serif;
   letter-spacing: 0.1em;
@@ -51,17 +51,46 @@ min-height: 14vh;
   margin: 5px 0px 20px;
 }
 
+.spacer-large {
+min-height: 14vh;
+}
+.spacer {
+min-height: 10vh;
+}
+.spacer_medium {
+  min-height: 8vh;
+}
+.spacer_small {
+  min-height: 4vh;
+}
+
 
 .warning {
-  color: rgb(241, 62, 62);
-  font-size: 0.80rem;
+  color: rgb(211, 54, 54);
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+  margin: 10px 80px;
+
 }
 
 .note {
   font-family: 'Montserrat' sans-serif;
   color: whitesmoke;
-  font-style: italic;
-  font-size: 13px;
+  // font-style: italic;
+  font-size: 1.1rem;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  text-decoration: underline;
+  text-decoration-color: rgba(247, 226, 158, 0.74);
+  
+}
+.note_inputs {
+  font-style: unset;
+  font-size: 15px;
+}
+.note_inputs_txt {
+  // font-style: italic;
+  font-size: 0.9rem;
   margin-top: 0px;
   margin-bottom: 0px;
 }

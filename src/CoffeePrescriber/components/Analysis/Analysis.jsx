@@ -12,18 +12,15 @@ const Analysis = (props) => {
     setHappinessScore,
     averageProductivityScore,
     averageHappinessScore,
-    // feelingsText,
     setFeelingsText,
-    // productivityText,
     setProductivityText,
-    productivityScore,
-    happinessScore,
     record,
   } = props;
 
   const DangerZone = () => {
     if (currentCup === 8) {
       return (
+
         <div>
           <div className="dangerzone">WARNING</div>
           <div className="warning">Have you done any of the following in since your last drink ?</div>
@@ -38,6 +35,14 @@ const Analysis = (props) => {
     }
   };
 
+  const Alert = () => {
+    if (currentCup === 9) {
+      alert('WARNING: TOO MUCH COFFEE');
+    } if (currentCup === 7) {
+      alert('WARNING: Too much coffee in a short span of time. Please slow down.');
+    }
+  };
+
   const generateData = (stat) => record.map((_, idx) => ({
     x: `Cup ${idx + 1}`,
     y: record[idx][stat],
@@ -45,7 +50,7 @@ const Analysis = (props) => {
 
   const cupdata = [
     {
-      id: 'Happiness',
+      id: 'Satisfaction',
       color: 'hsl(302, 70%, 50%)',
       data: [...generateData('happiness')],
     },
@@ -74,7 +79,7 @@ const Analysis = (props) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: 'Cups of coffee',
+        legend: '',
         legendOffset: 36,
         legendPosition: 'middle',
       }}
@@ -83,7 +88,7 @@ const Analysis = (props) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: 'Score',
+        legend: '',
         legendOffset: -40,
         legendPosition: 'middle',
       }}
@@ -100,11 +105,11 @@ const Analysis = (props) => {
       useMesh
       legends={[
         {
-          anchor: 'top-left',
+          anchor: 'bottom-left',
           direction: 'row',
           justify: false,
-          translateX: 100,
-          translateY: -40,
+          translateX: 80,
+          translateY: 50,
           itemsSpacing: 20,
           itemDirection: 'left-to-right',
           itemWidth: 80,
@@ -134,20 +139,21 @@ const Analysis = (props) => {
     <div className="central-component_analysis">
       <div className="spacer" />
       <h1>Analysis</h1>
-      <div>{DangerZone()}</div>
-      <div>Average happiness: {roundedAverageHappinessScore}</div>
-      <div>Average productivity: {roundedAverageProductivityScore} </div>
+      <div>{DangerZone()}{Alert()}</div>
+
+      <div>Average satisfaction index: {roundedAverageHappinessScore}</div>
+      <div>Average productivity index: {roundedAverageProductivityScore} </div>
 
       <div className="plot">
         <MyResponsiveLine data={cupdata} />
       </div>
+      <div className="spacer_small" />
       {currentCup <= 9 && (
       <button
         className="button"
         type="button"
         onClick={() => {
           setCurrentComponent('cup');
-          // setCurrentCup((cup) => cup + 1);
           setProductivityScore(0);
           setHappinessScore(0);
           setFeelingsText('');

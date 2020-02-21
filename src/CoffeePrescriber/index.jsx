@@ -57,6 +57,7 @@ const App = () => {
           setAdultMode={setAdultMode}
           adultMode={adultMode}
         />
+
       </div>
     </div>
 

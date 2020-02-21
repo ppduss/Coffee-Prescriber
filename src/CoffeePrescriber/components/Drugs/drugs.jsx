@@ -8,11 +8,10 @@ const DrugWarning = (props) => {
   } = props;
 
   //Time stuff
-const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-const currentTime = new Date();
-console.log(currentTime)
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const currentTime = new Date();
+  console.log(currentTime)
   //DRUGZZz
-
   const drugs = [
     {
       name: "Adenosine",
@@ -118,46 +117,56 @@ console.log(currentTime)
 
   const [effectState, setEffectState] = useState('');
 
+
   const handleSelectChange = (e) => {
     const currentDrug = drugs.find(drug => drug.name === e.target.value)
     if (currentDrug?.effect) {
       setEffectState(currentDrug.effect)
     }
   };
+  const handleSelectAgeChange = (e) => {
+    if (e.target.value === '1') {
+      return (setEffectState(''))
+    } if (e.target.value === '2') {
+      return (setEffectState('Caffeine isn’t recommended for children under 12.'))
+    } if (e.target.value === '3') {
+      return (
+        setEffectState('Developing teens should have no more than 100 mg of caffeine daily.'))
+    }; if (e.target.value === '4') {
+      return (setEffectState('You are good to go !'))
+    };if (e.target.value === '5') {
+      return (setEffectState('Carry on in moderation, old timer. '))
+    };
+  };
+    
+  console.log(109, effectState)
+  console.log( 1111, handleSelectAgeChange)
       
   return (
-    
     <div className="App-footer">
-       <p className="warning">{effectState}</p>
-      <p className="note">Here's an optional tool to help determine if coffee is right for you.</p>
+      <p className="note">Here's an optional tool to determine if coffee is right for you.</p>
       <div className='meds'>
-        <p className="note"> Are you prescribed any of the following</p>
-      </div>
-      <div className='meds'>
-        <select className='button' onChange={handleSelectChange}>
-        <option>Medication ? </option>
+        <p className="note_inputs_txt">Do you take any of the following</p>
+     
+        <select className='button button_optional' onChange={handleSelectChange}>
+        <option>medication ? </option>
         {drugs.map((drug, idx) => <option key={drug.name + idx}>{drug.name}</option> )}
         </select>
       </div>
-     
-      
-        {/* <label for="time" className="note">What time is it ?</label>
-        <input className="button" type="time"  name="time"
-            min="01:00" max="24:00" step="600" required /> */}
+     <br/>
       <div className='meds'>
-        <p className="note">What is your</p>
-      </div>
-      <div className='meds'>
-        <select className='button' name="age">
-          <option value="select">Age ? </option>
-          <option value="child"> 0 - 12 yo </option>
-          <option value="teen"> 12 - 18 yo </option>
-          <option value="adult">  18 - 65 yo  </option>
-          <option value="senior">  65 +  </option>
+        <p className="note_inputs_txt">What is your</p>
+
+        <select className='button button_optional' onChange={handleSelectAgeChange} name="age">
+          <option value='1'>age group ? </option>
+          <option value='2'> 12 years or less </option>
+          <option value='3'> 13 - 18 years old </option>
+          <option value='4'>  18 - 65 years old  </option>
+          <option value='5'>  65+ years old </option>
         </select>
       </div>
-        {/* <input className="button" id="reset" type="reset" /> */}
-      
+      <p className="warning spacer_medium">{effectState}</p>
+    
     </div>
   )
 };
