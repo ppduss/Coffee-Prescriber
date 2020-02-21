@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Cups.scss';
+import Steam from '../Steam';
 
 // IMAGES
 import SlightlySmilingImg from '../assets/Slightly_Smiling.png';
@@ -163,20 +164,24 @@ const Cups = (props) => {
   const CupContent = () => (
 
     <div className="central-component">
-      <div className="spacer-large" />
-      <header className="App-header">
-        <div className="svg"><svg width="100" height="100">
-          {/* <!--<circle cx="50" cy="50" r="50" />--> */}
-          <path d="M0,50 a1,1 0 0,0 100,0" fill="white" />
-        </svg>
+      <div className="centreal-component-container">
+        <div className="spacer-large" />
+        <div className="steam-container">{Steam}</div>
+        <img src={Steam} alt="" />
+        <div className="svg">
+          <svg width="100" height="100">
+            {/* <!--<circle cx="50" cy="50" r="50" />--> */}
+            <path d="M0,50 a1,1 0 0,0 100,0" fill="white" />
+          </svg>
         </div>
         <h1 className="cup-titles">
           CUP {currentCup}
         </h1>
-        {/* <h3 className="cup-title">{cupTitle()}</h3> */}
+      </div>
+      {/* <h3 className="cup-title">{cupTitle()}</h3> */}
 
-      </header>
       <p className="cup-text">Please rate your satisfaction and productivity <br />after your {satisfactionQuery()} cup.</p>
+
 
       <div>
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={1} name={0} type="image" src={handleEmoji()[0]} alt="sleepy" height="46" width="46" />

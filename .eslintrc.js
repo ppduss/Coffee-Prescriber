@@ -30,6 +30,7 @@ module.exports = {
     'no-console': 0,
     // 'no-return-assign': 0
     // "react/jsx-max-props-per-line": [{"maxiumum": 3}],
-    'max-len': 0
+    'max-len': 0,
+    'react/jsx-closing-bracket-location': 0
   },
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './global.scss';
-// import InlineSVG from 'svg-inline-react';
+import InlineSVG from 'svg-inline-react';
 // COMPONENTS
 import Cups from './components/Cups';
 import Analysis from './components/Analysis/Analysis';
