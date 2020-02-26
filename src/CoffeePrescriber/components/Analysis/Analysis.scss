@@ -1,23 +1,11 @@
 
-
-.analysis-container {
-  // background-color: rgb(120, 176, 221);
-  // min-height: 90vh;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // font-size: calc(6px + 2vmin);
-  // color: white;
-  // margin-top: 20vh;
-}
-
 .central-component_analysis {
   min-height: 100vh;
-    text-align: center;
+  text-align: center;
   flex-direction: column;
   justify-content: space-between;
   background-image: linear-gradient(rgb(120, 176, 221), rgb(120, 176, 221),rgb(120, 176, 221), rgb(120, 189, 221), rgb(224, 191, 129));
-   color: white;
+  color: white;
   font-size: calc(0.8em + 0.8vw);
 }
 

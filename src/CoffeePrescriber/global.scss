@@ -8,14 +8,13 @@ a {
   color: rgb(58, 112, 94);
 }
 
-// rgb(224, 191, 129)
 .central-component {
   min-height: 100vh;
-    text-align: center;
+  text-align: center;
   flex-direction: column;
   justify-content: space-between;
   background-image: linear-gradient(rgb(120, 176, 221), rgb(120, 176, 221),rgb(120, 176, 221), rgb(120, 189, 221),  #dcbf87);
-   color: white;
+  color: white;
   font-size: calc(0.8em + 0.8vw);
 }
 
@@ -52,11 +51,6 @@ a {
     outline-offset: -2px;
   }
 
-
-.time {
-  margin: 5px 0px 20px;
-}
-
 .spacer_large {
 min-height: 14vh;
 }
@@ -70,35 +64,23 @@ min-height: 10vh;
   min-height: 4vh;
 }
 
-
 .warning {
   color: rgb(211, 54, 54);
   font-size: 0.85rem;
   flex-wrap: wrap;
   margin: 10px 80px;
-
 }
 
 .note {
   font-family: Raleway;
   color: whitesmoke;
-  // font-style: italic;
   font-size: 1.1rem;
-  // margin-top: 0px;
-  // margin-bottom: 15px;
   margin: 0px 25vw 15px;
-  // text-decoration: underline;
   text-decoration-color: rgba(247, 226, 158, 0.74);
-  
 }
-// .note_inputs {
-//   font-style: unset;
-//   font-size: 15px;
-// }
+
 .note_inputs_txt {
-  // font-style: italic;
   font-family: Raleway;
-  
   font-size: 0.95rem;
   margin-top: 0px;
   margin-bottom: 0px;

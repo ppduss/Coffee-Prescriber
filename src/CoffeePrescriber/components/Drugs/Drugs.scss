@@ -1,29 +1,16 @@
 
-
 .button-margin {
-margin-right: 9vw;
-background-color: red;
+  margin-right: 9vw;
+  background-color: red;
 }
+
 .button_optional{
   font-size: 0.90rem;
 }
-#reset {
-  padding: 4px;
-//  border-color: black;
-color: rgb(32, 32, 32);
-background-color: whitesmoke
 
-}
 .meds {
-  // align-self: left;
-  // align-items: unset;
-  // flex-direction: row;
   justify-content: right;
-  // background-color: rgb(187, 87, 87);
   display: inline-flex;
   flex-wrap: wrap;
-  // margin-right: 2vw;
-  // line-height: 4px;
   align-items: baseline;
-  
 }

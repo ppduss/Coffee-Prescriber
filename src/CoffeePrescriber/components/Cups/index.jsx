@@ -61,7 +61,6 @@ const Cups = (props) => {
     ['This is clearly the most socially acceptable way to self destruct', 'My body is now convinced I\'m trying to kill it ', 'I\'ve turned into a paranoid android', 'My inner self has regressed to pure energy.  No thoughts, no doubt ', 'My mind and body feel godlike.  Time and matter are the bane of mere mortals and I laugh at the abyss. Oh'],
   ];
 
-
   const handleText = (idx) => emotionText[currentCup - 1][idx];
 
   const handleIconClick = (event) => {
@@ -171,7 +170,6 @@ const Cups = (props) => {
       <p className="cup-text">How productive were you after this {satisfactionQuery()} cup ?</p>
       <div>
         <input className="star" onClick={(event) => handleStarClick(event, 'was not productive at all')} name="" value={1} type="image" src={StarImg} alt="I wasn't productive at all" height="45" width="45" />
-
         <input className="star" onClick={(event) => handleStarClick(event, 'was not very productive')} name="" value={2} type="image" src={StarImg} alt="barely productive" height="45" width="45" />
 
         <input className="star" onClick={(event) => handleStarClick(event, 'was somewhat productive')} name="" value={3} type="image" src={StarImg} alt="somewhat productive" height="45" width="45" />

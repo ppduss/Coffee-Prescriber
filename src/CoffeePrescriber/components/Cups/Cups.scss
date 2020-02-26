@@ -1,21 +1,13 @@
-
-.Cups_Main {
-}
-.cup-title {
-}
 .cup-text {
   font-size: 0.85em;
   margin: 45px 100px 20px;
   // font-family: Montserrat ;
   font-family: Raleway;
   // font-family: Roboto ;
-  
 }
 .cup-spacer {
   min-height: 8vh;
 }
-
-
 .cup-titles {
   font-family: Roboto ;
   color: white;
@@ -27,26 +19,18 @@ margin: 0px 0px -20px 0px;
 }
 .button--emoji {
   margin: 0.5vw 0.5vw 0.5vw 0.5vw;
-
 }
 .star {
   margin: 7px 0.2vw 7px 0.2vw;
-
 }
-
-
 .star:hover {
-  // filter: gray;
+  filter: gray;
   -webkit-filter: grayscale(1); 
   filter: grayscale(1);
 }
 .feelings {
-  // background-color:rgb(120, 176, 221);
-  // color: rgb(255, 255, 255);
   color: rgb(75, 44, 21);
   font-size: 0.9em;
-  // max-width: calc(500px + 2vw);
-  // min-width: 300px;
   margin: 0px 20vw;
 }
 
