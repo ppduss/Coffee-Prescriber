@@ -1,20 +1,17 @@
 
 
 .analysis-container {
-
-  background-color: rgb(120, 176, 221);
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
- /* justify-content: center; */
-  font-size: calc(6px + 2vmin);
-  color: white;
-  margin-top: 20vh;
+  // background-color: rgb(120, 176, 221);
+  // min-height: 90vh;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // font-size: calc(6px + 2vmin);
+  // color: white;
+  // margin-top: 20vh;
 }
 
 .central-component_analysis {
-
   min-height: 100vh;
     text-align: center;
   flex-direction: column;
@@ -22,16 +19,19 @@
   background-image: linear-gradient(rgb(120, 176, 221), rgb(120, 176, 221),rgb(120, 176, 221), rgb(120, 189, 221), rgb(224, 191, 129));
    color: white;
   font-size: calc(0.8em + 0.8vw);
-
 }
 
 .plot{
-  height: calc(300px + 20vh);
-  // width: 500px;
-  // width: calc(400px + 20vw);
+  height: calc(220px + 10vh);
 }
 
 .dangerzone {
   font-size: 4vw;
   color: rgb(209, 52, 52);
+}
+
+.paragraph {
+    color: rgb(56, 33, 16);
+  font-size: 0.8em;
+    margin: 0px 25vw;
 }

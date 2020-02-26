@@ -139,8 +139,6 @@ const DrugWarning = (props) => {
     };
   };
     
-  console.log(109, effectState)
-  console.log( 1111, handleSelectAgeChange)
       
   return (
     <div className="App-footer">

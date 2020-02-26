@@ -4,41 +4,47 @@
 .cup-title {
 }
 .cup-text {
+  font-size: 0.85em;
+  margin: 45px 100px 20px;
+  // font-family: Montserrat ;
+  font-family: Raleway;
+  // font-family: Roboto ;
+  
 }
 .cup-spacer {
   min-height: 8vh;
 }
-.cup-titles {
-  text-decoration: overline;
 
-  text-decoration-color: white;
+
+.cup-titles {
+  font-family: Roboto ;
+  color: white;
+  text-decoration: overline;
+  text-decoration-color: rgb(203, 218, 189);
 }
 .svg {
 margin: 0px 0px -20px 0px;
 }
 .button--emoji {
   margin: 0.5vw 0.5vw 0.5vw 0.5vw;
-  // background-color: white;
+
 }
 .star {
   margin: 7px 0.2vw 7px 0.2vw;
-}
-
-.steam-container {
-  max-width: 200px;
 
 }
+
 
 .star:hover {
-  filter: gray;
+  // filter: gray;
   -webkit-filter: grayscale(1); 
   filter: grayscale(1);
-  width: 47px;
-  height: 47px;
 }
 .feelings {
   // background-color:rgb(120, 176, 221);
-  color: rgb(255, 255, 255);
+  // color: rgb(255, 255, 255);
+  color: rgb(75, 44, 21);
+  font-size: 0.9em;
   // max-width: calc(500px + 2vw);
   // min-width: 300px;
   margin: 0px 20vw;

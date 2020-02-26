@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './global.scss';
-import InlineSVG from 'svg-inline-react';
+
 // COMPONENTS
 import Cups from './components/Cups';
 import Analysis from './components/Analysis/Analysis';
 import DrugWarning from './components/Drugs/Drugs';
 import Outro from './components/Outro.jsx';
+import Death from './components/Death/Death';
 // OTHER
 import CoffeeCup from './components/assets/coffee.png';
 
@@ -127,6 +128,30 @@ const App = () => {
             setAverageHappinessScore={setAverageHappinessScore}
             setAverageProductivityScore={setAverageProductivityScore}
             setFeelingsText={setFeelingsText}
+          />
+        );
+      case 'death':
+        return (
+          <Death
+            setCurrentComponent={setCurrentComponent}
+            currentComponent={currentComponent}
+            setCurrentCup={setCurrentCup}
+            currentCup={currentCup}
+            happinessScore={happinessScore}
+            setHappinessScore={setHappinessScore}
+            setAverageProductivityScore={setAverageProductivityScore}
+            averageProductivityScore={averageProductivityScore}
+            averageHappinessScore={averageHappinessScore}
+            setAverageHappinessScore={setAverageHappinessScore}
+            setProductivityScore={setProductivityScore}
+            productivityScore={productivityScore}
+            productivityText={productivityText}
+            setProductivityText={setProductivityText}
+            feelingsText={feelingsText}
+            setFeelingsText={setFeelingsText}
+            record={record}
+            setRecord={setRecord}
+
           />
         );
       default:

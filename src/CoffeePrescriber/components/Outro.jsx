@@ -2,16 +2,12 @@ import React from 'react';
 import {
   EmailShareButton,
   FacebookShareButton,
-  InstapaperShareButton,
-  LineShareButton,
   LinkedinShareButton,
   RedditShareButton,
-  TelegramShareButton,
   TumblrShareButton,
   TwitterShareButton,
   FacebookIcon,
   TwitterIcon,
-  TelegramIcon,
   WhatsappIcon,
   GooglePlusIcon,
   LinkedinIcon,
@@ -49,15 +45,25 @@ const Outro = (props) => {
   const OutroContent = () => (
     <div className="central-component">
       <div className="spacer" />
-      <body className="App-header">
-        <img src={CoffeeCup} alt="coffee mug" />
-        <h1>Thanks for playing !</h1>
-        <button className="button" onClick={handleReset}>Would you like to begin again ? </button>
-        <div className="spacer" />
-        <div className="social-media">
-          <button><TwitterIcon size={32} round /></button>
-        </div>
-      </body>
+
+      <img src={CoffeeCup} alt="coffee mug" />
+      <h1>Thanks for playing !</h1>
+      <button className="button" onClick={handleReset}>Would you like to begin again ? </button>
+      <div className="spacer" />
+      <p>Feel free to share:</p>
+      <div className="social-media">
+        <button><TwitterIcon size={32} round /></button>
+        <button><FacebookIcon size={32} round /></button>
+        <button><WhatsappIcon size={32} round /></button>
+        <button><RedditIcon size={32} round /></button>
+        <button><EmailIcon size={32} round /></button>
+        <button><LinkedinIcon size={32} round /></button>
+        <button><TumblrIcon size={32} round /></button>
+      </div>
+      <div className="spacer_large" />
+      <div className="spacer_large" />
+      <p className="note">Check out <a href="www.caffeineinformer.com">www.caffeineinformer.com</a> for more information about coffee and other caffeine containing bevrages.</p>
+
     </div>
 
   );

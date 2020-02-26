@@ -1,14 +1,20 @@
 
 h1 {
   margin: 20px 25px 30px;
+  font-family: Raleway ;
+  letter-spacing: 0.1rem;
+}
+a {
+  color: rgb(58, 112, 94);
 }
 
+// rgb(224, 191, 129)
 .central-component {
   min-height: 100vh;
     text-align: center;
   flex-direction: column;
   justify-content: space-between;
-  background-image: linear-gradient(rgb(120, 176, 221), rgb(120, 176, 221),rgb(120, 176, 221), rgb(120, 189, 221), rgb(224, 191, 129));
+  background-image: linear-gradient(rgb(120, 176, 221), rgb(120, 176, 221),rgb(120, 176, 221), rgb(120, 189, 221),  #dcbf87);
    color: white;
   font-size: calc(0.8em + 0.8vw);
 }
@@ -26,9 +32,9 @@ h1 {
 }
 
 .button {
-  font-size: calc(0.9rem);
-  font-family: 'lato', sans-serif;
-  // font-weight: 'Raleway' , sans-serif;
+  font-size: 0.95rem;
+  // font-family: Lato ;
+  font-family: Raleway;
   letter-spacing: 0.1em;
   color: white;
   padding: 8px 30px;
@@ -51,7 +57,7 @@ h1 {
   margin: 5px 0px 20px;
 }
 
-.spacer-large {
+.spacer_large {
 min-height: 14vh;
 }
 .spacer {
@@ -74,23 +80,26 @@ min-height: 10vh;
 }
 
 .note {
-  font-family: 'Montserrat' sans-serif;
+  font-family: Raleway;
   color: whitesmoke;
   // font-style: italic;
   font-size: 1.1rem;
-  margin-top: 0px;
-  margin-bottom: 15px;
-  text-decoration: underline;
+  // margin-top: 0px;
+  // margin-bottom: 15px;
+  margin: 0px 25vw 15px;
+  // text-decoration: underline;
   text-decoration-color: rgba(247, 226, 158, 0.74);
   
 }
-.note_inputs {
-  font-style: unset;
-  font-size: 15px;
-}
+// .note_inputs {
+//   font-style: unset;
+//   font-size: 15px;
+// }
 .note_inputs_txt {
   // font-style: italic;
-  font-size: 0.9rem;
+  font-family: Raleway;
+  
+  font-size: 0.95rem;
   margin-top: 0px;
   margin-bottom: 0px;
 }

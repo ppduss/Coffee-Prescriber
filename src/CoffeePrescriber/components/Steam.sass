@@ -14,11 +14,10 @@
 /* Custom Code Here */
 
 .steam-style 
-  width: 800px
+  width: 102px;
 // .steam-style 
 // 	width: 1000px
 // #Layer_1
-// 	background-color: red
 // 	margin: 0px
 // 	padding: -50px
 
@@ -26,27 +25,28 @@
 	opacity: 0
 	stroke-dashoffset 9.886253356933594
 	stroke-dasharray: 9.886253356933594
-	background: #000
+	// background: #000
 	// height: 1000px
 	// width: 1000px
 
 @for $i from 1 to 4
 	#steam#{$i}
-		animation: steam#{$i} 10s infinite cubic-bezier(0.24, 0.85, 0.37, 0.99) forwards
-		animation-delay: #{$i * 400}ms
+		animation: steam#{$i} 7s infinite cubic-bezier(0.24, 0.85, 0.37, 0.99) forwards
+		animation-delay: #{$i * 600}ms
  
 @for $i from 1 to 4
 	@keyframes steam#{$i}
 		0%
 			opacity: 0
+			stroke-dashoffset: 0
 
-		60%
-			opacity: 1
+		50%
+			opacity: 0.6
 			stroke-dashoffset: 0
 
 		100%	
 			opacity: 0
-			stroke-dashoffset: -9.886253356933594
+			stroke-dashoffset: -9
 			
 
 /* end of custom code */

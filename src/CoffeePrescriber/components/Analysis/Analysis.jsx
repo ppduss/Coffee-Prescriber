@@ -1,7 +1,6 @@
 import React from 'react';
 import { ResponsiveLine } from '@nivo/line';
 import './Analysis.scss';
-// import smileImg from '../assets/Slightly_Smiling.png';
 
 
 const Analysis = (props) => {
@@ -65,7 +64,7 @@ const Analysis = (props) => {
     <ResponsiveLine
       data={data}
       margin={{
-        top: 60, right: 110, bottom: 60, left: 60,
+        top: 40, right: 135, bottom: 22, left: 150,
       }}
       xScale={{ type: 'point' }}
       yScale={{
@@ -98,18 +97,18 @@ const Analysis = (props) => {
       pointColor={{ from: 'color', modifiers: [] }}
       pointBorderWidth={3}
       pointBorderColor={{ from: 'serieColor', modifiers: [] }}
-      pointLabel="y"
-      pointLabelYOffset={-12}
+      pointLabel={false}
+      pointLabelYOffset={0}
       areaOpacity={0.3}
       enableCrosshair={false}
-      useMesh
+      useMesh={false}
       legends={[
         {
-          anchor: 'bottom-left',
+          anchor: 'top',
           direction: 'row',
           justify: false,
-          translateX: 80,
-          translateY: 50,
+          translateX: 0,
+          translateY: -35,
           itemsSpacing: 20,
           itemDirection: 'left-to-right',
           itemWidth: 80,
@@ -137,27 +136,35 @@ const Analysis = (props) => {
 
   const AnalysisContent = () => (
     <div className="central-component_analysis">
-      <div className="spacer" />
+      <div className="spacer_medium" />
       <h1>Analysis</h1>
-      <div>{DangerZone()}{Alert()}</div>
+      <div>{Alert()}</div>
 
-      <div>Average satisfaction index: {roundedAverageHappinessScore}</div>
-      <div>Average productivity index: {roundedAverageProductivityScore} </div>
-
+      <p className="paragraph">This chart will plot your performance and state of mind during this consumption period.  </p>
+      <div className="spacer_small" />
       <div className="plot">
         <MyResponsiveLine data={cupdata} />
       </div>
       <div className="spacer_small" />
+
+      <div className="note"> Your average satisfaction index is currently {roundedAverageHappinessScore}, whereas your productivity index is {roundedAverageProductivityScore}. </div>
+      <div className="paragraph"> Be mindful of the <a href="https://en.wikipedia.org/wiki/Yerkes%E2%80%93Dodson_law" target="_blank">Yerkes–Dodson law</a> that states a relationship between arousal and performance only on specific types of tasks, and only up to a certain point. </div>
+
+      <div className="spacer_medium" />
       {currentCup <= 9 && (
       <button
         className="button"
         type="button"
         onClick={() => {
-          setCurrentComponent('cup');
-          setProductivityScore(0);
-          setHappinessScore(0);
-          setFeelingsText('');
-          setProductivityText('');
+          if (currentCup <= 8) {
+            setCurrentComponent('cup');
+            setProductivityScore(0);
+            setHappinessScore(0);
+            setFeelingsText('');
+            setProductivityText('');
+          } else {
+            setCurrentComponent('death');
+          }
         }}
       >
         On to cup {currentCup}
@@ -173,10 +180,7 @@ const Analysis = (props) => {
     </div>
   );
   return (
-    <>
-      <AnalysisContent />
-
-    </>
+    <AnalysisContent />
   );
 };
 
