@@ -27,21 +27,17 @@ const App = () => {
   // EXPERIMENTAL
   const [adultMode, setAdultMode] = useState('');
 
-  //   // useEffect(() => {
-  //   console.log('this runs every render');
-  // });
-  // useEffect(() => {
-  //   console.log('this runs only on first render');
-  // }, []);
-  // useEffect(() => {
-  //   console.log('this runs only when feelingsText changes (and first render, but they all do that)');
-  // }, [feelingsText]);
-  // useEffect(() => {
-  //   console.log('this runs first render only');
-  //   return () => {
-  //     console.log('this only runs on dismount of this component');
-  //   };
-  // });
+  useEffect(() => console.log('this runs every render'));
+
+  useEffect(() => console.log('this runs only on first render'), []);
+
+  useEffect(() => console.log('this runs only when feelingsText changes (and first render, but they all do that)'), [feelingsText]);
+
+  useEffect(() => console.log('this runs first render only');
+    return () => {
+      console.log('this only runs on dismount of this component');
+    };
+  });
 
   const IntroComponent = () => (
     <div className="central-component">
