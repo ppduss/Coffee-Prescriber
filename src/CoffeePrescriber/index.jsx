@@ -4,16 +4,16 @@ import './global.scss';
 // COMPONENTS
 import Cups from './components/Cups';
 import Analysis from './components/Analysis/Analysis';
-import DrugWarning from './components/Drugs/Drugs';
+import DrugWarning from './components/Drugs';
 import Outro from './components/Outro.jsx';
 import Death from './components/Death/Death';
+
 // OTHER
 import CoffeeCup from './components/assets/coffee.png';
 
 const App = () => {
   const [currentComponent, setCurrentComponent] = useState('intro');
   const [currentCup, setCurrentCup] = useState(1);
-  const [prodScore, setProdScore] = useState(0);
   // FEELINGS & PRODUCTIVITY
   const [feelingsText, setFeelingsText] = useState('');
   const [happinessScore, setHappinessScore] = useState(0);
@@ -25,19 +25,7 @@ const App = () => {
   // STYLING ?
   const [IconHover, setIconHover] = useState(48);
   // EXPERIMENTAL
-  const [adultMode, setAdultMode] = useState('');
-
-  useEffect(() => console.log('this runs every render'));
-
-  useEffect(() => console.log('this runs only on first render'), []);
-
-  useEffect(() => console.log('this runs only when feelingsText changes (and first render, but they all do that)'), [feelingsText]);
-
-  useEffect(() => console.log('this runs first render only');
-    return () => {
-      console.log('this only runs on dismount of this component');
-    };
-  });
+  // const [adultMode, setAdultMode] = useState('');
 
   const IntroComponent = () => (
     <div className="central-component">
@@ -47,17 +35,13 @@ const App = () => {
         <h1>Are you ready for coffee ?</h1>
         <button className="button" onClick={() => setCurrentComponent('cup')}>Drink first cup </button>
       </body>
-
       <div>
-
         <DrugWarning
-          setAdultMode={setAdultMode}
-          adultMode={adultMode}
+          // setAdultMode={setAdultMode}
+          // adultMode={adultMode}
         />
-
       </div>
     </div>
-
   );
 
   const ActiveComponent = () => {
@@ -147,7 +131,6 @@ const App = () => {
             setFeelingsText={setFeelingsText}
             record={record}
             setRecord={setRecord}
-
           />
         );
       default:
@@ -155,9 +138,7 @@ const App = () => {
     }
   };
 
-
   return <ActiveComponent />;
 };
-
 
 export default App;

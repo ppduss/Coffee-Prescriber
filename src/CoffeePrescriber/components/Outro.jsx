@@ -1,19 +1,13 @@
 import React from 'react';
 import {
-  EmailShareButton,
   FacebookShareButton,
-  LinkedinShareButton,
   RedditShareButton,
   TumblrShareButton,
   TwitterShareButton,
   FacebookIcon,
   TwitterIcon,
-  WhatsappIcon,
-  GooglePlusIcon,
-  LinkedinIcon,
   RedditIcon,
   TumblrIcon,
-  EmailIcon,
 } from 'react-share';
 import CoffeeCup from './assets/coffee.png';
 
@@ -40,32 +34,45 @@ const Outro = (props) => {
     setAverageProductivityScore(0);
     setFeelingsText('');
   };
-  const test = () => ({ FacebookShareButton });
 
   const OutroContent = () => (
     <div className="central-component">
       <div className="spacer" />
-
       <img src={CoffeeCup} alt="coffee mug" />
       <h1>Thanks for playing !</h1>
       <button className="button" onClick={handleReset}>Would you like to begin again ? </button>
       <div className="spacer" />
       <p>Feel free to share:</p>
       <div className="social-media">
-        <button><TwitterIcon size={32} round /></button>
-        <button><FacebookIcon size={32} round /></button>
-        <button><WhatsappIcon size={32} round /></button>
-        <button><RedditIcon size={32} round /></button>
-        <button><EmailIcon size={32} round /></button>
-        <button><LinkedinIcon size={32} round /></button>
-        <button><TumblrIcon size={32} round /></button>
+        <TwitterShareButton
+          title="Coffee Prescriber"
+          hashtags="coffee, coffeeprescription"
+          url="https://en.wikipedia.org/wiki/Coffee"
+          children={<TwitterIcon size={38} round />}
+        />
+        <FacebookShareButton
+          quote="Wow coffee!"
+          round="true"
+          hashtag="#coffee"
+          url="https://en.wikipedia.org/wiki/Coffee"
+          children={<FacebookIcon size={38} round />}
+        />
+        <RedditShareButton
+          title="Coffee Prescriber"
+          hashtag="#coffee"
+          url="https://en.wikipedia.org/wiki/Coffee"
+          children={<RedditIcon size={38} round />}
+        />
+        <TumblrShareButton
+          title="Coffee Prescriber"
+          url="https://en.wikipedia.org/wiki/Coffee"
+          children={<TumblrIcon size={38} round />}
+          />
       </div>
       <div className="spacer_large" />
       <div className="spacer_large" />
       <p className="note">Check out <a href="www.caffeineinformer.com">www.caffeineinformer.com</a> for more information about coffee and other caffeine containing bevrages.</p>
-
     </div>
-
   );
   return (
     <div>
