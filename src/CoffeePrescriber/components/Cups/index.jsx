@@ -1,33 +1,32 @@
 import React from 'react';
 import './Cups.scss';
 import Steam from '../Steam';
-
 // IMAGES
-import SlightlySmilingImg from '../assets/Slightly_Smiling.png';
-import UnhappyImg from '../assets/Unhappy.png';
-import ExpressionlessImg from '../assets/Expressionless.png';
-import SleepingImg from '../assets/Sleeping.png';
-import ConfusedImg from '../assets/Confused.png';
-import StarImg from '../assets/medium_star.png';
-import NeutralImg from '../assets/Neutral.png';
-import VerySadImg from '../assets/Very_Sad.png';
-import SmilingImg from '../assets/Smiling.png';
-import PerseveringImg from '../assets/Persevering.png';
-import ConfoundedImg from '../assets/Confounded.png';
-import WearyImg from '../assets/Weary.png';
-import PoisonedImg from '../assets/Poisoned.png';
-import DizzyImg from '../assets/Dizzy.png';
-import HighVoltageImg from '../assets/high_voltage.png';
+import SlightlySmilingImg from '../assets/slightlySmiling.png';
+import UnhappyImg from '../assets/unhappy.png';
+import ExpressionlessImg from '../assets/expressionless.png';
+import SleepingImg from '../assets/sleeping.png';
+import ConfusedImg from '../assets/confused.png';
+import StarImg from '../assets/mediumStar.png';
+import NeutralImg from '../assets/neutral.png';
+import VerySadImg from '../assets/verySad.png';
+import SmilingImg from '../assets/smiling.png';
+import PerseveringImg from '../assets/persevering.png';
+import ConfoundedImg from '../assets/confounded.png';
+import WearyImg from '../assets/weary.png';
+import PoisonedImg from '../assets/poisoned.png';
+import DizzyImg from '../assets/dizzy.png';
+import HighVoltageImg from '../assets/highVoltage.png';
 import CollisionImg from '../assets/collision.png';
-import ExplodingImg from '../assets/Exploding.png';
-import PartyImg from '../assets/Party.png';
-import GrimacingImg from '../assets/Grimacing.png';
-import BlushedImg from '../assets/Blushed.png';
-import SunglassesImg from '../assets/Sunglasses.png';
-import FlushedImg from '../assets/Flushed.png';
-import StarEyesImg from '../assets/Star_Eyes.png';
-import TongueOutImg from '../assets/Tongue_Out.png';
-import SkullImg from '../assets/Skull.png';
+import ExplodingImg from '../assets/exploding.png';
+import PartyImg from '../assets/party.png';
+import GrimacingImg from '../assets/grimacing.png';
+import BlushedImg from '../assets/blushed.png';
+import SunglassesImg from '../assets/sunglasses.png';
+import FlushedImg from '../assets/flushed.png';
+import StarEyesImg from '../assets/starEyes.png';
+import TongueOutImg from '../assets/tongueOut.png';
+import SkullImg from '../assets/skull.png';
 
 const Cups = (props) => {
   const {
@@ -156,7 +155,6 @@ const Cups = (props) => {
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={4} name={3} type="image" src={handleEmoji()[3]} alt="Confused face" height="46" width="46" />
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={5} name={4} type="image" src={handleEmoji()[4]} alt="Unhappy face" height="46" width="46" />
       </div>
-
       <p className="cup-text">How productive were you after this {satisfactionQuery()} cup ?</p>
       <div>
         <input className="star" onClick={(event) => handleStarClick(event, 'was not productive at all')} name="" value={1} type="image" src={StarImg} alt="I wasn't productive at all" height="45" width="45" />
@@ -165,7 +163,6 @@ const Cups = (props) => {
         <input className="star" onClick={(event) => handleStarClick(event, 'was productive')} name="" value={4} type="image" src={StarImg} alt="productive" height="45" width="45" />
         <input className="star" onClick={(event) => handleStarClick(event, 'was very productive !')} name="" value={5} type="image" src={StarImg} alt="I was not very productive" height="45" width="45" />
       </div>
-
       <div className="spacer_small" />
       <div className="cup-spacer">
         <div className="feelings">
@@ -181,7 +178,6 @@ const Cups = (props) => {
       </button>
     </div>
   );
-
   return (
     <CupContent />
   );

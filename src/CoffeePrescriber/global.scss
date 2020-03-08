@@ -21,7 +21,6 @@ a {
   font-size: calc(0.8em + 0.8vw);
 }
 
-
 .App-footer {
   position: absolute;
     bottom: 20px;
@@ -30,7 +29,6 @@ a {
 
 .button {
   font-size: 0.95rem;
-  // font-family: Lato ;
   font-family: Raleway;
   letter-spacing: 0.1em;
   color: white;
@@ -43,11 +41,11 @@ a {
   border-radius: 0.3rem;
   border-style: solid;
 }
-  .button:focus {
-    outline-width: 1px;
-    outline-color: rgb(230, 203, 154);
-    outline-offset: -2px;
-  }
+.button:focus {
+  outline-width: 1px;
+  outline-color: rgb(230, 203, 154);
+  outline-offset: -2px;
+}
 
 .spacer_large {
 min-height: 14vh;

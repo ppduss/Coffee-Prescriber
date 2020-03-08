@@ -20,13 +20,19 @@ margin: 0px 0px -20px 0px;
 .button--emoji {
   margin: 0.5vw 0.5vw 0.5vw 0.5vw;
 }
+.button--emoji:hover {
+  margin: 0.5vw 0.5vw 0.5vw 0.5vw;
+  filter: gray;
+  -webkit-filter: grayscale(0.7); 
+  filter: grayscale(0.7);
+}
 .star {
   margin: 7px 0.2vw 7px 0.2vw;
 }
 .star:hover {
   filter: gray;
-  -webkit-filter: grayscale(1); 
-  filter: grayscale(1);
+  -webkit-filter: grayscale(0.7); 
+  filter: grayscale(0.7);
 }
 .feelings {
   color: rgb(75, 44, 21);
