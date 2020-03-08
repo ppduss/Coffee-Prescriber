@@ -4,9 +4,9 @@ import './global.scss';
 // COMPONENTS
 import Cups from './components/Cups';
 import Analysis from './components/Analysis/Analysis';
-import DrugWarning from './components/Drugs';
-import Outro from './components/Outro.jsx';
-import Death from './components/Death/Death';
+import Outro from './components/Outro';
+import Death from './components/Death';
+import DrugWarning from './components/DrugWarning';
 
 // OTHER
 import CoffeeCup from './components/assets/coffee.png';
