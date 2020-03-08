@@ -16,29 +16,11 @@ const Analysis = (props) => {
     record,
   } = props;
 
-  // const DangerZone = () => {
-  //   if (currentCup === 8) {
-  //     return (
-
-  //       <div>
-  //         <div className="dangerzone">WARNING</div>
-  //         <div className="warning">Have you done any of the following in since your last drink ?</div>
-  //         <div className="warning">
-  //           Cleaned the bathroom tiles with a toothbrush
-  //           Had a panic attack thinking about your ex/father
-  //           Juggled firearms for your IG feed.
-  //           Started a list of nemeses.
-  //         </div>
-  //       </div>
-  //     );
-  //   }
-  // };
-
   const Alert = () => {
     if (currentCup === 9) {
-      alert('WARNING: TOO MUCH COFFEE');
+      alert('DANGER: TOO MUCH COFFEE');
     } if (currentCup === 7) {
-      alert('WARNING: Too much coffee in a short span of time. Please slow down.');
+      alert('WARNING: Too much coffee in too short a span of time. Please slow down.');
     }
   };
 
@@ -146,7 +128,6 @@ const Analysis = (props) => {
         <MyResponsiveLine data={cupdata} />
       </div>
       <div className="spacer_small" />
-
       <div className="note"> Your average satisfaction index is currently {roundedAverageHappinessScore}, whereas your productivity index is {roundedAverageProductivityScore}. </div>
       <div className="paragraph"> Be mindful of the <a href="https://en.wikipedia.org/wiki/Yerkes%E2%80%93Dodson_law" target="_blank" rel="noopener noreferrer">Yerkes–Dodson law</a> that states a relationship between arousal and performance only on specific types of tasks, and only up to a certain point. </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Cups.scss';
 import Steam from '../Steam';
 
@@ -29,7 +29,6 @@ import StarEyesImg from '../assets/Star_Eyes.png';
 import TongueOutImg from '../assets/Tongue_Out.png';
 import SkullImg from '../assets/Skull.png';
 
-
 const Cups = (props) => {
   const {
     setCurrentComponent,
@@ -55,7 +54,7 @@ const Cups = (props) => {
     ['I\'m feeling a bit tense', 'I\'m still not there yet', 'Meh. I\'m feeling pretty neutral', 'Oh yeah, that\'s the ticket. I\'m feeling good', 'I feel fantastic'],
     ['I\'m feeling very anxious', 'I don\'t feel so good', 'My caffeine tolerance cannot be underestimated', 'Boo-Yah ! I feel like a Starcraft marine on a stim pack', 'I\'m feeling like a solid million and there\'s no end in sight'],
     ['FML.  I regret my life choices', 'There\'s no back button on coffee.  I have to live with myself for the next 8 hours', 'My jaw is tight', 'I feel awesome, and everyone is eternally interested in what I have to say', 'Who says what goes up must come down ? I feel like a boss'],
-    ['I\'m overwhelmed with crippling amounts of anxiety.  My heart is beating faster and more irregularly than a Mathcore drummer', 'I smell like teen angst', 'The hamspter wheel in my brain feels like it\s spinning so fast it could power a small town', 'placeHOLDER', 'I\'m feeling pumped about everything and every idea I come up with is the BEST idea I’ve ever had, '],
+    ['I\'m overwhelmed with crippling amounts of anxiety.  My heart is beating faster and more irregularly than a Mathcore drummer', 'I smell like teen angst', 'The hamspter wheel in my brain feels like it\'s spinning so fast it could power a small town', 'placeHOLDER', 'I\'m feeling pumped about everything and every idea I come up with is the BEST idea I’ve ever had, '],
     ['My heart is racing and I feel like I might die', 'Why do I do this to myself ?  I feel terrible', 'I can\'t tell if I\'m excited or terrified', 'My brain is on fire - I feel like a Space X rocket'],
     ['I\'m on the fast track to panic attack central', 'My body is sending me clear signals that it wants to purge ', ' I feel like an F16 about to break the sound barrier : the engine is revving hard, and the hull is rattling', 'The sound of my ego has become so loud that you can barely focus on anything else.  My inner monologue is blasting thoughts at a rate I can barely process, never mind control ', 'No I didn\'t take a handfull of Adderal, this is normal ! I AM FINE'],
     ['This is clearly the most socially acceptable way to self destruct', 'My body is now convinced I\'m trying to kill it ', 'I\'ve turned into a paranoid android', 'My inner self has regressed to pure energy.  No thoughts, no doubt ', 'My mind and body feel godlike.  Time and matter are the bane of mere mortals and I laugh at the abyss. Oh'],
@@ -126,8 +125,7 @@ const Cups = (props) => {
       return ('seventh');
     } if (currentCup === 8) {
       return ('eighth');
-    }
-    return ('');
+    } return ('');
   };
 
   const connectorText = () => {
@@ -138,10 +136,7 @@ const Cups = (props) => {
     } return (' but ');
   };
 
-  // const emoticonClasses = () => classNames("button", {"isSelected": isSelected})
-
   const CupContent = () => (
-
     <div className="central-component">
       <div className="spacer_medium" />
       <div className="steam-container">{Steam}</div>
@@ -154,16 +149,11 @@ const Cups = (props) => {
         CUP {currentCup}
       </h1>
       <p className="cup-text">Please click the emoji that best describes your level of satisfaction after your {satisfactionQuery()} cup.</p>
-
       <div>
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={1} name={0} type="image" src={handleEmoji()[0]} alt="sleepy" height="46" width="46" />
-
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={2} name={1} type="image" src={handleEmoji()[1]} alt="Expressionless face" height="46" width="46" />
-
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={3} name={2} type="image" src={handleEmoji()[2]} alt="Smiling face" height="46" width="46" />
-
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={4} name={3} type="image" src={handleEmoji()[3]} alt="Confused face" height="46" width="46" />
-
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={5} name={4} type="image" src={handleEmoji()[4]} alt="Unhappy face" height="46" width="46" />
       </div>
 
@@ -171,16 +161,12 @@ const Cups = (props) => {
       <div>
         <input className="star" onClick={(event) => handleStarClick(event, 'was not productive at all')} name="" value={1} type="image" src={StarImg} alt="I wasn't productive at all" height="45" width="45" />
         <input className="star" onClick={(event) => handleStarClick(event, 'was not very productive')} name="" value={2} type="image" src={StarImg} alt="barely productive" height="45" width="45" />
-
         <input className="star" onClick={(event) => handleStarClick(event, 'was somewhat productive')} name="" value={3} type="image" src={StarImg} alt="somewhat productive" height="45" width="45" />
-
         <input className="star" onClick={(event) => handleStarClick(event, 'was productive')} name="" value={4} type="image" src={StarImg} alt="productive" height="45" width="45" />
-
         <input className="star" onClick={(event) => handleStarClick(event, 'was very productive !')} name="" value={5} type="image" src={StarImg} alt="I was not very productive" height="45" width="45" />
       </div>
 
       <div className="spacer_small" />
-
       <div className="cup-spacer">
         <div className="feelings">
           {
@@ -190,7 +176,6 @@ const Cups = (props) => {
         </div>
       </div>
       <div className="spacer" />
-
       <button className="button" onClick={handleSubmit}>
         Analysis
       </button>
