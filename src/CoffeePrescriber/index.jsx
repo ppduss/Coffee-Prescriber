@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './global.scss';
-
+import CoffeeCup from './components/assets/coffee.png';
 // COMPONENTS
 import Cups from './components/Cups';
 import Analysis from './components/Analysis/Analysis';
@@ -8,24 +8,18 @@ import Outro from './components/Outro';
 import Death from './components/Death';
 import DrugWarning from './components/DrugWarning';
 
-// OTHER
-import CoffeeCup from './components/assets/coffee.png';
-
 const App = () => {
   const [currentComponent, setCurrentComponent] = useState('intro');
   const [currentCup, setCurrentCup] = useState(1);
+  const [averageHappinessScore, setAverageHappinessScore] = useState();
+  const [IconHover, setIconHover] = useState(48);
+  const [record, setRecord] = useState([]);
   // FEELINGS & PRODUCTIVITY
   const [feelingsText, setFeelingsText] = useState('');
   const [happinessScore, setHappinessScore] = useState(0);
   const [productivityText, setProductivityText] = useState('');
   const [productivityScore, setProductivityScore] = useState(0);
   const [averageProductivityScore, setAverageProductivityScore] = useState(0);
-  const [record, setRecord] = useState([]);
-  const [averageHappinessScore, setAverageHappinessScore] = useState();
-  // STYLING ?
-  const [IconHover, setIconHover] = useState(48);
-  // EXPERIMENTAL
-  // const [adultMode, setAdultMode] = useState('');
 
   const IntroComponent = () => (
     <div className="central-component">
@@ -37,8 +31,6 @@ const App = () => {
       </body>
       <div>
         <DrugWarning
-          // setAdultMode={setAdultMode}
-          // adultMode={adultMode}
         />
       </div>
     </div>
@@ -137,7 +129,6 @@ const App = () => {
         break;
     }
   };
-
   return <ActiveComponent />;
 };
 

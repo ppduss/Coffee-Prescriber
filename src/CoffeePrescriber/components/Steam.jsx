@@ -6,11 +6,9 @@ const Steam = (
   <svg
     className="steam-style"
     version="1.1"
-    // id="Layer_1"
     x="0px"
     y="0px"
     viewBox="80 141 19 9"
-    // enableBackground="new 69.964 142.01 208.618 33.542"
     xmlSpace="preserve"
   >
     <path

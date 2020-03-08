@@ -13,8 +13,6 @@ const Death = (props) => {
     setFeelingsText,
     setAverageHappinessScore,
     setAverageProductivityScore,
-    // roundedAverageHappinessScore
-    // roundedAverageProductivityScore
   } = props;
 
   const handleReset = (event) => {
@@ -45,7 +43,7 @@ const Death = (props) => {
           onClick={() => {
             setCurrentComponent('outro');
           }}
-      >Quit
+        >Quit
         </button>
       </body>
     </div>
