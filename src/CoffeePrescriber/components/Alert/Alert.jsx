@@ -7,7 +7,6 @@ const Alert = (props) => {
     modalText,
     closeModal,
     displayModal,
-    currentCup,
   } = props;
 
   const modalClasses = classNames('alert_container', {
