@@ -24,11 +24,11 @@ const App = () => {
   const IntroComponent = () => (
     <div className="central-component">
       <div className="spacer" />
-      <body className="App-header">
+      <div className="App-header">
         <img src={CoffeeCup} alt="coffee mug" />
         <h1>Are you ready for coffee ?</h1>
         <button className="button" onClick={() => setCurrentComponent('cup')}>Drink first cup </button>
-      </body>
+      </div>
       <div>
         <DrugWarning
         />

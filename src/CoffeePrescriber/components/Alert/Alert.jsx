@@ -13,10 +13,9 @@ const Alert = (props) => {
     is_visible: displayModal,
   });
 
-
   return (
     <div className={modalClasses}>
-      <div onClick={closeModal} className="alert_overlay" />
+      <div role="presentation" onClick={closeModal} className="alert_overlay" />
       <div className="alert_content">
         <div className="alert">
           {modalText}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Analysis.scss';
 import Alert from '../Alert/Alert';
-import MyResponsiveLine from './NivoLine';
+import MyResponsiveLine from './NivoLine/NivoLine';
 
 const Analysis = (props) => {
   const {
@@ -17,13 +17,16 @@ const Analysis = (props) => {
   } = props;
 
   const [displayAlertModal, setDisplayAlertModal] = useState(false);
+  const [modal, setModal] = useState('WARNING: Too much coffee in too short a span of time. Please slow down.');
 
   useEffect(() => {
     if (currentCup === 7) {
       setDisplayAlertModal(true);
+    } if (currentCup === 8) {
+      setDisplayAlertModal(true);
+      setModal('DANGER: TOO MUCH COFFEE !');
     }
   }, []);
-
 
   const roundedAverageHappinessScore = averageHappinessScore.toFixed(1);
   const roundedAverageProductivityScore = averageProductivityScore.toFixed(1);
@@ -40,7 +43,6 @@ const Analysis = (props) => {
       <div className="spacer_small" />
       <div className="note"> Your average satisfaction index is currently {roundedAverageHappinessScore}, whereas your productivity index is {roundedAverageProductivityScore}. </div>
       <div className="paragraph"> Be mindful of the <a href="https://en.wikipedia.org/wiki/Yerkes%E2%80%93Dodson_law" target="_blank" rel="noopener noreferrer">Yerkes–Dodson law</a> that states a relationship between arousal and performance only on specific types of tasks, and only up to a certain point. </div>
-
       <div className="spacer_medium" />
       {currentCup <= 9 && (
       <button
@@ -77,7 +79,7 @@ const Analysis = (props) => {
         currentCup={currentCup}
         displayModal={displayAlertModal}
         closeModal={() => setDisplayAlertModal(false)}
-        modalText="WARNING: Too much coffee in too short a span of time. Please slow down."
+        modalText={modal}
       />
     </>
   );
