@@ -16,7 +16,7 @@ import PerseveringImg from '../assets/persevering.png';
 import ConfoundedImg from '../assets/Confounded.png';
 import WearyImg from '../assets/weary.png';
 import PoisonedImg from '../assets/poisoned.png';
-import DizzyImg from '../assets/dizzy.png';
+import DizzyImg from '../assets/diZzy.png';
 import HighVoltageImg from '../assets/highVoltage.png';
 import CollisionImg from '../assets/collision.png';
 import ExplodingImg from '../assets/exploding.png';
