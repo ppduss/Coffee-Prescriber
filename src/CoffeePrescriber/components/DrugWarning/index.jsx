@@ -2,11 +2,6 @@ import React, { useState } from 'react';
 import './Drugs.scss';
 
 const DrugWarning = () => {
-  // const {
-  //   // setAdultMode,
-  //   // adultMode,
-  // } = props;
-
   // DRUG LIST
   const drugs = [
     {

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ResponsiveLine } from '@nivo/line';
 import './Analysis.scss';
-
+import Alertbox from './Alert';
 
 const Analysis = (props) => {
   const {
@@ -16,13 +16,17 @@ const Analysis = (props) => {
     record,
   } = props;
 
-  const Alert = () => {
-    if (currentCup === 9) {
-      alert('DANGER: TOO MUCH COFFEE');
-    } if (currentCup === 7) {
-      alert('WARNING: Too much coffee in too short a span of time. Please slow down.');
-    }
-  };
+  const [displayAlertModal, setDisplayAlertModal] = useState(false);
+
+
+  // const Alert = () => {
+  //   if (currentCup === 9) {
+  //     alert('DANGER: TOO MUCH COFFEE');
+  //   } if (currentCup === 7) {
+  //     alert('WARNING: Too much coffee in too short a span of time. Please slow down.');
+  //   }
+  // };
+
 
   const generateData = (stat) => record.map((_, idx) => ({
     x: `Cup ${idx + 1}`,
@@ -120,8 +124,6 @@ const Analysis = (props) => {
     <div className="central-component_analysis">
       <div className="spacer_medium" />
       <h1>Analysis</h1>
-      <div>{Alert()}</div>
-
       <p className="paragraph">This chart will plot your performance and state of mind during this consumption period.  </p>
       <div className="spacer_small" />
       <div className="plot">
@@ -161,7 +163,17 @@ const Analysis = (props) => {
     </div>
   );
   return (
-    <AnalysisContent />
+    <>
+      <AnalysisContent />
+      <Alertbox
+        currentCup={currentCup}
+        displayModal={displayAlertModal}
+        closeModal={() => setDisplayAlertModal(false)}
+        modalText={
+          "Here's the text"
+        }
+      />
+    </>
   );
 };
 

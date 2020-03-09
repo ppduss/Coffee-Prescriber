@@ -3,7 +3,7 @@ import './global.scss';
 import CoffeeCup from './components/assets/coffee.png';
 // COMPONENTS
 import Cups from './components/Cups';
-import Analysis from './components/Analysis/Analysis';
+import Analysis from './components/Analysis';
 import Outro from './components/Outro';
 import Death from './components/Death';
 import DrugWarning from './components/DrugWarning';
