@@ -1,5 +1,5 @@
 import React from 'react';
-import SkullImg from '../assets/skull.png';
+import SkullImg from '../assets/skullFace.png';
 
 const Death = (props) => {
   const {
