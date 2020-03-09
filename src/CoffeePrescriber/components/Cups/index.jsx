@@ -22,7 +22,7 @@ import CollisionImg from '../assets/collision.png';
 import ExplodingImg from '../assets/exploding.png';
 import PartyImg from '../assets/party.png';
 import GrimacingImg from '../assets/grimacing.png';
-import BlushedImg from '../assets/blushed.png';
+import BlushedImg from '../assets/blushing.png';
 import SunglassesImg from '../assets/sunglasses.png';
 import FlushedImg from '../assets/flushed.png';
 import StarEyesImg from '../assets/starEyes.png';
