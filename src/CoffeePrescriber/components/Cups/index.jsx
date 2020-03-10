@@ -1,33 +1,8 @@
 import React from 'react';
 import './Cups.scss';
 import Steam from '../Steam';
-import EmotionText from './Emotions';
-// IMAGES
-import SlightlySmilingImg from '../assets/slightlySmilingFace.png';
-import UnhappyImg from '../assets/unhappyFace.png';
-import ExpressionlessImg from '../assets/expressionlessFace.png';
-import SleepingImg from '../assets/sleepingFace.png';
-import ConfusedImg from '../assets/confusedFace.png';
+import CupObjects from './CupObjects';
 import StarImg from '../assets/mediumStar.png';
-import NeutralImg from '../assets/neutralFace.png';
-import VerySadImg from '../assets/verySadFace.png';
-import SmilingImg from '../assets/smilingFace.png';
-import PerseveringImg from '../assets/perseveringFace.png';
-import ConfoundedImg from '../assets/confoundedFace.png';
-import WearyImg from '../assets/wearyFace.png';
-import PoisonedImg from '../assets/poisonedFace.png';
-import DizzyImg from '../assets/dizzyFace.png';
-import HighVoltageImg from '../assets/highVoltageFace.png';
-import CollisionImg from '../assets/collisionFace.png';
-import ExplodingImg from '../assets/explodingFace.png';
-import PartyImg from '../assets/partyFace.png';
-import GrimacingImg from '../assets/grimacingFace.png';
-import BlushedImg from '../assets/blushingFace.png';
-import SunglassesImg from '../assets/sunglassesFace.png';
-import FlushedImg from '../assets/flushedFace.png';
-import StarEyesImg from '../assets/starEyesFace.png';
-import TongueOutImg from '../assets/tongueOutFace.png';
-import SkullImg from '../assets/skullFace.png';
 
 const Cups = (props) => {
   const {
@@ -49,12 +24,18 @@ const Cups = (props) => {
     record,
   } = props;
 
-  const handleText = (idx) => EmotionText[currentCup - 1][idx];
+
+  const handleText = (value) => CupObjects[currentCup - 1].emotionText[value - 1];
+
+  const handleEmoji = (iconNumber) => CupObjects[currentCup - 1].emoticons[iconNumber];
+
+  const satisfactionQuery = CupObjects[currentCup - 1].numberText;
+
 
   const handleIconClick = (event) => {
     event.preventDefault();
     setHappinessScore(Number(event.target.value));
-    setFeelingsText(handleText(event.target.name));
+    setFeelingsText(handleText(event.target.value));
     setIconHover(55);
   };
 
@@ -75,47 +56,6 @@ const Cups = (props) => {
     setCurrentCup((cup) => cup + 1);
   };
 
-  const handleEmoji = () => {
-    if (currentCup === 1) {
-      return ([SleepingImg, ExpressionlessImg, NeutralImg, SlightlySmilingImg, BlushedImg]);
-    } if (currentCup === 2) {
-      return ([ConfusedImg, ExpressionlessImg, NeutralImg, SlightlySmilingImg, BlushedImg]);
-    } if (currentCup === 3) {
-      return ([VerySadImg, UnhappyImg, NeutralImg, BlushedImg, SmilingImg]);
-    } if (currentCup === 4) {
-      return ([PerseveringImg, VerySadImg, GrimacingImg, SmilingImg, PartyImg]);
-    } if (currentCup === 5) {
-      return ([ConfoundedImg, PerseveringImg, FlushedImg, SunglassesImg, StarEyesImg]);
-    } if (currentCup === 6) {
-      return ([WearyImg, ConfoundedImg, FlushedImg, TongueOutImg, ExplodingImg]);
-    } if (currentCup === 7) {
-      return ([DizzyImg, PoisonedImg, FlushedImg, ExplodingImg, HighVoltageImg]);
-    } if (currentCup === 8) {
-      return ([SkullImg, DizzyImg, NeutralImg, HighVoltageImg, CollisionImg]);
-    } if (currentCup === 9) {
-      return ([SkullImg]);
-    }
-  };
-
-  const satisfactionQuery = () => {
-    if (currentCup === 1) {
-      return ('first');
-    } if (currentCup === 2) {
-      return ('second');
-    } if (currentCup === 3) {
-      return ('third');
-    } if (currentCup === 4) {
-      return ('fourth');
-    } if (currentCup === 5) {
-      return ('fifth');
-    } if (currentCup === 6) {
-      return ('sixth');
-    } if (currentCup === 7) {
-      return ('seventh');
-    } if (currentCup === 8) {
-      return ('eighth');
-    } return ('');
-  };
 
   const connectorText = () => {
     if (happinessScore >= 3 && productivityScore >= 3) {
@@ -137,15 +77,15 @@ const Cups = (props) => {
       <h1 className="cup-titles">
         CUP {currentCup}
       </h1>
-      <p className="cup-text">Please click the emoji that best describes your level of satisfaction after your {satisfactionQuery()} cup.</p>
+      <p className="cup-text">Please click the emoji that best describes your level of satisfaction after your {satisfactionQuery} cup.</p>
       <div>
-        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={1} name={0} type="image" src={handleEmoji()[0]} alt="sleepy" height="46" width="46" />
-        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={2} name={1} type="image" src={handleEmoji()[1]} alt="Expressionless face" height="46" width="46" />
-        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={3} name={2} type="image" src={handleEmoji()[2]} alt="Smiling face" height="46" width="46" />
-        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={4} name={3} type="image" src={handleEmoji()[3]} alt="Confused face" height="46" width="46" />
-        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={5} name={4} type="image" src={handleEmoji()[4]} alt="Unhappy face" height="46" width="46" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={1} name={0} type="image" src={handleEmoji(0)} alt="sleepy" height="46" width="46" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={2} name={1} type="image" src={handleEmoji(1)} alt="Expressionless face" height="46" width="46" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={3} name={2} type="image" src={handleEmoji(2)} alt="Smiling face" height="46" width="46" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={4} name={3} type="image" src={handleEmoji(3)} alt="Confused face" height="46" width="46" />
+        <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={5} name={4} type="image" src={handleEmoji(4)} alt="Unhappy face" height="46" width="46" />
       </div>
-      <p className="cup-text">How productive were you after this {satisfactionQuery()} cup ?</p>
+      <p className="cup-text">How productive were you after this {satisfactionQuery} cup ?</p>
       <div>
         <input className="star" onClick={(event) => handleStarClick(event, 'was not productive at all')} name="" value={1} type="image" src={StarImg} alt="I wasn't productive at all" height="45" width="45" />
         <input className="star" onClick={(event) => handleStarClick(event, 'was not very productive')} name="" value={2} type="image" src={StarImg} alt="barely productive" height="45" width="45" />

@@ -21,6 +21,7 @@ const App = () => {
   const [productivityScore, setProductivityScore] = useState(0);
   const [averageProductivityScore, setAverageProductivityScore] = useState(0);
 
+
   const IntroComponent = () => (
     <div className="central-component">
       <div className="spacer" />
