@@ -40,12 +40,13 @@ a {
   border-color:whitesmoke;
   border-radius: 0.3rem;
   border-style: solid;
+  &:focus {
+    outline-width: 1px;
+    outline-color: rgb(230, 203, 154);
+    outline-offset: -2px;
+  }
 }
-.button:focus {
-  outline-width: 1px;
-  outline-color: rgb(230, 203, 154);
-  outline-offset: -2px;
-}
+
 
 .spacer_large {
 min-height: 14vh;

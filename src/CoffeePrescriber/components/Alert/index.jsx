@@ -2,13 +2,11 @@ import React from 'react';
 import classNames from 'classnames';
 import './Alert.scss';
 
-const Alert = (props) => {
-  const {
-    modalText,
-    closeModal,
-    displayModal,
-  } = props;
-
+const Alert = ({
+  modalText,
+  closeModal,
+  displayModal,
+}) => {
   const modalClasses = classNames('alert_container', {
     is_visible: displayModal,
   });

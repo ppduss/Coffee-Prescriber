@@ -28,12 +28,13 @@ margin: 0px 0px -20px 0px;
 }
 .star {
   margin: 7px 0.2vw 7px 0.2vw;
+  &:hover {
+    filter: gray;
+    -webkit-filter: grayscale(0.7); 
+    filter: grayscale(0.7);
+  }
 }
-.star:hover {
-  filter: gray;
-  -webkit-filter: grayscale(0.7); 
-  filter: grayscale(0.7);
-}
+
 .feelings {
   color: rgb(75, 44, 21);
   font-size: 0.9em;

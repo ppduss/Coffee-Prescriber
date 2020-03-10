@@ -30,8 +30,7 @@ const App = () => {
         <button className="button" onClick={() => setCurrentComponent('cup')}>Drink first cup </button>
       </div>
       <div>
-        <DrugWarning
-        />
+        <DrugWarning />
       </div>
     </div>
   );

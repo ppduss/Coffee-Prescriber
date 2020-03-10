@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Analysis.scss';
-import Alert from '../Alert/Alert';
-import MyResponsiveLine from './NivoLine/NivoLine';
+import Alert from '../Alert';
+import MyResponsiveLine from './MyNivoLine';
 
 const Analysis = (props) => {
   const {

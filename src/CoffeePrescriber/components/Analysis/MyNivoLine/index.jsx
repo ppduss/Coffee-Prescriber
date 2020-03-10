@@ -1,11 +1,7 @@
 import React from 'react';
 import { ResponsiveLine } from '@nivo/line';
 
-const NivoLine = (props) => {
-  const {
-    record,
-  } = props;
-
+const NivoLine = ({ record }) => {
   const generateData = (stat) => record.map((_, idx) => ({
     x: `Cup ${idx + 1}`,
     y: record[idx][stat],
