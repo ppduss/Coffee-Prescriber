@@ -7,9 +7,7 @@ const Alert = ({
   closeModal,
   displayModal,
 }) => {
-  const modalClasses = classNames('alert_container', {
-    is_visible: displayModal,
-  });
+  const modalClasses = classNames('alert_container', { is_visible: displayModal });
 
   return (
     <div className={modalClasses}>

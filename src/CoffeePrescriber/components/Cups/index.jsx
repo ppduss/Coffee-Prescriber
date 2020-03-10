@@ -4,6 +4,7 @@ import Steam from '../Steam';
 import CupObjects from './CupObjects';
 import StarImg from '../assets/mediumStar.png';
 
+
 const Cups = (props) => {
   const {
     setCurrentComponent,
@@ -23,14 +24,10 @@ const Cups = (props) => {
     setRecord,
     record,
   } = props;
-
-
+ 
   const handleText = (value) => CupObjects[currentCup - 1].emotionText[value - 1];
-
   const handleEmoji = (iconNumber) => CupObjects[currentCup - 1].emoticons[iconNumber];
-
   const satisfactionQuery = CupObjects[currentCup - 1].numberText;
-
 
   const handleIconClick = (event) => {
     event.preventDefault();
@@ -45,17 +42,21 @@ const Cups = (props) => {
     setProductivityScore(Number(e.target.value));
   };
 
-  const handleSubmit = () => {
-    // ADDING CUP TO RECORDS
-    const newRecord = record;
-    newRecord[currentCup - 1] = { happiness: happinessScore, productivity: productivityScore };
-    setRecord(newRecord);
-    setAverageHappinessScore(newRecord.reduce((acc, cur) => acc + cur.happiness, 0) / newRecord.length);
-    setAverageProductivityScore(newRecord.reduce((acc, cur) => acc + cur.productivity, 0) / newRecord.length);
-    setCurrentComponent('analysis');
-    setCurrentCup((cup) => cup + 1);
-  };
+  console.log(111, productivityText, productivityScore, feelingsText, happinessScore);
 
+  const handleSubmit = () => {
+    if (productivityScore && happinessScore) {
+      const newRecord = record;
+      newRecord[currentCup - 1] = { happiness: happinessScore, productivity: productivityScore };
+      setRecord(newRecord);
+      setAverageHappinessScore(newRecord.reduce((acc, cur) => acc + cur.happiness, 0) / newRecord.length);
+      setAverageProductivityScore(newRecord.reduce((acc, cur) => acc + cur.productivity, 0) / newRecord.length);
+      setCurrentComponent('analysis');
+      setCurrentCup((cup) => cup + 1);
+    } else {
+
+    }
+  };
 
   const connectorText = () => {
     if (happinessScore >= 3 && productivityScore >= 3) {
@@ -78,7 +79,7 @@ const Cups = (props) => {
         CUP {currentCup}
       </h1>
       <p className="cup-text">Please click the emoji that best describes your level of satisfaction after your {satisfactionQuery} cup.</p>
-      <div>
+      <div classNames=({'icon-box_emoji'})>
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={1} name={0} type="image" src={handleEmoji(0)} alt="sleepy" height="46" width="46" />
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={2} name={1} type="image" src={handleEmoji(1)} alt="Expressionless face" height="46" width="46" />
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={3} name={2} type="image" src={handleEmoji(2)} alt="Smiling face" height="46" width="46" />
@@ -86,7 +87,7 @@ const Cups = (props) => {
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={5} name={4} type="image" src={handleEmoji(4)} alt="Unhappy face" height="46" width="46" />
       </div>
       <p className="cup-text">How productive were you after this {satisfactionQuery} cup ?</p>
-      <div>
+      <div classNames="icon-box_star">
         <input className="star" onClick={(event) => handleStarClick(event, 'was not productive at all')} name="" value={1} type="image" src={StarImg} alt="I wasn't productive at all" height="45" width="45" />
         <input className="star" onClick={(event) => handleStarClick(event, 'was not very productive')} name="" value={2} type="image" src={StarImg} alt="barely productive" height="45" width="45" />
         <input className="star" onClick={(event) => handleStarClick(event, 'was somewhat productive')} name="" value={3} type="image" src={StarImg} alt="somewhat productive" height="45" width="45" />
@@ -96,10 +97,7 @@ const Cups = (props) => {
       <div className="spacer_small" />
       <div className="cup-spacer">
         <div className="feelings">
-          {
-        feelingsText && productivityText
-          && `${feelingsText}${connectorText()}${productivityText}`
-        }
+          {feelingsText && productivityText && `${feelingsText}${connectorText()}${productivityText}`}
         </div>
       </div>
       <div className="spacer" />

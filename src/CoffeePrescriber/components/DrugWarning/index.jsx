@@ -11,18 +11,21 @@ const DrugWarning = () => {
       setEffectState(currentDrug.effect);
     }
   };
+
   const handleSelectAgeChange = (e) => {
-    if (e.target.value === '1') {
-      return (setEffectState(''));
-    } if (e.target.value === '2') {
-      return (setEffectState('Caffeine isn’t recommended for children under 12.'));
-    } if (e.target.value === '3') {
-      return (
-        setEffectState('Developing teens should have no more than 100 mg of caffeine daily.'));
-    } if (e.target.value === '4') {
-      return (setEffectState('You are good to go !'));
-    } if (e.target.value === '5') {
-      return (setEffectState('Carry on in moderation, old timer.'));
+    switch (e.target.value) {
+      case '1':
+        return setEffectState('');
+      case '2':
+        return setEffectState('Caffeine isn’t recommended for children under 12.');
+      case '3':
+        return setEffectState('Developing teens should have no more than 100 mg of caffeine daily.');
+      case '4':
+        return setEffectState('You are good to go !');
+      case '5':
+        return setEffectState('Carry on in moderation, old timer.');
+      default:
+        return setEffectState('test');
     }
   };
 
@@ -31,7 +34,6 @@ const DrugWarning = () => {
       <p className="note">Here&#39;s an optional tool to determine if coffee is right for you.</p>
       <div className="meds">
         <p className="note_inputs_txt">Do you take any of the following</p>
-
         <select className="button button_optional" onChange={handleSelectChange}>
           <option>medication ? </option>
           {drugs.map((drug) => <option key={drug.name}>{drug.name}</option>)}
@@ -40,7 +42,6 @@ const DrugWarning = () => {
       <br />
       <div className="meds">
         <p className="note_inputs_txt">What is your</p>
-
         <select className="button button_optional" onChange={handleSelectAgeChange} name="age">
           <option value="1">age group ? </option>
           <option value="2"> 12 years or less </option>
@@ -50,7 +51,6 @@ const DrugWarning = () => {
         </select>
       </div>
       <p className="warning spacer_medium">{effectState}</p>
-
     </div>
   );
 };

@@ -17,14 +17,14 @@ const Analysis = (props) => {
   } = props;
 
   const [displayAlertModal, setDisplayAlertModal] = useState(false);
-  const [modal, setModal] = useState('WARNING: Too much coffee in too short a span of time. Please slow down.');
+  const [alertModal, setAlertModal] = useState('WARNING: Too much coffee in too short a span of time. Please slow down.');
 
   useEffect(() => {
     if (currentCup === 7) {
       setDisplayAlertModal(true);
     } if (currentCup === 8) {
       setDisplayAlertModal(true);
-      setModal('DANGER: TOO MUCH COFFEE !');
+      setAlertModal('DANGER: TOO MUCH COFFEE !');
     }
   }, []);
 
@@ -79,7 +79,7 @@ const Analysis = (props) => {
         currentCup={currentCup}
         displayModal={displayAlertModal}
         closeModal={() => setDisplayAlertModal(false)}
-        modalText={modal}
+        modalText={alertModal}
       />
     </>
   );

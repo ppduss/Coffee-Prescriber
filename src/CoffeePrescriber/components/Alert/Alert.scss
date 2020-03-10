@@ -8,7 +8,7 @@
   display: none;
   justify-content: center;
   align-items: center;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.3);
 }
 
 .is_visible {
@@ -35,9 +35,9 @@
   border-style: solid;
   border-radius: 8px;
   z-index: 10;
-  -webkit-box-shadow: 6px 6px 10px -5px rgba(0,0,0,0.43);
-  -moz-box-shadow: 6px 6px 10px -5px rgba(0,0,0,0.43);
-  box-shadow: 6px 6px 10px -5px rgba(0,0,0,0.43);
+  -webkit-box-shadow: 6px 6px 10px -5px rgba(0,0,0,0.73);
+  -moz-box-shadow: 6px 6px 10px -5px rgba(0,0,0,0.73);
+  box-shadow: 6px 6px 10px -5px rgba(0,0,0,0.73);
   .alert {
     color: maroon;
     font-size: 0.8em;
