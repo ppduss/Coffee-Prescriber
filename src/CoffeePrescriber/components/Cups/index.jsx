@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Cups.scss';
 import Steam from '../Steam';
 import CupObjects from './CupObjects';
@@ -24,7 +24,7 @@ const Cups = (props) => {
     setRecord,
     record,
   } = props;
- 
+
   const handleText = (value) => CupObjects[currentCup - 1].emotionText[value - 1];
   const handleEmoji = (iconNumber) => CupObjects[currentCup - 1].emoticons[iconNumber];
   const satisfactionQuery = CupObjects[currentCup - 1].numberText;
@@ -42,7 +42,8 @@ const Cups = (props) => {
     setProductivityScore(Number(e.target.value));
   };
 
-  console.log(111, productivityText, productivityScore, feelingsText, happinessScore);
+  const [forceEmoji, setForceEmoji] = useState('');
+  const [forceStar, setForceStar] = useState('');
 
   const handleSubmit = () => {
     if (productivityScore && happinessScore) {
@@ -53,8 +54,10 @@ const Cups = (props) => {
       setAverageProductivityScore(newRecord.reduce((acc, cur) => acc + cur.productivity, 0) / newRecord.length);
       setCurrentComponent('analysis');
       setCurrentCup((cup) => cup + 1);
+    } else if (productivityScore) {
+      setForceEmoji('_force');
     } else {
-
+      setForceStar('_force');
     }
   };
 
@@ -79,7 +82,7 @@ const Cups = (props) => {
         CUP {currentCup}
       </h1>
       <p className="cup-text">Please click the emoji that best describes your level of satisfaction after your {satisfactionQuery} cup.</p>
-      <div classNames=({'icon-box_emoji'})>
+      <div className={`icon-box_emoji${forceEmoji}`}>
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={1} name={0} type="image" src={handleEmoji(0)} alt="sleepy" height="46" width="46" />
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={2} name={1} type="image" src={handleEmoji(1)} alt="Expressionless face" height="46" width="46" />
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={3} name={2} type="image" src={handleEmoji(2)} alt="Smiling face" height="46" width="46" />
@@ -87,7 +90,7 @@ const Cups = (props) => {
         <input className="button--emoji" onClick={(event) => handleIconClick(event)} value={5} name={4} type="image" src={handleEmoji(4)} alt="Unhappy face" height="46" width="46" />
       </div>
       <p className="cup-text">How productive were you after this {satisfactionQuery} cup ?</p>
-      <div classNames="icon-box_star">
+      <div className={`icon-box_star${forceStar}`}>
         <input className="star" onClick={(event) => handleStarClick(event, 'was not productive at all')} name="" value={1} type="image" src={StarImg} alt="I wasn't productive at all" height="45" width="45" />
         <input className="star" onClick={(event) => handleStarClick(event, 'was not very productive')} name="" value={2} type="image" src={StarImg} alt="barely productive" height="45" width="45" />
         <input className="star" onClick={(event) => handleStarClick(event, 'was somewhat productive')} name="" value={3} type="image" src={StarImg} alt="somewhat productive" height="45" width="45" />

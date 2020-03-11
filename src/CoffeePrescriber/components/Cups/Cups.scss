@@ -19,19 +19,23 @@ margin: 0px 0px -20px 0px;
 }
 .button--emoji {
   margin: 0.5vw 0.5vw 0.5vw 0.5vw;
-}
-.button--emoji:hover {
+  &:hover {
   margin: 0.5vw 0.5vw 0.5vw 0.5vw;
   filter: gray;
   -webkit-filter: grayscale(0.7); 
   filter: grayscale(0.7);
 }
+}
+
 .star {
   margin: 7px 0.2vw 7px 0.2vw;
   &:hover {
     filter: gray;
     -webkit-filter: grayscale(0.7); 
     filter: grayscale(0.7);
+  }
+  &:focus {
+    background-color: brown;
   }
 }
 
@@ -41,3 +45,17 @@ margin: 0px 0px -20px 0px;
   margin: 0px 20vw;
 }
 
+.icon-box_emoji{
+}
+.icon-box_emoji_force {
+  border-color: brown;
+  border-style: solid;
+  
+}
+.icon-box_star {
+
+}
+.icon-box_star_force {
+   border-color: brown;
+  border-style: solid;
+}
