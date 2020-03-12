@@ -28,7 +28,9 @@ margin: 0px 0px -20px 0px;
 }
 
 .star {
-  margin: 7px 0.2vw 7px 0.2vw;
+  // margin: 7px 0.2vw 7px 0.2vw;
+  margin: 0 auto;
+
   &:hover {
     filter: gray;
     -webkit-filter: grayscale(0.7); 
@@ -46,16 +48,28 @@ margin: 0px 0px -20px 0px;
 }
 
 .icon-box_emoji{
+  width: fit-content;
+  margin: auto;
 }
+
 .icon-box_emoji_force {
-  border-color: brown;
+  border-color: rgb(209, 209, 209);
   border-style: solid;
+  border-radius: 12px;
+    width: fit-content;
+  margin: auto;
   
 }
 .icon-box_star {
+    width: fit-content;
+  margin: auto;
 
 }
 .icon-box_star_force {
-   border-color: brown;
+  border-color: rgb(209, 209, 209);
   border-style: solid;
+    border-radius: 12px;
+
+    width: fit-content;
+  margin: auto;
 }

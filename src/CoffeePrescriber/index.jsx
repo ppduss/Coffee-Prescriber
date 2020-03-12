@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './global.scss';
 import CoffeeCup from './components/assets/coffee.png';
-// COMPONENTS
 import Cups from './components/Cups';
 import Analysis from './components/Analysis';
 import Outro from './components/Outro';
@@ -14,22 +13,18 @@ const App = () => {
   const [averageHappinessScore, setAverageHappinessScore] = useState();
   const [IconHover, setIconHover] = useState(48);
   const [record, setRecord] = useState([]);
-  // FEELINGS & PRODUCTIVITY
   const [feelingsText, setFeelingsText] = useState('');
   const [happinessScore, setHappinessScore] = useState(0);
   const [productivityText, setProductivityText] = useState('');
   const [productivityScore, setProductivityScore] = useState(0);
   const [averageProductivityScore, setAverageProductivityScore] = useState(0);
 
-
   const IntroComponent = () => (
     <div className="central-component">
-      <div className="spacer" />
-      <div className="App-header">
-        <img src={CoffeeCup} alt="coffee mug" />
-        <h1>Are you ready for coffee ?</h1>
-        <button className="button" onClick={() => setCurrentComponent('cup')}>Drink first cup </button>
-      </div>
+      {/* <div className="spacer" /> */}
+      <img className="cup-img" src={CoffeeCup} alt="coffee mug" />
+      <h1>Are you ready for coffee ?</h1>
+      <button className="button" onClick={() => setCurrentComponent('cup')}>Drink first cup </button>
       <div>
         <DrugWarning />
       </div>

@@ -4,7 +4,6 @@ import Steam from '../Steam';
 import CupObjects from './CupObjects';
 import StarImg from '../assets/mediumStar.png';
 
-
 const Cups = (props) => {
   const {
     setCurrentComponent,
@@ -56,8 +55,11 @@ const Cups = (props) => {
       setCurrentCup((cup) => cup + 1);
     } else if (productivityScore) {
       setForceEmoji('_force');
+    } else if (happinessScore) {
+      setForceStar('_force');
     } else {
       setForceStar('_force');
+      setForceEmoji('_force');
     }
   };
 

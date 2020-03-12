@@ -9,8 +9,15 @@
 }
 
 .meds {
-  justify-content: right;
+  // justify-content: center;
   display: inline-flex;
   flex-wrap: wrap;
   align-items: baseline;
+  
+}
+.warning {
+  color: rgb(211, 54, 54);
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+  margin: 10px 80px;
 }

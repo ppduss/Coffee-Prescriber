@@ -37,8 +37,8 @@ const Outro = (props) => {
 
   const OutroContent = () => (
     <div className="central-component">
-      <div className="spacer" />
-      <img src={CoffeeCup} alt="coffee mug" />
+      {/* <div className="spacer" /> */}
+      <img className="cup-img" src={CoffeeCup} alt="coffee mug" />
       <h1>Thanks for playing !</h1>
       <button className="button" onClick={handleReset}>Would you like to begin again ? </button>
       <div className="spacer" />
@@ -50,6 +50,8 @@ const Outro = (props) => {
           url="https://en.wikipedia.org/wiki/Coffee"
           children={<TwitterIcon size={38} round />}
         />
+      </div>
+      <div className="social-media">
         <FacebookShareButton
           quote="Wow coffee!"
           round="true"
@@ -57,12 +59,16 @@ const Outro = (props) => {
           url="https://en.wikipedia.org/wiki/Coffee"
           children={<FacebookIcon size={38} round />}
         />
+      </div>
+      <div className="social-media">
         <RedditShareButton
           title="Coffee Prescriber"
           hashtag="#coffee"
           url="https://en.wikipedia.org/wiki/Coffee"
           children={<RedditIcon size={38} round />}
         />
+      </div>
+      <div className="social-media">
         <TumblrShareButton
           title="Coffee Prescriber"
           url="https://en.wikipedia.org/wiki/Coffee"
