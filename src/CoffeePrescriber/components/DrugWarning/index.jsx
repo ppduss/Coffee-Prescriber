@@ -30,7 +30,7 @@ const DrugWarning = () => {
   };
 
   return (
-    <div className="App-footer">
+    <div className="drugs-container">
       <p className="note">Here&#39;s an optional tool to determine if coffee is right for you.</p>
       <div className="meds">
         <p className="note_inputs_txt">Do you take any of the following</p>

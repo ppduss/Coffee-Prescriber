@@ -37,21 +37,19 @@ const Outro = (props) => {
 
   const OutroContent = () => (
     <div className="central-component">
-      {/* <div className="spacer" /> */}
       <img className="cup-img" src={CoffeeCup} alt="coffee mug" />
       <h1>Thanks for playing !</h1>
       <button className="button" onClick={handleReset}>Would you like to begin again ? </button>
-      <div className="spacer" />
       <p>Feel free to share:</p>
-      <div className="social-media">
+      <span className="social-media">
         <TwitterShareButton
           title="Coffee Prescriber"
           hashtags="coffee, coffeeprescription"
           url="https://en.wikipedia.org/wiki/Coffee"
           children={<TwitterIcon size={38} round />}
         />
-      </div>
-      <div className="social-media">
+      </span>
+      <span className="social-media">
         <FacebookShareButton
           quote="Wow coffee!"
           round="true"
@@ -59,24 +57,22 @@ const Outro = (props) => {
           url="https://en.wikipedia.org/wiki/Coffee"
           children={<FacebookIcon size={38} round />}
         />
-      </div>
-      <div className="social-media">
+      </span>
+      <span className="social-media">
         <RedditShareButton
           title="Coffee Prescriber"
           hashtag="#coffee"
           url="https://en.wikipedia.org/wiki/Coffee"
           children={<RedditIcon size={38} round />}
         />
-      </div>
-      <div className="social-media">
+      </span>
+      <span className="social-media">
         <TumblrShareButton
           title="Coffee Prescriber"
           url="https://en.wikipedia.org/wiki/Coffee"
           children={<TumblrIcon size={38} round />}
           />
-      </div>
-      <div className="spacer_large" />
-      <div className="spacer_large" />
+      </span>
       <p className="note">Check out <a href="www.caffeineinformer.com">www.caffeineinformer.com</a> for more information about coffee and other caffeine containing bevrages.</p>
     </div>
   );

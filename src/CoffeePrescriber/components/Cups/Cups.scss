@@ -1,50 +1,55 @@
+.analysis {
+  // margin-top: 8%;
+  // margin-bottom: 1%;
+
+}
+
+.button-emoji {
+  margin: 0.3rem;
+  height: 2.8rem;
+  width: 2.8rem;
+  border-bottom: transparent solid 3px;
+  padding-bottom: 0.5rem;
+  transition: all 0.2s;
+  &:hover {
+    filter: gray;
+    -webkit-filter: grayscale(0.7); 
+    filter: grayscale(0.7);
+  }
+}
+
 .cup-text {
-  font-size: 0.85em;
-  margin: 45px 100px 20px;
+  font-size: calc(0.9rem + 0.5vw);
+  margin: 4% 20% 1%;
   // font-family: Montserrat ;
   font-family: Raleway;
   // font-family: Roboto ;
 }
-.cup-spacer {
-  min-height: 8vh;
-}
+
 .cup-titles {
   font-family: Roboto ;
   color: white;
   text-decoration: overline;
   text-decoration-color: rgb(203, 218, 189);
 }
-.svg {
-margin: 0px 0px -20px 0px;
+.cup-component {
+  padding-top: 5%;
 }
-.button--emoji {
-  margin: 0.5vw 0.5vw 0.5vw 0.5vw;
-  &:hover {
-  margin: 0.5vw 0.5vw 0.5vw 0.5vw;
-  filter: gray;
-  -webkit-filter: grayscale(0.7); 
-  filter: grayscale(0.7);
+.prod-and-feels_container{
+  min-height: 20%;
+  height: 100px;
+  width: 50%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.445);
+  border-radius: 16px;
+  align-items: center;
 }
-}
-
-.star {
-  // margin: 7px 0.2vw 7px 0.2vw;
-  margin: 0 auto;
-
-  &:hover {
-    filter: gray;
-    -webkit-filter: grayscale(0.7); 
-    filter: grayscale(0.7);
-  }
-  &:focus {
-    background-color: brown;
-  }
-}
-
-.feelings {
-  color: rgb(75, 44, 21);
-  font-size: 0.9em;
-  margin: 0px 20vw;
+.prod-and-feels_txt {
+  color: rgb(36, 21, 10);
+  font-size: 0.9rem;
+  margin: 0px 2rem;
 }
 
 .icon-box_emoji{
@@ -52,24 +57,43 @@ margin: 0px 0px -20px 0px;
   margin: auto;
 }
 
-.icon-box_emoji_force {
+.force {
   border-color: rgb(209, 209, 209);
   border-style: solid;
   border-radius: 12px;
-    width: fit-content;
-  margin: auto;
-  
+  width: fit-content;
+  margin: auto;  
 }
+
 .icon-box_star {
-    width: fit-content;
+  width: fit-content;
   margin: auto;
-
 }
-.icon-box_star_force {
-  border-color: rgb(209, 209, 209);
-  border-style: solid;
-    border-radius: 12px;
+// .icon-box_star_force {
+//   border-color: rgb(209, 209, 209);
+//   border-style: solid;
+//     border-radius: 12px;
 
-    width: fit-content;
-  margin: auto;
+//     width: fit-content;
+//   margin: auto;
+// }
+
+.star {
+  margin: 0.3rem;
+  height: 2.8rem;
+  width: 2.8rem;
+  border-bottom: transparent solid 3px;
+  &:hover {
+    filter: grayscale(0.7);
+  }
+}
+
+.steam-container {
+  // margin-top: 5vh;
+}
+.svg {
+  margin-bottom: -20px;
+}
+._selected {
+  border-bottom: rgb(165, 119, 66) solid 3px;
 }

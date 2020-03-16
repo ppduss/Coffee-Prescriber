@@ -1,23 +1,21 @@
 
-.button-margin {
-  margin-right: 9vw;
-  background-color: red;
-}
+.drugs-container {
+  .button_optional{
+    font-size: 0.90rem;
+  }
 
-.button_optional{
-  font-size: 0.90rem;
-}
-
-.meds {
-  // justify-content: center;
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  
-}
-.warning {
-  color: rgb(211, 54, 54);
-  font-size: 0.85rem;
-  flex-wrap: wrap;
-  margin: 10px 80px;
+  .meds {
+    // justify-content: center;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    
+  }
+  .warning {
+    color: rgb(211, 54, 54);
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    margin: 10px 80px;
+    min-height: 4rem;
+  }
 }

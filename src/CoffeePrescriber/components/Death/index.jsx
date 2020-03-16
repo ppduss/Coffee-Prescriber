@@ -29,14 +29,11 @@ const Death = (props) => {
 
   const DeathComponent = () => (
     <div className="central-component">
-      <div className="spacer" />
       <body>
         <img className="death" src={SkullImg} alt="coffee mug" width="150" />
         <h1>You died !</h1>
-        <div className="spacer_small" />
         <div>Average satisfaction index: {averageHappinessScore.toFixed(1)}</div>
         <div>Average productivity index: {averageProductivityScore.toFixed(1)} </div>
-        <div className="spacer_medium" />
         <button className="button" onClick={handleReset}>Would you like to begin again ? </button>
         <button
           className="button"

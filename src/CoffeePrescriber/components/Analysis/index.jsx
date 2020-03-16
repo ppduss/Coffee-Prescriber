@@ -33,17 +33,13 @@ const Analysis = (props) => {
 
   const AnalysisContent = () => (
     <div className="central-component_analysis">
-      <div className="spacer_medium" />
       <h1>Analysis</h1>
       <p className="paragraph">This chart will plot your performance and state of mind during this consumption period.  </p>
-      <div className="spacer_small" />
       <div className="plot">
         <MyResponsiveLine record={record} />
       </div>
-      <div className="spacer_small" />
       <div className="note"> Your average satisfaction index is currently {roundedAverageHappinessScore}, whereas your productivity index is {roundedAverageProductivityScore}. </div>
       <div className="paragraph"> Be mindful of the <a href="https://en.wikipedia.org/wiki/Yerkes%E2%80%93Dodson_law" target="_blank" rel="noopener noreferrer">Yerkes–Dodson law</a> that states a relationship between arousal and performance only on specific types of tasks, and only up to a certain point. </div>
-      <div className="spacer_medium" />
       {currentCup <= 9 && (
       <button
         className="button"

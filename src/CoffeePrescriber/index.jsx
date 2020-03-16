@@ -8,26 +8,31 @@ import Death from './components/Death';
 import DrugWarning from './components/DrugWarning';
 
 const App = () => {
-  const [currentComponent, setCurrentComponent] = useState('intro');
+  const [currentComponent, setCurrentComponent] = useState('outro');
   const [currentCup, setCurrentCup] = useState(1);
   const [averageHappinessScore, setAverageHappinessScore] = useState();
-  const [IconHover, setIconHover] = useState(48);
   const [record, setRecord] = useState([]);
   const [feelingsText, setFeelingsText] = useState('');
   const [happinessScore, setHappinessScore] = useState(0);
   const [productivityText, setProductivityText] = useState('');
   const [productivityScore, setProductivityScore] = useState(0);
   const [averageProductivityScore, setAverageProductivityScore] = useState(0);
+  // cups
+  const [forceEmoji, setForceEmoji] = useState('');
+  const [forceStar, setForceStar] = useState('');
+  const [emojiSelected, setEmojiSelected] = useState('');
+  const [starSelected, setStarSelected] = useState('');
+
+  // console.log(111, emojiSelected);
 
   const IntroComponent = () => (
-    <div className="central-component">
-      {/* <div className="spacer" /> */}
-      <img className="cup-img" src={CoffeeCup} alt="coffee mug" />
-      <h1>Are you ready for coffee ?</h1>
-      <button className="button" onClick={() => setCurrentComponent('cup')}>Drink first cup </button>
-      <div>
-        <DrugWarning />
+    <div className="central-component intro-component">
+      <div className="coffee-logo-container">
+        <img className="cup-img" src={CoffeeCup} alt="coffee mug" />
+        <h1>Are you ready for coffee ?</h1>
+        <button className="button" onClick={() => setCurrentComponent('cup')}>Drink first cup </button>
       </div>
+      <div className="warning-container"><DrugWarning /></div>
     </div>
   );
 
@@ -54,10 +59,16 @@ const App = () => {
             setProductivityText={setProductivityText}
             feelingsText={feelingsText}
             setFeelingsText={setFeelingsText}
-            setIconHover={setIconHover}
-            IconHover={IconHover}
             record={record}
             setRecord={setRecord}
+            setForceEmoji={setForceEmoji}
+            forceEmoji={forceEmoji}
+            setForceStar={setForceStar}
+            forceStar={forceStar}
+            setEmojiSelected={setEmojiSelected}
+            emojiSelected={emojiSelected}
+            setStarSelected={setStarSelected}
+            starSelected={starSelected}
           />
         );
       case 'analysis':
