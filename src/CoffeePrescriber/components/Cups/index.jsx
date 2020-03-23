@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Cups.scss';
 import Steam from '../Steam';
 import CupObjects from './CupObjects';

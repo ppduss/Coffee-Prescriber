@@ -33,7 +33,7 @@ const DrugWarning = () => {
     <div className="drugs-container">
       <p className="note">Here&#39;s an optional tool to determine if coffee is right for you.</p>
       <div className="meds">
-        <p className="note_inputs_txt">Do you take any of the following</p>
+        <p className="note_inputs_txt">Do you take any</p>
         <select className="button button_optional" onChange={handleSelectChange}>
           <option>medication ? </option>
           {drugs.map((drug) => <option key={drug.name}>{drug.name}</option>)}
