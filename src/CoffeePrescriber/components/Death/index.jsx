@@ -1,4 +1,5 @@
 import React from 'react';
+import './Death.scss';
 import SkullImg from '../assets/skullFace.png';
 
 const Death = (props) => {
@@ -29,11 +30,15 @@ const Death = (props) => {
 
   const DeathComponent = () => (
     <div className="central-component">
-      <body>
-        <img className="death" src={SkullImg} alt="coffee mug" width="150" />
-        <h1>You died !</h1>
-        <div>Average satisfaction index: {averageHappinessScore.toFixed(1)}</div>
-        <div>Average productivity index: {averageProductivityScore.toFixed(1)} </div>
+      <div>
+        <div className="death">
+          <img className="d" src={SkullImg} alt="coffee mug" width="150" />
+          <h1>You died !</h1>
+        </div>
+        <div className="index">
+          <div>Your average satisfaction index: {averageHappinessScore.toFixed(1)}</div>
+          <div>Your average productivity index: {averageProductivityScore.toFixed(1)} </div>
+        </div>
         <button className="button" onClick={handleReset}>Would you like to begin again ? </button>
         <button
           className="button"
@@ -42,7 +47,7 @@ const Death = (props) => {
           }}
         >Quit
         </button>
-      </body>
+      </div>
     </div>
   );
 

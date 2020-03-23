@@ -8,7 +8,7 @@ import Death from './components/Death';
 import DrugWarning from './components/DrugWarning';
 
 const App = () => {
-  const [currentComponent, setCurrentComponent] = useState('outro');
+  const [currentComponent, setCurrentComponent] = useState('intro');
   const [currentCup, setCurrentCup] = useState(1);
   const [averageHappinessScore, setAverageHappinessScore] = useState();
   const [record, setRecord] = useState([]);

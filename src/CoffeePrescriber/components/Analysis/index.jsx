@@ -33,39 +33,42 @@ const Analysis = (props) => {
 
   const AnalysisContent = () => (
     <div className="central-component_analysis">
-      <h1>Analysis</h1>
-      <p className="paragraph">This chart will plot your performance and state of mind during this consumption period.  </p>
+      <div className="analysis-header"><h1>Analysis</h1>
+        <p className="paragraph">This chart will plot your performance and state of mind during this consumption period.  </p>
+      </div>
       <div className="plot">
         <MyResponsiveLine record={record} />
       </div>
       <div className="note"> Your average satisfaction index is currently {roundedAverageHappinessScore}, whereas your productivity index is {roundedAverageProductivityScore}. </div>
       <div className="paragraph"> Be mindful of the <a href="https://en.wikipedia.org/wiki/Yerkes%E2%80%93Dodson_law" target="_blank" rel="noopener noreferrer">Yerkes–Dodson law</a> that states a relationship between arousal and performance only on specific types of tasks, and only up to a certain point. </div>
-      {currentCup <= 9 && (
-      <button
-        className="button"
-        type="button"
-        onClick={() => {
-          if (currentCup <= 8) {
-            setCurrentComponent('cup');
-            setProductivityScore(0);
-            setHappinessScore(0);
-            setFeelingsText('');
-            setProductivityText('');
-          } else {
-            setCurrentComponent('death');
-          }
-        }}
+      <div>
+        {currentCup <= 9 && (
+        <button
+          className="button"
+          type="button"
+          onClick={() => {
+            if (currentCup <= 8) {
+              setCurrentComponent('cup');
+              setProductivityScore(0);
+              setHappinessScore(0);
+              setFeelingsText('');
+              setProductivityText('');
+            } else {
+              setCurrentComponent('death');
+            }
+          }}
       >
-        On to cup {currentCup}
-      </button>
-      )}
-      <button
-        className="button"
-        onClick={() => {
-          setCurrentComponent('outro');
-        }}
+          On to cup {currentCup}
+        </button>
+        )}
+        <button
+          className="button"
+          onClick={() => {
+            setCurrentComponent('outro');
+          }}
       >Quit
-      </button>
+        </button>
+      </div>
     </div>
   );
   return (

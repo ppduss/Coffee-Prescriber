@@ -2,15 +2,17 @@
 .central-component_analysis {
   min-height: 100vh;
   text-align: center;
-  flex-direction: column;
-  justify-content: space-between;
   background-image: linear-gradient(rgb(120, 176, 221), rgb(120, 176, 221),rgb(120, 176, 221), rgb(120, 189, 221), rgb(224, 191, 129));
   color: white;
   font-size: calc(0.8em + 0.8vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .plot{
   height: calc(220px + 10vh);
+  padding: 0 15%;
 }
 
 .dangerzone {
@@ -19,7 +21,7 @@
 }
 
 .paragraph {
-    color: rgb(56, 33, 16);
+  color: rgb(24, 18, 14);
   font-size: 0.8em;
-    margin: 0px 25vw;
+  margin: 0px 20%;
 }

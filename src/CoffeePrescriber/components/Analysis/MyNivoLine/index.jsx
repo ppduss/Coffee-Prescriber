@@ -24,7 +24,7 @@ const NivoLine = ({ record }) => {
     <ResponsiveLine
       data={data}
       margin={{
-        top: 40, right: 135, bottom: 22, left: 150,
+        top: 40, right: 50, bottom: 22, left: 50,
       }}
       xScale={{ type: 'point' }}
       yScale={{
