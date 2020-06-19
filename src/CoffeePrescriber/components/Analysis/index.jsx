@@ -26,7 +26,7 @@ const Analysis = (props) => {
       setDisplayAlertModal(true);
       setAlertModal('DANGER: TOO MUCH COFFEE !');
     }
-  }, []);
+  }, [currentCup]);
 
   const roundedAverageHappinessScore = averageHappinessScore.toFixed(1);
   const roundedAverageProductivityScore = averageProductivityScore.toFixed(1);
@@ -40,7 +40,7 @@ const Analysis = (props) => {
         <MyResponsiveLine record={record} />
       </div>
       <div className="note"> Your average satisfaction index is currently {roundedAverageHappinessScore}, whereas your productivity index is {roundedAverageProductivityScore}. </div>
-      <div className="paragraph"> Be mindful of the <a href="https://en.wikipedia.org/wiki/Yerkes%E2%80%93Dodson_law" target="_blank" rel="noopener noreferrer">Yerkes–Dodson law</a> that states a relationship between arousal and performance only on specific types of tasks, and only up to a certain point. </div>
+      <div className="paragraph"> Be mindful of the <a href="https://en.wikipedia.org/wiki/Yerkes%E2%80%93Dodson_law" target="_blank" rel="noopener noreferrer">Yerkes–Dodson law</a> that states a positive relationship between arousal and performance only on specific types of tasks, and only up to a certain point.</div>
       <div>
         {currentCup <= 9 && (
         <button

@@ -48,22 +48,22 @@ const Objects = [
   },
 
   {
-    emotionText: ['I\'m overwhelmed with crippling amounts of anxiety. My heart is beating faster and more irregularly than a Mathcore drummer', 'I smell like teen angst', 'The hamspter wheel in my brain feels like it\'s spinning so fast it could power a small town', 'I feel super cool', 'I\'m feeling pumped about everything and every idea I come up with is the BEST idea I’ve ever had, '],
+    emotionText: ['I\'m overwhelmed with crippling amounts of anxiety. My heart is beating faster and more irregularly than a mathcore drummer', 'I smell like teen angst', 'The hamspter wheel in my brain feels like it\'s spinning so fast it could power a small town', 'I feel super cool', 'I\'m feeling pumped about everything and every idea I come up with is the BEST idea I’ve ever had, '],
     emoticons: [ConfoundedImg, PerseveringImg, FlushedImg, SunglassesImg, StarEyesImg],
     numberText: 'fifth',
   },
   {
-    emotionText: ['My heart is racing and I feel like I might die', 'Why do I do this to myself ?  I feel terrible', 'I\'m both excited and terrified', 'Yahoo ! I feel invincible', 'My brain is on fire - I feel like a Space X rocket'],
+    emotionText: ['My heart is racing, I feel like I might die', 'Why do I do this to myself ?  I feel terrible', 'I\'m both excited and terrified', 'Yahoo ! I feel invincible', 'My brain is on fire - I feel like a Space X rocket'],
     emoticons: [WearyImg, ConfoundedImg, FlushedImg, TongueOutImg, ExplodingImg],
     numberText: 'sixth',
   },
   {
-    emotionText: ['I\'m on the fast track to panic attack central', 'My body is sending me clear signals that it wants to purge.  I feel ill ', ' I feel like an F16 about to break the sound barrier. The engine is revving hard, the hull is rattling', 'The sound of my ego has become so loud that I can barely focus on anything else.  My inner monologue is blasting thoughts at a rate I can barely process, never mind control ', 'No I didn\'t take a handfull of Adderal, this is normal ! I AM FINE'],
+    emotionText: ['I\'m on the fast track to a panic attack', 'My body is sending me clear signals that it wants to purge.  I feel ill ', 'I feel like an F16 about to break the sound barrier', 'My ego\'s inner monologue has become so loud that I can barely focus on anything else', 'My mind is blasting thoughts at a rate I can barely process correctly, never mind control'],
     emoticons: [DizzyImg, PoisonedImg, FlushedImg, ExplodingImg, HighVoltageImg],
     numberText: 'seventh',
   },
   {
-    emotionText: ['This is clearly the most socially acceptable way to self destruct', 'My body is now convinced I\'m trying to kill it ', 'I\'ve turned into a paranoid android', 'My inner self has regressed to pure energy.  No thoughts, no doubt ', 'My mind and body feel godlike. Time and matter are the bane of mere mortals and I laugh at the abyss. Oh'],
+    emotionText: ['I feel like I\'m self destructing in the most socially acceptable way', 'My body is now convinced I\'m trying to kill it ', 'I\'ve turned into a paranoid android', 'I am pure energy', 'My mind and body feel godlike. Time and matter are the bane of mere mortals and I laugh at the abyss. I feel like a cross between Doctor Manhattan and Rock James'],
     emoticons: [SkullImg, DizzyImg, NeutralImg, HighVoltageImg, CollisionImg],
     numberText: 'eighth',
   },

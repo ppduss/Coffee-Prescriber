@@ -72,7 +72,7 @@ const Cups = (props) => {
       setForceEmoji('force');
     }
   };
-  console.log(forceEmoji, forceStar);
+  // console.log(forceEmoji, forceStar);
 
   const connectorText = () => {
     if (happinessScore >= 3 && productivityScore >= 3) {
