@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Coffee-Prescriber/static/css/main.ba47f1ca.chunk.css",
-    "main.js": "/Coffee-Prescriber/static/js/main.355b2b1d.chunk.js",
-    "main.js.map": "/Coffee-Prescriber/static/js/main.355b2b1d.chunk.js.map",
+    "main.css": "/Coffee-Prescriber/static/css/main.762a5bf4.chunk.css",
+    "main.js": "/Coffee-Prescriber/static/js/main.d0f5615c.chunk.js",
+    "main.js.map": "/Coffee-Prescriber/static/js/main.d0f5615c.chunk.js.map",
     "runtime-main.js": "/Coffee-Prescriber/static/js/runtime-main.4840daca.js",
     "runtime-main.js.map": "/Coffee-Prescriber/static/js/runtime-main.4840daca.js.map",
     "static/js/2.8416df5f.chunk.js": "/Coffee-Prescriber/static/js/2.8416df5f.chunk.js",
     "static/js/2.8416df5f.chunk.js.map": "/Coffee-Prescriber/static/js/2.8416df5f.chunk.js.map",
     "index.html": "/Coffee-Prescriber/index.html",
-    "precache-manifest.ee646db52bd2708d3b8cc299bc88fea5.js": "/Coffee-Prescriber/precache-manifest.ee646db52bd2708d3b8cc299bc88fea5.js",
+    "precache-manifest.9142da2a9af5aa07c624448e8661d678.js": "/Coffee-Prescriber/precache-manifest.9142da2a9af5aa07c624448e8661d678.js",
     "service-worker.js": "/Coffee-Prescriber/service-worker.js",
-    "static/css/main.ba47f1ca.chunk.css.map": "/Coffee-Prescriber/static/css/main.ba47f1ca.chunk.css.map",
+    "static/css/main.762a5bf4.chunk.css.map": "/Coffee-Prescriber/static/css/main.762a5bf4.chunk.css.map",
     "static/js/2.8416df5f.chunk.js.LICENSE.txt": "/Coffee-Prescriber/static/js/2.8416df5f.chunk.js.LICENSE.txt",
     "static/media/blushingFace.png": "/Coffee-Prescriber/static/media/blushingFace.419a60ad.png",
     "static/media/coffee.png": "/Coffee-Prescriber/static/media/coffee.ca4a3c60.png",
@@ -41,7 +41,7 @@
   "entrypoints": [
     "static/js/runtime-main.4840daca.js",
     "static/js/2.8416df5f.chunk.js",
-    "static/css/main.ba47f1ca.chunk.css",
-    "static/js/main.355b2b1d.chunk.js"
+    "static/css/main.762a5bf4.chunk.css",
+    "static/js/main.d0f5615c.chunk.js"
   ]
 }
