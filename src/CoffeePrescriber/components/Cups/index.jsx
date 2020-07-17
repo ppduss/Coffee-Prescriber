@@ -106,13 +106,13 @@ const Cups = (props) => {
         <input className={`button-emoji ${isSelected(4) && emojiSelected}`} onClick={handleIconClick} value={4} name={3} type="image" src={handleEmoji(3)} alt="Confused face" />
         <input className={`button-emoji ${isSelected(5) && emojiSelected}`} onClick={handleIconClick} value={5} name={4} type="image" src={handleEmoji(4)} alt="Unhappy face" />
       </div>
-      <p className="cup-text">How productive were you while drinking this {satisfactionQuery} cup ?</p>
+      <p className="cup-text">How productive were you while drinking this {satisfactionQuery} cup?</p>
       <div className={`icon-box_star ${forceStar}`}>
-        <input className={`star ${isStarSelected(1) && starSelected}`} onClick={(e) => handleStarClick(e, 'was not productive at all')} name="" value={1} type="image" src={StarImg} alt="I wasn't productive at all" />
-        <input className={`star ${isStarSelected(2) && starSelected}`} onClick={(e) => handleStarClick(e, 'was not very productive')} name="" value={2} type="image" src={StarImg} alt="barely productive" />
-        <input className={`star ${isStarSelected(3) && starSelected}`} onClick={(e) => handleStarClick(e, 'was somewhat productive')} name="" value={3} type="image" src={StarImg} alt="somewhat productive" />
-        <input className={`star ${isStarSelected(4) && starSelected}`} onClick={(e) => handleStarClick(e, 'was productive')} name="" value={4} type="image" src={StarImg} alt="productive" />
-        <input className={`star ${isStarSelected(5) && starSelected}`} onClick={(e) => handleStarClick(e, 'was very productive !')} name="" value={5} type="image" src={StarImg} alt="I was not very productive" />
+        <input className={`star ${isStarSelected(1) && starSelected}`} onClick={(e) => handleStarClick(e, 'was not productive at all.')} name="" value={1} type="image" src={StarImg} alt="I wasn't productive at all" />
+        <input className={`star ${isStarSelected(2) && starSelected}`} onClick={(e) => handleStarClick(e, 'was not very productive.')} name="" value={2} type="image" src={StarImg} alt="barely productive" />
+        <input className={`star ${isStarSelected(3) && starSelected}`} onClick={(e) => handleStarClick(e, 'was somewhat productive.')} name="" value={3} type="image" src={StarImg} alt="somewhat productive" />
+        <input className={`star ${isStarSelected(4) && starSelected}`} onClick={(e) => handleStarClick(e, 'was productive.')} name="" value={4} type="image" src={StarImg} alt="productive" />
+        <input className={`star ${isStarSelected(5) && starSelected}`} onClick={(e) => handleStarClick(e, 'was very productive!')} name="" value={5} type="image" src={StarImg} alt="I was not very productive" />
       </div>
 
       <div className="prod-and-feels_container">
