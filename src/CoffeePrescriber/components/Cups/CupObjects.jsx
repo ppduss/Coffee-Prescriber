@@ -63,7 +63,7 @@ const Objects = [
     numberText: 'seventh',
   },
   {
-    emotionText: ['I feel like I\'m self destructing in the most socially acceptable way', 'My body is now convinced I\'m trying to kill it ', 'I\'ve turned into a paranoid android', 'I am pure energy', 'My mind and body feel godlike. Time and matter are the bane of mere mortals and I laugh at the abyss. I feel like a cross between Doctor Manhattan and Rock James'],
+    emotionText: ['I feel like I\'m self destructing in the most socially acceptable way', 'My body is now convinced I\'m trying to kill it ', 'I\'ve turned into a paranoid android', 'I am pure energy', 'My mind and body feel godlike. Time and matter are the bane of mere mortals and I laugh at the abyss. I feel like a cross between Doctor Manhattan and Rick James'],
     emoticons: [SkullImg, DizzyImg, NeutralImg, HighVoltageImg, CollisionImg],
     numberText: 'eighth',
   },
